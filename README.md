@@ -1,5 +1,7 @@
 # 创作者项目收藏与工作台
 
+**先从这里找项目：[Lujiuqin 的公开仓库导航](GITHUB_NAVIGATION.md)** — 按个人作品、内容工作流、待配置应用、参考项目和归档项目分类，逐个说明用途、维护判断和下一步。
+
 > **想查看和原作者一样的 README、中文介绍和使用方法，请打开[独立仓库入口](INDEPENDENT_REPOSITORIES.md)。**
 >
 > 例如：[账号定位原版首页](https://github.com/Lujiuqin/account-positioning-interview#readme) · [内容工作流原版首页](https://github.com/Lujiuqin/ai-content-workflow-skills#readme) · [信号台原版首页](https://github.com/Lujiuqin/Ai-news#readme)。这些是 Lujiuqin 账号下各自独立的仓库。
