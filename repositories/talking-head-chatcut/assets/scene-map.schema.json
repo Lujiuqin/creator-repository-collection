@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "scene-map.schema.json",
+  "title": "ChatCut Scene Identity Map",
+  "description": "剪辑/scene-map.json：全链路唯一一次性登记的场景编号映射。任何文件都不得私自重编号。",
+  "type": "object",
+  "required": ["schemaVersion", "topicId", "fps", "scenes"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "topicId": {"type": "string", "minLength": 1},
+    "fps": {"type": "number", "exclusiveMinimum": 0},
+    "userPlanRef": {"type": "string", "minLength": 1},
+    "scenes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["userSceneId", "planSceneId", "range"],
+        "properties": {
+          "userSceneId": {"type": "string", "minLength": 1},
+          "planSceneId": {"type": "string", "minLength": 1},
+          "label": {"type": "string", "minLength": 1},
+          "aliases": {"type": "array", "items": {"type": "string", "minLength": 1}},
+          "range": {
+            "type": "object",
+            "required": ["startFrame", "endFrameExclusive"],
+            "properties": {
+              "startFrame": {"type": "integer", "minimum": 0},
+              "endFrameExclusive": {"type": "integer", "minimum": 1}
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

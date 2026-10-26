@@ -1,0 +1,59 @@
+@charset "utf-8";
+/* CSS Document */
+#zhuce{
+	width:auto;
+	height:1000px;
+	margin-top:10px;
+	border:1px solid #000;
+}
+#zhuce h1{
+	margin-top:30px;
+	margin-left:100px;
+	border-bottom:1px solid #ccc;
+	padding-bottom:20px;
+	margin-right:100px;
+}
+#zhuce dl{
+	width:400px;
+	margin:0 auto;
+}
+#zhuce dl dd{
+	padding:10px 0;
+}
+.spsc{
+	font-size:18px;
+	font-weight:600;
+}
+#zhuce dl dt{
+	color:#bbb;
+	text-indent:50px;
+}
+#zhuce dl dd img#code{
+	position:relative;
+	top:8px;
+	cursor:pointer;
+}
+.v_btn{
+	border:1px solid #000;
+	background:#fff;
+	margin-left:42px;
+}
+#zhuce dl dd input.text{
+	width:220px;
+	height:19px;
+	border:1px solid #333;
+}
+.submit{
+	width:100px;
+	height:30px;
+	background:#99cccc;
+	border:1px solid #99cccc;
+	color:#FFF;
+	font-weight:600;
+	margin-top:20px;
+	margin-left:110px;
+	cursor:pointer;
+}
+#zhuce dl dd input.yzm{
+	width:60px;
+}

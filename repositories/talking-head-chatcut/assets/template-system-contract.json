@@ -1,0 +1,137 @@
+{
+  "version": 2,
+  "resolverPriority": [
+    "mustHonor-userOverride",
+    "evidence-backed-candidate-score-at-least-8",
+    "bespoke"
+  ],
+  "templateScoreDimensions": [
+    "aspect-fit",
+    "information-structure-fit",
+    "semantic-motion-fit",
+    "style-fit",
+    "editability",
+    "timing-control"
+  ],
+  "minimumTemplateScore": 8,
+  "originVocabulary": {
+    "sceneAndTransitionOrigins": ["skill-catalog", "chatcut-library", "project-existing", "bespoke"],
+    "mapping": {
+      "skill-catalog": {
+        "sourceMode": "template",
+        "identityCheck": "id exists in semantic-template-system.json",
+        "snapshotRequired": "skill-template-catalog"
+      },
+      "chatcut-library": {
+        "sourceMode": "chatcut-library",
+        "identityCheck": "id exists in the current project-bound ChatCut Library snapshot",
+        "snapshotRequired": "chatcut-library",
+        "toolEvidenceRequired": true,
+        "skillSceneMapLookup": false
+      },
+      "project-existing": {
+        "sourceMode": "project-existing",
+        "identityCheck": "asset or MG id, type, and revision exist in the current project snapshot",
+        "snapshotRequired": "project-assets-or-mg",
+        "toolEvidenceRequired": true,
+        "skillSceneMapLookup": false
+      },
+      "bespoke": {
+        "sourceModes": ["bespoke", "bespoke-forced"],
+        "identityCheck": "id is null and trigger reason, implementation route, and editable properties are present",
+        "snapshotRequired": "current-project-state-and-machine-contracts"
+      }
+    },
+    "legacy": {
+      "newPlansMaySelect": false,
+      "historicalImportOnly": true,
+      "mustResolveToOneOfFourOrigins": true,
+      "unknownOriginFailure": "legacy-origin-unknown",
+      "compatibilityViewsMayEmit": false
+    }
+  },
+  "sourceEvidence": {
+    "requiredForScenes": true,
+    "requiredForTransitions": true,
+    "commonFields": ["snapshotRef", "snapshotRevision", "identityRef"],
+    "libraryAndProjectFields": ["toolId", "toolEvidenceRef"],
+    "bespokeFields": ["implementationRoute", "editableProperties", "triggerReason"],
+    "transitionRoleFields": ["entryRole", "exitRole", "roleMetadataRef"],
+    "crossFileValidationRequired": true
+  },
+  "continuity": {
+    "quantitativeDensityGates": "removed-2026-08-02",
+    "replacedBy": "per-motion purpose declaration; see user-fidelity-rules.json",
+    "everyMotionMustDeclarePurpose": true,
+    "purposeTasks": ["understand-structure", "emphasize-point", "express-relation", "locate-operation", "build-memory-hook"],
+    "userPlannedMotionIsExemptFromPurposeChoice": true,
+    "defaultWhenNoReasonToAddVisuals": "keep a clean full-screen talking head",
+    "decorativeLoopsCountAsMotion": false,
+    "decorativeAmbientLoopsForbidden": true,
+    "boundedSemanticLoopsAllowed": true,
+    "advisory": {
+      "note": "提示性建议，不是门槛，不产生 fail",
+      "denseSpeechStaticHoldFeelsLongAfterSeconds": 4,
+      "generalCompositionHoldFeelsLongAfterSeconds": 15
+    }
+  },
+  "transitions": {
+    "fieldName": "transitionChoice",
+    "maximumHardCutRatio": 0.3,
+    "forbidAdjacentSameIntentAndCarriedElement": true,
+    "requiredProofPoints": ["start", "mid", "end"],
+    "mustValidateFromAndToRoles": true,
+    "carriedElementMustRemainContinuousWhenRequired": true,
+    "libraryOrProjectRoleMetadataMayBeGuessed": false,
+    "missingRoleMetadataFailure": "transition-role-metadata-missing"
+  },
+  "quantitativeValidation": {
+    "appliesToAllOrigins": true,
+    "contracts": ["visual-sync-contract.json", "visual-orchestration-contract.json", "template-system-contract.json"],
+    "identityValidationVariesByOriginOnly": true
+  },
+  "directives": {
+    "mustHonorWins": true,
+    "facetIsolationRequired": true,
+    "bespokeDirectiveForcesBespokeSourceMode": true,
+    "unresolvedConflictIsHardFail": true
+  },
+  "aspects": {
+    "portrait-9-16": {"canvas": [1080, 1920], "subtitleSafeBottom": 1560},
+    "landscape-16-9": {"canvas": [1920, 1080], "requiresIndependentComposition": true}
+  },
+  "evolution": {
+    "candidateAfterS9Passes": 1,
+    "provenAfterS9Passes": 2,
+    "storeProjectIds": false,
+    "storeAssetUrls": false,
+    "storeReusableMechanismOnly": true
+  },
+  "hardFails": [
+    "missing-required-field",
+    "template-motion-signature-missing",
+    "template-aspect-variant-missing",
+    "primitive-not-authorized",
+    "cue-frame-negative",
+    "cue-sync-mode-not-authorized",
+    "resolved-count-outside-template-range",
+    "scene-role-not-authorized",
+    "scene-handoff-not-contiguous",
+    "motion-without-declared-purpose",
+    "decorative-ambient-loop",
+    "origin-source-mode-mismatch",
+    "source-evidence-missing-or-stale",
+    "library-id-not-in-current-snapshot",
+    "project-existing-id-not-in-current-snapshot",
+    "legacy-source-used-by-new-plan",
+    "legacy-origin-unknown",
+    "transition-intent-missing",
+    "transition-incompatible-pair",
+    "transition-role-metadata-missing",
+    "carried-element-broken",
+    "transition-continuity-unproven",
+    "directive-not-honored",
+    "override-facet-leak",
+    "visual-claim-without-pixel-evidence"
+  ]
+}

@@ -1,0 +1,33 @@
+@charset "UTF-8";
+/* CSS Document */
+.class{
+	width:100%;
+	height:100px;
+	background-color:#F12024;
+	margin-bottom:10px;
+}
+.class_photo{
+	height:100px;
+	width:150px;
+	float:left;
+	background-color:#B420D8;
+}
+.class_name{
+	text-align:center;
+	line-height:8em;
+}
+.friends{
+	width:100px;
+	height:120px;
+	margin:20px;
+	float:left;
+}
+.friends_photo{
+	width:100px;
+	height:100px;
+}
+.friends_name{
+	width:100px;
+	height:20px;
+	text-align:center;
+}

@@ -1,0 +1,76 @@
+{
+  "version": 4,
+  "layout": {
+    "defaultProfile": null,
+    "supportedProfiles": ["portrait-9-16", "landscape-16-9"],
+    "profilesAsset": "layout-profiles.json",
+    "profileSelectionRequiresCanvasEvidence": true,
+    "noStretchBetweenProfilesSource": "layout-profiles.json#rules.noStretchBetweenProfiles",
+    "separateLayoutReviewPerProfile": true
+  },
+  "colors": {
+    "background": "#040706",
+    "textPrimary": "#F4FFF8",
+    "textMuted": "#93A69A",
+    "accent": "#43F59E"
+  },
+  "typography": {
+    "fontFamily": "Noto Sans SC",
+    "maxHierarchyLevels": 3,
+    "verifyCloudFontCatalogBeforeMg": true
+  },
+  "captions": {
+    "profileSpecificGeometry": true,
+    "lineHeight": 1.25,
+    "maxLines": 2,
+    "punctuation": true,
+    "currentWordHighlight": false,
+    "keyTermHighlight": "optional",
+    "keyTermColor": "#43F59E",
+    "maxKeyTermHighlightsPerCaption": 1,
+    "maxKeyTermHighlightedCharacterRatio": 0.35,
+    "maxConsecutiveHighlightedCaptions": 2
+  },
+  "talkingHeadPip": {
+    "profileSpecificGeometry": true,
+    "placement": "top-right-unless-subject-conflict",
+    "allowMirrorToTopLeft": true,
+    "crop": "center-face"
+  },
+  "motion": {
+    "enterFrames": [8, 14],
+    "exitFrames": [6, 12],
+    "primaryResponseWindowSeconds": [-0.133, 0.2],
+    "preferReadableHold": true,
+    "visualSyncContract": "visual-sync-contract.json",
+    "syncModes": ["reveal", "highlight", "state-change", "media-focus"],
+    "maximumConclusionLeadSeconds": 0.5,
+    "maximumResponseLagSeconds": 0.5,
+    "maximumMeaninglessStaticSeconds": 4
+  },
+  "templatePolicy": {
+    "minimumScore": 8,
+    "maximumScore": 10,
+    "preferFor": ["transition", "builtin-zoom", "simple-title", "low-information-prompt", "fx"],
+    "neverHardcodeLibraryIds": true
+  },
+  "componentPolicy": {
+    "catalogAsset": "component-catalog.json",
+    "preferForCoreInformationStructures": true,
+    "instantiateInTargetProject": true,
+    "storeLocalJsxFiles": false,
+    "reuseOnlyWhenViewerJobStructureAndFormMatch": true,
+    "autonomouslyRecordNewPatterns": true,
+    "candidateSuccessfulUses": 1,
+    "provenSuccessfulUses": 2
+  },
+  "audio": {
+    "speechSpeed": 1.1,
+    "preservePitch": true,
+    "voiceEnhancement": true,
+    "voiceEnhancementFallback": "reduce-strength-if-artifacts",
+    "machineProfile": "sound-profile.json",
+    "numericGainSource": "sound-profile.json",
+    "duplicateNumericDefaultsForbidden": true
+  }
+}

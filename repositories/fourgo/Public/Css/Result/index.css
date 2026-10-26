@@ -1,0 +1,33 @@
+.content{
+  width: 1000px;
+  margin: 0 auto;
+  padding-top: 100px;
+}
+.showTop,.showBot{
+  width: 100%;
+  clear: left;
+}
+.showTop img,.showBot img{
+  border-radius: 20px;
+  max-height: 200px;
+}
+.showTop nav{
+  margin-right: 2.5%;
+}
+.showBot{
+  margin-top: 50px;
+  margin-bottom: 100px;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+}
+.center{
+  float: right;
+}
+.thumbnail{
+  border-radius: 20px;
+  box-shadow: 0 0 5px #ccc;
+  border: 0;
+}
+.thumbnail:hover{
+  box-shadow: 0 0 20px #999;
+}

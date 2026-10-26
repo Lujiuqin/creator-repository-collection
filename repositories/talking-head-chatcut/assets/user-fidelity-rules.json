@@ -1,0 +1,95 @@
+{
+  "version": 1,
+  "contractId": "chatcut-user-fidelity-v1",
+  "principle": "用户画面规划是版式与动效的最高真值。AI 只能补充、细化、润色；不能删除、替换、合并、降级。AI 认为用户规划无法实现时，唯一合法动作是停下来向用户提问。",
+  "fidelityLevels": {
+    "verbatim": "用户规划已写明，计划照做，结构与参数均未改动。",
+    "elaborated": "用户规划已写明，AI 只补齐了用户未指定的精确帧、坐标、曲线、配色等实现细节；版式类型、PIP、点名机制、mustShowTerms 全部保持不变。",
+    "ai-added": "用户规划未覆盖该场景，AI 自主补充。补充内容仍受其余硬约束限制。"
+  },
+  "userSpecRefRequiredFor": ["verbatim", "elaborated"],
+  "deviationRules": {
+    "defaultMustBeEmpty": true,
+    "approvalRequiredFields": ["quote", "date"],
+    "approvalMustBeUserOriginalWords": true,
+    "aiSelfApprovalForbidden": true
+  },
+  "downgradeChecks": [
+    {
+      "code": "layout-type-changed",
+      "description": "用户指定的版式类型被更换（例如 L4 信息舞台被降为 L1 全屏口播）。",
+      "compare": "userSpec.layoutType != plan.canvasState",
+      "severity": "hard-fail"
+    },
+    {
+      "code": "pip-removed-or-moved",
+      "description": "用户指定的口播画中画被删除、被改为 full/hidden，或位置象限发生变化。",
+      "compare": "userSpec.pip vs plan.presenter.policy + plan.presenter.pipRect 象限",
+      "severity": "hard-fail"
+    },
+    {
+      "code": "named-mechanism-replaced",
+      "description": "用户点名的视觉机制被替换为其他机制（例如“外壳轮廓包住三张卡”变成三张普通卡片）。",
+      "compare": "userSpec.mechanismKeywords 必须全部出现在 plan 场景的机制描述中",
+      "severity": "hard-fail"
+    },
+    {
+      "code": "must-show-term-missing",
+      "description": "用户指定的 mustShowTerms 在计划中缺失。",
+      "compare": "userSpec.mustShowTerms ⊆ plan 场景可见文本集合",
+      "severity": "hard-fail"
+    },
+    {
+      "code": "must-show-term-timing-drift",
+      "description": "用户指定的 mustShowTerms 出现时机偏离用户锚点超过 ±0.5 秒。",
+      "toleranceSeconds": 0.5,
+      "severity": "hard-fail"
+    },
+    {
+      "code": "scene-merged",
+      "description": "用户定义的两个及以上场景在计划中被合并为一个。",
+      "severity": "hard-fail"
+    },
+    {
+      "code": "scene-split",
+      "description": "用户定义的一个场景在计划中被拆成多个且未标注为细化。",
+      "severity": "hard-fail"
+    },
+    {
+      "code": "scene-reordered",
+      "description": "用户定义的场景顺序在计划中被重排。",
+      "severity": "hard-fail"
+    },
+    {
+      "code": "real-capture-replaced-by-illustration",
+      "description": "用户标注必须使用真实录屏/截图的场景，计划改用示意图或 AI 生成素材。",
+      "severity": "hard-fail"
+    }
+  ],
+  "legalResponseWhenPlanSeemsWrong": [
+    "停止规划",
+    "把问题、影响范围和备选方案写入 unresolved",
+    "向用户提问并等待裁决"
+  ],
+  "forbiddenResponses": [
+    "先按自己的理解改了再说",
+    "把用户描述的机制降级为通用模板",
+    "改写用户的画面描述去迁就现有模板",
+    "以“模板评分不足”为由删掉用户要求的元素"
+  ],
+  "hardFails": [
+    "scene-missing-fidelity",
+    "scene-missing-user-spec-ref",
+    "deviation-without-user-approval",
+    "user-approval-not-quoting-user",
+    "layout-type-changed",
+    "pip-removed-or-moved",
+    "named-mechanism-replaced",
+    "must-show-term-missing",
+    "must-show-term-timing-drift",
+    "scene-merged",
+    "scene-split",
+    "scene-reordered",
+    "real-capture-replaced-by-illustration"
+  ]
+}

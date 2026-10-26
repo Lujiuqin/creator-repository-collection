@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>四步曲</title>
+    <!-- 插件css文件 -->
+    <css href="__CSS__/bootstrap.min.css"/>
+    <css href="__CSS__/bootstrap-theme.min.css"/>
+    <css href="__CSS__/video-js.min.css"/>
+    <css href="__CSS__/common.css"/>
+    <css href="__CSS__/header.css"/>
+    <css href="__CSS__/bottom.css"/>
+    <css href="__CSS__/Result/show.css"/>
+</head>
+<body>
+<!-- 导航栏 -->
+<header>
+    <include file="Public:header"/>
+</header>
+
+<div class="content">
+    <!-- 播放器 -->
+    <video id="example_video_1" height="800" class="video-js vjs-default-skin" controls preload="none" data-setup="{}">
+        <source src="__PUBLIC__/Video/2.mp4" type='video/mp4' />
+        <source src="__PUBLIC__/Video/2.webm" type='video/webm' />
+        <source src="__PUBLIC__/Video/2.ogv" type='video/ogg' />
+    </video>
+    <!-- 评论 -->
+    <div class="comment">
+        <div class="page-header">
+          <h2>评论<span class="label label-primary" style="font-size: 12px;position: absolute;margin-top: -5px;">5</span></h2>
+        </div>
+        <textarea class="com-text" id="com" placeholder="扯淡、吐槽、表扬、鼓励……想说啥就说啥！"></textarea>
+        <button type="button" class="btn btn-default btn-success" id="submit">提交评论</button>
+        <div class="comment_all">
+            <ul>
+
+                <li style="display: none;" id="qwe">
+                    <img src="__IMG__/head/1.jpg" alt=""/>
+                    <div class="list-main">
+                        <div class="name">hxf</div>
+                        <div class="info" id="info">123</div>
+                        <span class="list-time">时间: 2016-05-11</span>
+                        <span class="glyphicon glyphicon-thumbs-up zan" aria-hidden="true"></span>
+                    </div>
+                </li>
+
+                <li>
+                    <img src="__IMG__/head/1.jpg" alt=""/>
+                    <div class="list-main">
+                        <div class="name">仁平君临天下</div>
+                        <div class="info">很好看呢。</div>
+                        <span class="list-time">时间: 2016-04-19</span>
+                        <span class="glyphicon glyphicon-thumbs-up zan" aria-hidden="true"></span>
+                    </div>
+                </li>
+                <li>
+                    <img src="__IMG__/head/2.jpg" alt=""/>
+                    <div class="list-main">
+                        <div class="name">PaulDing</div>
+                        <div class="info">～～～～～～～～～～～～～～～～～～～～～～</div>
+                        <span class="list-time">时间: 2016-04-09</span>
+                        <span class="glyphicon glyphicon-thumbs-up zan" aria-hidden="true"></span>
+                    </div>
+
+                </li>
+                <li>
+                    <img src="__IMG__/head/3.jpg" alt=""/>
+                    <div class="list-main">
+                        <div class="name">juntor</div>
+                        <div class="info">很有意义的一步MV。</div>
+                        <span class="list-time">时间: 2016-03-11</span>
+                        <span class="glyphicon glyphicon-thumbs-up zan" aria-hidden="true"></span>
+                    </div>
+                </li>
+                <li>
+                    <img src="__IMG__/head/4.jpg" alt=""/>
+                    <div class="list-main">
+                        <div class="name">淡淡忧伤qz</div>
+                        <div class="info">膜拜了！膜拜了！</div>
+                        <span class="list-time">时间: 2016-02-19</span>
+                        <span class="glyphicon glyphicon-thumbs-up zan" aria-hidden="true"></span>
+                    </div>
+
+                </li>
+                <li>
+                    <img src="__IMG__/head/5.jpg" alt=""/>
+                    <div class="list-main">
+                        <div class="name">_小王子</div>
+                        <div class="info">确实是全网最好的视频！！</div>
+                        <span class="list-time">时间: 2016-01-19</span>
+                        <span class="glyphicon glyphicon-thumbs-up zan" aria-hidden="true"></span>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <include file="Public:bottom"/>
+</footer>
+<!--最后引入各项JS文件-->
+<js href="__JQUERY__/jquery.js"/>
+<js href="__JQUERY__/bootstrap.js"/>
+<js href="__JS__/video.js"/>
+<js href="__JS__/header.js"/>
+<js href="__JS__/Result/show.js"/>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!-- BEGIN STYLE CUSTOMIZER -->
+<script type="text/javascript">
+	window.onload=function () {
+		var path = "__ROOT__";
+        var style_color = getCookie('style_color');
+        $('#style_color').attr("href", path+"/Application/Admin/View/media/css/" + style_color + ".css");
+        var layoutOption = getCookie('layout');
+        var headerOption = getCookie('header');
+        var sidebarOption = getCookie('sidebar');
+        var footerOption = getCookie('footer');
+
+        if (sidebarOption == "fixed" && headerOption == "default") {
+            alert('固定侧栏时，默认的流动标题不支持，继续用默认样式。');
+            $('.sidebar-option').val("default");
+            sidebarOption = 'default';
+        }
+
+        if (layoutOption === "boxed") {
+            $("body").addClass("page-boxed");
+
+            // set header
+            $('.header > .navbar-inner > .container-fluid').removeClass("container-fluid").addClass("container");
+            var cont = $('.header').after('<div class="container"></div>');
+
+            // set content
+            $('.page-container').appendTo('body > .container');
+
+            // set footer
+            if (footerOption === 'fixed' || sidebarOption === 'default') {
+                $('.footer').html('<div class="container">'+$('.footer').html()+'</div>');
+            } else {
+                $('.footer').appendTo('body > .container');
+            }
+        }
+
+        //header
+        if (headerOption === 'fixed') {
+            $("body").addClass("page-header-fixed");
+            $(".header").removeClass("navbar-static-top").addClass("navbar-fixed-top");
+        } else {
+            $("body").removeClass("page-header-fixed");
+            $(".header").removeClass("navbar-fixed-top").addClass("navbar-static-top");
+        }
+
+        //sidebar
+        if (sidebarOption === 'fixed') {
+            $("body").addClass("page-sidebar-fixed");
+        } else {
+            $("body").removeClass("page-sidebar-fixed");
+        }
+
+        //footer
+        if (footerOption === 'fixed') {
+            $("body").addClass("page-footer-fixed");
+        } else {
+            $("body").removeClass("page-footer-fixed");
+        }
+    }
+	function setCookie(name,value){
+		var Days = 30;
+		var exp = new Date();
+		exp.setTime(exp.getTime() + Days*24*60*60*1000);
+		document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
+	}
+	function getCookie(cookieName){
+		var cookieValue = document.cookie;
+		var cookieStartAt = cookieValue.indexOf(""+cookieName+"=");
+		if(cookieStartAt==-1){
+			cookieStartAt = cookieValue.indexOf(cookieName+"=");
+		}
+		if(cookieStartAt==-1){
+			cookieValue = null;
+		}
+		else{
+			cookieStartAt = cookieValue.indexOf("=",cookieStartAt)+1;
+			cookieEndAt = cookieValue.indexOf(";",cookieStartAt);
+			if(cookieEndAt==-1)
+			{
+				cookieEndAt = cookieValue.length;
+			}
+			cookieValue = unescape(cookieValue.substring(cookieStartAt,cookieEndAt));//解码latin-1
+		}
+		return cookieValue;
+	}
+
+	function setLayout(obj){
+		var value = obj.value;
+		setCookie("layout",value);
+	}
+	function setHeader(obj){
+		var value = obj.value;
+		setCookie("header",value);
+	}
+	function setSidebar(obj){
+		var value = obj.value;
+		setCookie("sidebar",value);
+	}
+	function setFooter(obj){
+		var value = obj.value;
+		setCookie("footer",value);
+	}
+	function setColor(obj){
+		setCookie("style_color",obj);
+	}
+</script>
+<div id="color-panel" class="color-panel hidden-phone">
+
+	<div class="color-mode-icons icon-color"></div>
+
+	<div class="color-mode-icons icon-color-close"></div>
+
+	<div class="color-mode">
+
+		<p>主题颜色</p>
+			<!-- <input type="hidden" name="" id="color" value="<{$bd_style.color}>">
+			<input type="hidden" name="" id="layout" value="<{$bd_style.layout}>">
+			<input type="hidden" name="" id="header" value="<{$bd_style.header}>">
+			<input type="hidden" name="" id="sidebar" value="<{$bd_style.sidebar}>">
+			<input type="hidden" name="" id="footer" value="<{$bd_style.footer}>">
+			<input type="hidden" name="" id="style_color" value="<{$bd_style.style_color}>"> -->
+
+		<ul class="inline">
+
+			<li class="color-black current color-default" data-style="default" onclick="setColor('default')"></li>
+
+			<li class="color-blue" data-style="blue" onclick="setColor('blue')"></li>
+
+			<li class="color-brown" data-style="brown" onclick="setColor('brown')"></li>
+
+			<li class="color-purple" data-style="purple" onclick="setColor('purple')"></li>
+
+			<li class="color-grey" data-style="grey" onclick="setColor('grey')"></li>
+
+			<li class="color-white color-light" data-style="light" onclick="setColor('light')"></li>
+
+		</ul>
+
+		<label>
+
+			<span>页面布局</span>
+
+			<select class="layout-option m-wrap small" onchange="setLayout(this)">
+
+				<if condition=" 'fluid' eq $_COOKIE['layout']">
+					<option value="fluid" selected>流动</option></a>
+					<option value="boxed">固定</option></a>
+				<else/>
+					<option value="fluid">流动</option>
+					<option value="boxed" selected>固定</option>
+				</if>
+
+			</select>
+
+		</label>
+
+		<label>
+
+			<span>标头导航</span>
+
+			<select class="header-option m-wrap small" onchange="setHeader(this)">
+
+				<if condition=" 'fixed' eq $_COOKIE['header']">
+					<option value="fixed" selected>固定</option>
+					<option value="default">流动</option>
+				<else/>
+					<option value="fixed">固定</option>
+					<option value="default" selected>流动</option>
+				</if>
+
+			</select>
+
+		</label>
+
+		<label>
+
+			<span>侧栏导航</span>
+
+			<select class="sidebar-option m-wrap small" onchange="setSidebar(this)">
+
+				<if condition=" 'default' eq $_COOKIE['sidebar']">
+					<option value="default" selected>流动</option>
+					<option value="fixed">固定</option>
+				<else/>
+					<option value="default">流动</option>
+					<option value="fixed" selected>固定</option>
+				</if>
+
+
+			</select>
+
+		</label>
+
+		<label>
+
+			<span>底部导航</span>
+
+			<select class="footer-option m-wrap small" onchange="setFooter(this)">
+
+				<if condition=" 'default' eq $_COOKIE['footer']">
+					<option value="default" selected>流动</option>
+					<option value="fixed">固定</option>
+				<else/>
+					<option value="default">流动</option>
+					<option value="fixed" selected>固定</option>
+				</if>
+
+			</select>
+
+		</label>
+
+	</div>
+
+</div>
+<!-- END BEGIN STYLE CUSTOMIZER -->

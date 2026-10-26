@@ -1,0 +1,322 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/unified-material.schema.json",
+  "title": "Unified Material",
+  "type": "object",
+  "properties": {
+    "material_id": {
+      "type": "string",
+      "pattern": "^mat_[a-f0-9]{12}$"
+    },
+    "source_platform": {
+      "type": "string",
+      "enum": [
+        "twitter",
+        "xiaohongshu",
+        "weixin",
+        "aihot",
+        "rss"
+      ]
+    },
+    "source_kind": {
+      "type": "string",
+      "enum": [
+        "official",
+        "news",
+        "ugc"
+      ]
+    },
+    "collector": {
+      "type": "string",
+      "minLength": 1
+    },
+    "query_id": {
+      "type": "string"
+    },
+    "query_text": {
+      "type": "string"
+    },
+    "search_rank": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "maximum": 9007199254740991
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "source_item_id": {
+      "type": "string"
+    },
+    "identity_aliases": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "source_access_status": {
+      "default": "resolved",
+      "type": "string",
+      "enum": [
+        "resolved",
+        "unresolved"
+      ]
+    },
+    "author_name": {
+      "type": "string"
+    },
+    "author_followers": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "excerpt": {
+      "type": "string"
+    },
+    "source_url": {
+      "type": "string",
+      "minLength": 1
+    },
+    "canonical_url": {
+      "type": "string",
+      "minLength": 1
+    },
+    "content_path": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "content_downloaded": {
+      "default": false,
+      "type": "boolean"
+    },
+    "published_at": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "published_at_quality": {
+      "type": "string",
+      "enum": [
+        "exact",
+        "inferred",
+        "unknown"
+      ]
+    },
+    "collected_at": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+    },
+    "engagement": {
+      "type": "object",
+      "properties": {
+        "views": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "likes": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "comments": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "shares": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reposts": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "quotes": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "bookmarks": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "collects": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "views",
+        "likes",
+        "comments",
+        "shares",
+        "reposts",
+        "quotes",
+        "bookmarks",
+        "collects"
+      ],
+      "additionalProperties": false
+    },
+    "metric_quality": {
+      "type": "string",
+      "enum": [
+        "complete",
+        "partial",
+        "unavailable"
+      ]
+    },
+    "usage_mode": {
+      "type": "string",
+      "enum": [
+        "fact_source",
+        "trend_signal",
+        "structure_inspiration",
+        "reference_only"
+      ]
+    },
+    "viral_confidence": {
+      "type": "string",
+      "enum": [
+        "verified",
+        "likely",
+        "candidate",
+        "unverified"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "accepted",
+        "rejected",
+        "quarantined"
+      ]
+    },
+    "rejection_reasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "material_id",
+    "source_platform",
+    "source_kind",
+    "collector",
+    "query_id",
+    "query_text",
+    "search_rank",
+    "source_item_id",
+    "identity_aliases",
+    "source_access_status",
+    "author_name",
+    "author_followers",
+    "title",
+    "excerpt",
+    "source_url",
+    "canonical_url",
+    "content_path",
+    "content_downloaded",
+    "published_at",
+    "published_at_quality",
+    "collected_at",
+    "engagement",
+    "metric_quality",
+    "usage_mode",
+    "viral_confidence",
+    "status",
+    "rejection_reasons"
+  ],
+  "additionalProperties": false
+}

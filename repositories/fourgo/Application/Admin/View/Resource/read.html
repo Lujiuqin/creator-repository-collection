@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+
+<!-- BEGIN HEAD -->
+
+<head>
+
+	<meta charset="utf-8" />
+
+	<title>Learning</title>
+
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+	<meta content="" name="description" />
+
+	<meta content="" name="author" />
+
+	<!-- BEGIN GLOBAL MANDATORY STYLES -->
+
+	<link href="__ROOT__/Application/Admin/View/media/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+	<link href="__ROOT__/Application/Admin/View/media/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
+
+	<link href="__ROOT__/Application/Admin/View/media/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+	<link href="__ROOT__/Application/Admin/View/media/css/style-metro.css" rel="stylesheet" type="text/css"/>
+
+	<link href="__ROOT__/Application/Admin/View/media/css/style.css" rel="stylesheet" type="text/css"/>
+
+	<link href="__ROOT__/Application/Admin/View/media/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+
+	<link href="__ROOT__/Application/Admin/View/media/css/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+
+	<link href="__ROOT__/Application/Admin/View/media/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+
+	<!-- END GLOBAL MANDATORY STYLES -->
+
+	<!-- BEGIN PAGE LEVEL STYLES -->
+
+	<link rel="stylesheet" type="text/css" href="__ROOT__/Application/Admin/View/media/css/select2_metro.css" />
+
+	<link rel="stylesheet" href="__ROOT__/Application/Admin/View/media/css/DT_bootstrap.css" />
+	<link rel="stylesheet" href="__ROOT__/Application/Admin/View/media/css/page.css" />
+
+	<!-- END PAGE LEVEL STYLES -->
+
+	<link rel="shortcut icon" href="__ROOT__/Application/Admin/View/media/image/favicon.ico" />
+<script type="text/javascript">
+function delete_confirm(){
+    event.returnValue = confirm("你确认要删除该单词吗？");
+}
+</script>
+
+</head>
+
+<!-- END HEAD -->
+
+<!-- BEGIN BODY -->
+
+<body class="page-header-fixed">
+<include file="Index:header"/>
+
+	<!-- BEGIN CONTAINER -->
+
+	<div class="page-container row-fluid">
+
+		<include file="Index:sidebar"/>
+
+		<!-- BEGIN PAGE -->
+
+		<div class="page-content">
+
+			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+
+			<div id="portlet-config" class="modal hide">
+
+				<div class="modal-header">
+
+					<button data-dismiss="modal" class="close" type="button"></button>
+
+					<h3>后台管理</h3>
+
+				</div>
+
+				<div class="modal-body">
+
+					&nbsp;
+
+				</div>
+
+			</div>
+
+			<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+
+			<!-- BEGIN PAGE CONTAINER-->        
+
+			<div class="container-fluid">
+
+				<!-- BEGIN PAGE HEADER-->
+
+				<div class="row-fluid">
+
+					<div class="span12">
+
+						<include file="Index:style"/>
+
+						<!-- BEGIN PAGE TITLE & BREADCRUMB-->
+
+						<h3 class="page-title">
+
+							&nbsp;
+
+						</h3>
+
+						<ul class="breadcrumb">
+
+							<li>
+
+								<i class="icon-home"></i>
+
+								<a href="index.html">后台首页</a> 
+
+								<i class="icon-angle-right"></i>
+
+							</li>
+
+							<li>
+
+								<a href="<{:U('Manage/index')}>">管理中心</a>
+
+								<i class="icon-angle-right"></i>
+
+							</li>
+
+							<li>
+
+								<a href="<{:U('Manage/index')}>">资源管理</a>
+
+								<i class="icon-angle-right"></i>
+
+							</li>
+
+							<li><a href="<{:U('Manage/index')}>">阅读文章</a></li>
+
+						</ul>
+
+						<!-- END PAGE TITLE & BREADCRUMB-->
+
+					</div>
+
+				</div>
+
+				<!-- END PAGE HEADER-->
+
+				<!-- BEGIN PAGE CONTENT-->
+
+				<div class="row-fluid ">
+
+					<div class="span12">
+
+						<!-- BEGIN ACCORDION PORTLET-->
+
+						<div class="portlet box yellow">
+
+							<div class="portlet-title">
+
+								<div class="caption"><i class="icon-reorder"></i>阅读文章</div>
+
+								<div class="actions">
+
+									<a href="<{:U('Resource/addRead')}>" class="btn green"><i class="icon-plus"></i> 添加</a>
+
+								</div>
+
+								<div class="tools">
+
+									<a href="javascript:;" class="collapse"></a>
+
+									<a href="javascript:;" class="reload"></a>
+
+									<a href="javascript:;" class="remove"></a>
+
+									<a href="javascript:;" class="">&nbsp;</a>
+
+								</div>
+
+							</div>
+
+							<div class="portlet-body">
+
+								<div class="accordion scrollable" id="accordion2">
+									<foreach name="list" item="vo" >
+										<div class="accordion-group">
+
+											<div class="accordion-heading">
+
+												<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapse_<{$vo.id}>">
+												标题：
+
+												<i class="icon-angle-left"></i>
+
+												<span class="info"><{$vo.title}></span>
+
+												<i class="icon-angle-right"></i>
+
+												<ul class="unstyled inline">
+												<for start="0" end="mt_rand(1,5)">
+													<li><i class="icon-star"></i></li>
+												</for>
+												</ul>
+
+												</a>
+
+											</div>
+
+											<div id="collapse_<{$vo.id}>" class="accordion-body collapse">
+
+												<div class="tabbable tabbable-custom">
+
+												<ul class="nav nav-tabs">
+
+													<li class="active"><a href="#tab_<{$vo.id}>_1" data-toggle="tab">英文</a></li>
+
+													<li><a href="#tab_<{$vo.id}>_2" data-toggle="tab">中文</a></li>
+
+												</ul>
+
+												<div class="tab-content">
+
+													<div class="tab-pane active" id="tab_<{$vo.id}>_1">
+
+														<p><{$vo.title}></p>
+
+														<p class="text-capitalize">
+
+															<{$vo.english}>
+
+														</p>
+
+														<p>
+
+															<a class="btn green" href="<{:U('Resource/editRead',array('id'=>$vo['id']))}>">编辑</a>
+
+														</p>
+
+													</div>
+
+													<div class="tab-pane" id="tab_<{$vo.id}>_2">
+
+														<p><{$vo.change}></p>
+
+														<p>
+
+															<{$vo.chinese}>
+
+														</p>
+
+														<p>
+
+															<a class="btn green" href="<{:U('Resource/editRead',array('id'=>$vo['id']))}>">编辑</a>
+
+														</p>
+
+													</div>
+
+												</div>
+
+											</div>
+
+											</div>
+
+										</div>
+									</foreach>
+								</div>
+
+							</div>
+
+						</div>
+
+						<!-- END ACCORDION PORTLET-->     
+
+					</div>
+					<div class="pagination">
+						<ul>
+							<{$page}>
+						</ul>
+					</div>
+
+				</div>
+
+				<!-- END PAGE CONTENT-->
+
+			</div>
+
+			<!-- END PAGE CONTAINER-->
+
+		</div>
+
+		<!-- END PAGE -->
+
+	</div>
+
+	<!-- END CONTAINER -->
+
+<include file="Index:footer"/>
+
+	<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+
+	<!-- BEGIN CORE PLUGINS -->
+
+	<script src="__ROOT__/Application/Admin/View/media/js/jquery-1.10.1.min.js" type="text/javascript"></script>
+
+	<script src="__ROOT__/Application/Admin/View/media/js/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+
+	<!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+
+	<script src="__ROOT__/Application/Admin/View/media/js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>      
+
+	<script src="__ROOT__/Application/Admin/View/media/js/bootstrap.min.js" type="text/javascript"></script>
+
+	<!--[if lt IE 9]>
+
+	<script src="__ROOT__/Application/Admin/View/media/js/excanvas.min.js"></script>
+
+	<script src="__ROOT__/Application/Admin/View/media/js/respond.min.js"></script>  
+
+	<![endif]-->   
+
+	<script src="__ROOT__/Application/Admin/View/media/js/jquery.slimscroll.min.js" type="text/javascript"></script>
+
+	<script src="__ROOT__/Application/Admin/View/media/js/jquery.blockui.min.js" type="text/javascript"></script>  
+
+	<script src="__ROOT__/Application/Admin/View/media/js/jquery.cookie.min.js" type="text/javascript"></script>
+
+	<script src="__ROOT__/Application/Admin/View/media/js/jquery.uniform.min.js" type="text/javascript" ></script>
+
+	<!-- END CORE PLUGINS -->
+
+	<!-- BEGIN PAGE LEVEL PLUGINS -->
+
+	<script type="text/javascript" src="__ROOT__/Application/Admin/View/media/js/select2.min.js"></script>
+
+	<script type="text/javascript" src="__ROOT__/Application/Admin/View/media/js/jquery.dataTables.js"></script>
+
+	<script type="text/javascript" src="__ROOT__/Application/Admin/View/media/js/DT_bootstrap.js"></script>
+
+	<!-- END PAGE LEVEL PLUGINS -->
+
+	<!-- BEGIN PAGE LEVEL SCRIPTS -->
+
+	<script src="__ROOT__/Application/Admin/View/media/js/app.js"></script>
+
+	<script src="__ROOT__/Application/Admin/View/media/js/table-managed.js"></script>     
+
+	<script>
+
+		jQuery(document).ready(function() {       
+
+		   Application.init();
+
+		   TableManaged.init();
+
+		});
+
+	</script>
+
+</body>
+
+<!-- END BODY -->
+
+</html>

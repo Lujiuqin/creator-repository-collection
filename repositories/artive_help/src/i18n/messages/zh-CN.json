@@ -1,0 +1,224 @@
+{
+  "app": {
+    "common": {
+      "loading": "加载中...",
+      "generating": "生成中...",
+      "original": "原文",
+      "result": "结果",
+      "openMenu": "打开菜单",
+      "closeMenu": "关闭菜单"
+    },
+    "auth": {
+      "login": "登录",
+      "logout": "退出登录",
+      "loginAccount": "登录账户",
+      "user": "用户"
+    },
+    "title": "公众号内容管理系统",
+    "nav": {
+      "dashboard": "首页",
+      "materials": "素材库",
+      "rewrite": "AI 改写",
+      "contents": "内容管理",
+      "publish": "发布",
+      "publishHistory": "发布历史",
+      "settings": "设置"
+    },
+    "actions": {
+      "addToLibrary": "添加到素材库",
+      "batchRewrite": "批量改写",
+      "batchDelete": "批量删除",
+      "rewrite": "改写",
+      "regenerate": "重新生成",
+      "save": "保存",
+      "saveToContent": "保存到内容管理",
+      "publish": "发布",
+      "filter": "筛选",
+      "search": "搜索",
+      "refresh": "刷新",
+      "selectAll": "全选",
+      "clear": "清空",
+      "confirm": "确认",
+      "cancel": "取消"
+    },
+    "dashboard": {
+      "hotboards": {
+        "weixin": "微信热文",
+        "zhihu": "知乎热榜",
+        "baidu": "百度热搜"
+      },
+      "hot": "热度",
+      "source": "来源",
+      "empty": "暂无数据"
+    },
+    "materials": {
+      "title": "素材库",
+      "columns": {
+        "title": "标题",
+        "source": "来源",
+        "collectedAt": "收录时间"
+      }
+    },
+    "rewrite": {
+      "title": "AI 改写",
+      "style": "改写风格",
+      "prompt": "自定义提示词",
+      "styles": {
+        "professional": "专业严谨",
+        "plain": "通俗易懂",
+        "xiaohongshu": "小红书风格",
+        "zhihu": "知乎风格",
+        "humor": "幽默风趣"
+      }
+    },
+    "contents": {
+      "title": "内容管理",
+      "columns": {
+        "title": "文章标题",
+        "status": "发布状态",
+        "category": "分类",
+        "tags": "标签",
+        "createdAt": "创建时间",
+        "updatedAt": "修改时间",
+        "actions": "操作"
+      },
+      "status": {
+        "draft": "草稿",
+        "pending": "待发布",
+        "published": "已发布",
+        "failed": "失败"
+      },
+      "categoryManager": "分类管理",
+      "tagManager": "标签管理"
+    },
+    "publish": {
+      "title": "发布",
+      "modal": {
+        "title": "发布配置",
+        "selectAccounts": "选择要发布的公众号账号",
+        "schedule": "定时发布",
+        "publishNow": "立即发布"
+      },
+      "preparedLabel": "准备发布的文章",
+      "seeHistory": "发布历史见『发布历史』。",
+      "history": {
+        "title": "发布历史",
+        "columns": {
+          "article": "文章",
+          "account": "账号",
+          "status": "状态",
+          "reason": "原因",
+          "time": "时间"
+        }
+      }
+    },
+    "settings": {
+      "title": "设置",
+      "tabs": {
+        "accounts": "公众号账号",
+        "fingerprints": "指纹浏览器"
+      },
+      "accounts": {
+        "add": "新增账号",
+        "edit": "编辑账号",
+        "delete": "删除账号",
+        "fields": {
+          "name": "账号名称",
+          "appId": "AppID",
+          "appSecret": "AppSecret",
+          "cookie": "登录 Cookie",
+          "bindFingerprint": "绑定指纹实例"
+        }
+      },
+      "fingerprints": {
+        "add": "新增实例",
+        "edit": "编辑实例",
+        "delete": "删除实例",
+        "fields": {
+          "name": "实例名称",
+          "corePath": "浏览器核心路径",
+          "userDataDir": "用户数据目录"
+        }
+      }
+    },
+    "feedback": {
+      "addedToMaterials": "已加入素材库",
+      "addSuccess": "添加成功",
+      "saved": "已保存",
+      "deleted": "已删除",
+      "published": "已发布",
+      "failed": "发布失败"
+    },
+    "inspiration": {
+      "title": "灵感集市",
+      "subtitle": "订阅创作者，获取灵感，一键入库",
+      "todayUpdate": "今日更新",
+      "search": {
+        "title": "新增订阅",
+        "placeholder": "搜索公众号名或 YouTube 频道名",
+        "button": "搜索",
+        "searching": "搜索中",
+        "minChars": "请输入公众号名称进行搜索",
+        "notFound": "未找到该公众号，请检查名称是否正确",
+        "networkError": "搜索失败，请检查网络连接",
+        "systemError": "系统繁忙，请稍后重试",
+        "foundAccount": "找到公众号：{{name}}",
+        "checkNameHint": "请检查公众号名称后重试"
+      },
+      "subscription": {
+        "mySubscriptions": "我的订阅",
+        "limitReached": "订阅数量已达上限（200个），请先删除一些订阅",
+        "alreadySubscribed": "该公众号已订阅",
+        "subscribeSuccess": "成功订阅公众号：{{name}}",
+        "subscribe": "订阅",
+        "subscribed": "已订阅",
+        "unsubscribe": "取消订阅",
+        "enable": "启用",
+        "disable": "停用",
+        "edit": "编辑",
+        "delete": "删除",
+        "deleteConfirm": "确定要删除这个订阅吗？该公众号的所有历史内容也将被删除。",
+        "deleteFailed": "取消订阅失败，请稍后重试",
+        "all": "全部",
+        "active": "启用",
+        "inactive": "停用",
+        "noSubscriptions": "暂无订阅",
+        "noActiveSubscriptions": "暂无启用的订阅",
+        "noInactiveSubscriptions": "暂无停用的订阅",
+        "addCreatorHint": "搜索并添加你关注的创作者",
+        "switchTabHint": "尝试切换到其他标签查看",
+        "lastSync": "最近同步",
+        "neverSynced": "从未同步",
+        "willAutoFetch": "订阅后将自动采集该公众号的最新内容"
+      },
+      "account": {
+        "followers": "粉丝",
+        "articleCount": "文章数",
+        "latestUpdate": "最近更新",
+        "wxId": "微信ID",
+        "wechat": "微信公众号",
+        "youtube": "YouTube",
+        "today": "今天",
+        "yesterday": "昨天",
+        "daysAgo": "{{days}}天前",
+        "weeksAgo": "{{weeks}}周前",
+        "monthsAgo": "{{months}}月前",
+        "overYear": "超过一年",
+        "unknown": "未知"
+      },
+      "timeline": {
+        "latestContent": "最新内容",
+        "fromSubscriptions": "来自你订阅的 {{count}} 个创作者",
+        "fetchLatest": "获取最新内容",
+        "fetching": "获取中...",
+        "pleaseAddSubscription": "请先添加订阅"
+      },
+      "timeFormat": {
+        "justNow": "刚刚",
+        "minutesAgo": "{{minutes}}分钟前",
+        "hoursAgo": "{{hours}}小时前",
+        "daysAgo": "{{days}}天前"
+      }
+    }
+  }
+}

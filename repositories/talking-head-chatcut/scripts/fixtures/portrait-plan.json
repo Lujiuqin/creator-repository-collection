@@ -1,0 +1,116 @@
+{
+  "version": "1.0",
+  "status": "locked",
+  "fps": 30,
+  "aspect": "portrait-9-16",
+  "sceneInstances": [
+    {
+      "sceneId": "intro-presenter",
+      "templateId": null,
+      "sourceMode": "bespoke",
+      "aspect": "portrait-9-16",
+      "entryRole": "fullscreen-presenter",
+      "exitRole": "fullscreen-presenter",
+      "denseSpeech": true,
+      "startFrame": 0,
+      "endFrameExclusive": 120,
+      "resolvedParams": {"role": "fullscreen-presenter"},
+      "wordCues": [
+        {"id": "intro-cue", "triggerWord": "基础设施", "triggerFrame": 24, "cueFrame": 24, "syncMode": "highlight"}
+      ],
+      "processContinuity": {
+        "isGenuineProcess": false,
+        "motionWindows": [
+          {"startFrame": 0, "endFrameExclusive": 12},
+          {"startFrame": 36, "endFrameExclusive": 48},
+          {"startFrame": 72, "endFrameExclusive": 84}
+        ],
+        "motionCoverageRatio": 0.3,
+        "maxStaticHoldFrames": 120,
+        "cadenceFrames": [0, 36, 72]
+      },
+      "overrides": []
+    },
+    {
+      "sceneId": "model-radial",
+      "templateId": "radial-system-map",
+      "sourceMode": "template",
+      "aspect": "portrait-9-16",
+      "entryRole": "info-canvas-with-corner-pip",
+      "exitRole": "info-canvas-with-corner-pip",
+      "denseSpeech": true,
+      "startFrame": 120,
+      "endFrameExclusive": 360,
+      "resolvedParams": {
+        "core": "大模型",
+        "items": ["文字", "图片", "视频"],
+        "role": "info-canvas-with-corner-pip"
+      },
+      "wordCues": [
+        {"id": "model-core", "triggerWord": "大模型", "triggerFrame": 132, "cueFrame": 12, "syncMode": "state-change"},
+        {"id": "model-text", "triggerWord": "文字", "triggerFrame": 180, "cueFrame": 60, "syncMode": "state-change"},
+        {"id": "model-image", "triggerWord": "图片", "triggerFrame": 228, "cueFrame": 108, "syncMode": "state-change"},
+        {"id": "model-video", "triggerWord": "视频", "triggerFrame": 276, "cueFrame": 156, "syncMode": "state-change"}
+      ],
+      "processContinuity": {
+        "isGenuineProcess": false,
+        "motionWindows": [
+          {"startFrame": 120, "endFrameExclusive": 150},
+          {"startFrame": 170, "endFrameExclusive": 200},
+          {"startFrame": 220, "endFrameExclusive": 250},
+          {"startFrame": 270, "endFrameExclusive": 300}
+        ],
+        "motionCoverageRatio": 0.5,
+        "maxStaticHoldFrames": 120,
+        "cadenceFrames": [120, 170, 220, 270]
+      },
+      "overrides": []
+    }
+  ],
+  "transitionInstances": [
+    {
+      "transitionId": "presenter-demote-to-corner",
+      "fromSceneId": "intro-presenter",
+      "toSceneId": "model-radial",
+      "aspect": "portrait-9-16",
+      "startFrame": 96,
+      "endFrameExclusive": 120,
+      "intent": "role-demote",
+      "carriedElementBinding": {"type": "presenter-video", "ref": "presenter-track"},
+      "keyframes": {
+        "presenter": [
+          {"frame": 96, "rect": [0, 0, 1080, 1920], "radius": 0, "opacity": 1},
+          {"frame": 108, "rect": [560, 60, 480, 480], "radius": 20, "opacity": 1},
+          {"frame": 120, "rect": [740, 96, 300, 300], "radius": 28, "opacity": 1}
+        ],
+        "infoLayer": [
+          {"frame": 96, "opacity": 0, "buildProgress": 0},
+          {"frame": 108, "opacity": 0.4, "buildProgress": 0.3},
+          {"frame": 120, "opacity": 1, "buildProgress": 0.6}
+        ]
+      },
+      "overrides": ["ovr-presenter-pip"],
+      "audit": {
+        "continuityProofFrames": [96, 108, 120],
+        "expected": "同一口播视频连续缩小至右上圆角 PIP，信息画布在后方逐步建立"
+      }
+    }
+  ],
+  "userOverrides": [
+    {
+      "id": "ovr-presenter-pip",
+      "mustHonor": true,
+      "scope": "transition",
+      "appliesTo": {"fromSceneId": "intro-presenter", "toSceneId": "model-radial"},
+      "anchor": {"word": "大模型", "frame": 120},
+      "directiveType": "presenter-demote-to-corner",
+      "spec": {"targetCorner": "top-right", "targetRadius": 28, "crop": "center-face"},
+      "facet": "transition-only",
+      "conflictPolicy": "override-wins",
+      "fidelityCheck": {
+        "assertions": ["末帧口播位于右上圆角窗", "人物身份与播放连续"],
+        "evidenceRequired": ["start-frame", "mid-frame", "end-frame"]
+      }
+    }
+  ]
+}

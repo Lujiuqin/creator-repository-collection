@@ -1,0 +1,196 @@
+[ 2016-05-11T20:05:35+08:00 ] 127.0.0.1 /admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000226s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000658s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000795s ]
+SQL: SHOW COLUMNS FROM `website` [ RunTime:0.0210s ]
+SQL: SELECT * FROM `website` WHERE `id` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.0421s ]
+SQL: SELECT * FROM `admin` WHERE `name` = null  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000159s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017113s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000592s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000671s ]
+
+[ 2016-05-11T20:05:38+08:00 ] 127.0.0.1 /admin.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000157s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000527s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000617s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000133s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000247s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023523s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023766s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000503s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000574s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000539s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000641s ]
+
+[ 2016-05-11T20:05:39+08:00 ] 127.0.0.1 /admin.php/Login/verify_c.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000177s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000653s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000801s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000695s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000808s ]
+
+[ 2016-05-11T20:05:50+08:00 ] 127.0.0.1 /admin.php/Login/loginCheck.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000185s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000719s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000890s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.0109s ]
+SQL: SELECT `name`,`password`,`status`,`face` FROM `admin` WHERE `name` = 'admin'  [ RunTime:0.0008s ]
+
+[ 2016-05-11T20:05:50+08:00 ] 127.0.0.1 /admin.php/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000176s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000480s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000611s ]
+SQL: SHOW COLUMNS FROM `website` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `website` WHERE `id` = 1  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.0068s ]
+SQL: SELECT * FROM `admin` WHERE `name` = 'admin'  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000179s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000266s ]
+NOTIC: [8] Undefined variable: bd_style E:\Study\PHP\Visual-NMP-x64\www\fourgo\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 901 行.
+NOTIC: [8] Undefined variable: bd_style E:\Study\PHP\Visual-NMP-x64\www\fourgo\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 902 行.
+NOTIC: [8] Undefined variable: bd_style E:\Study\PHP\Visual-NMP-x64\www\fourgo\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 903 行.
+NOTIC: [8] Undefined variable: bd_style E:\Study\PHP\Visual-NMP-x64\www\fourgo\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 904 行.
+NOTIC: [8] Undefined variable: bd_style E:\Study\PHP\Visual-NMP-x64\www\fourgo\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 905 行.
+NOTIC: [8] Undefined variable: bd_style E:\Study\PHP\Visual-NMP-x64\www\fourgo\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 906 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.088110s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.088209s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000720s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000806s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000614s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000710s ]
+
+[ 2016-05-11T20:05:54+08:00 ] 127.0.0.1 /admin.php/Daily/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000098s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000446s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000519s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000257s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000383s ]
+NOTIC: [8] Undefined variable: bd_style E:\Study\PHP\Visual-NMP-x64\www\fourgo\Application\Runtime\Cache\Admin\c9c7f650d4b0f559278da1149990717e.php 第 916 行.
+NOTIC: [8] Undefined variable: bd_style E:\Study\PHP\Visual-NMP-x64\www\fourgo\Application\Runtime\Cache\Admin\c9c7f650d4b0f559278da1149990717e.php 第 917 行.
+NOTIC: [8] Undefined variable: bd_style E:\Study\PHP\Visual-NMP-x64\www\fourgo\Application\Runtime\Cache\Admin\c9c7f650d4b0f559278da1149990717e.php 第 918 行.
+NOTIC: [8] Undefined variable: bd_style E:\Study\PHP\Visual-NMP-x64\www\fourgo\Application\Runtime\Cache\Admin\c9c7f650d4b0f559278da1149990717e.php 第 919 行.
+NOTIC: [8] Undefined variable: bd_style E:\Study\PHP\Visual-NMP-x64\www\fourgo\Application\Runtime\Cache\Admin\c9c7f650d4b0f559278da1149990717e.php 第 920 行.
+NOTIC: [8] Undefined variable: bd_style E:\Study\PHP\Visual-NMP-x64\www\fourgo\Application\Runtime\Cache\Admin\c9c7f650d4b0f559278da1149990717e.php 第 921 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030491s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000567s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000648s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000477s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000553s ]
+
+[ 2016-05-11T20:05:57+08:00 ] 127.0.0.1 /admin.php/Daily/index2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000097s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000428s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000501s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000166s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000258s ]
+NOTIC: [8] Undefined variable: bd_style E:\Study\PHP\Visual-NMP-x64\www\fourgo\Application\Runtime\Cache\Admin\d9451b4b564c891096b3d69ce048edc1.php 第 916 行.
+NOTIC: [8] Undefined variable: bd_style E:\Study\PHP\Visual-NMP-x64\www\fourgo\Application\Runtime\Cache\Admin\d9451b4b564c891096b3d69ce048edc1.php 第 917 行.
+NOTIC: [8] Undefined variable: bd_style E:\Study\PHP\Visual-NMP-x64\www\fourgo\Application\Runtime\Cache\Admin\d9451b4b564c891096b3d69ce048edc1.php 第 918 行.
+NOTIC: [8] Undefined variable: bd_style E:\Study\PHP\Visual-NMP-x64\www\fourgo\Application\Runtime\Cache\Admin\d9451b4b564c891096b3d69ce048edc1.php 第 919 行.
+NOTIC: [8] Undefined variable: bd_style E:\Study\PHP\Visual-NMP-x64\www\fourgo\Application\Runtime\Cache\Admin\d9451b4b564c891096b3d69ce048edc1.php 第 920 行.
+NOTIC: [8] Undefined variable: bd_style E:\Study\PHP\Visual-NMP-x64\www\fourgo\Application\Runtime\Cache\Admin\d9451b4b564c891096b3d69ce048edc1.php 第 921 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.049384s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.049495s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000762s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000837s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000651s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000752s ]
+
+[ 2016-05-11T20:06:00+08:00 ] 127.0.0.1 /admin.php/Daily/index3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000141s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000433s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000510s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000163s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000247s ]
+NOTIC: [8] Undefined variable: bd_style E:\Study\PHP\Visual-NMP-x64\www\fourgo\Application\Runtime\Cache\Admin\65ddf83d34448e2142f8a9d2ea08716a.php 第 916 行.
+NOTIC: [8] Undefined variable: bd_style E:\Study\PHP\Visual-NMP-x64\www\fourgo\Application\Runtime\Cache\Admin\65ddf83d34448e2142f8a9d2ea08716a.php 第 917 行.
+NOTIC: [8] Undefined variable: bd_style E:\Study\PHP\Visual-NMP-x64\www\fourgo\Application\Runtime\Cache\Admin\65ddf83d34448e2142f8a9d2ea08716a.php 第 918 行.
+NOTIC: [8] Undefined variable: bd_style E:\Study\PHP\Visual-NMP-x64\www\fourgo\Application\Runtime\Cache\Admin\65ddf83d34448e2142f8a9d2ea08716a.php 第 919 行.
+NOTIC: [8] Undefined variable: bd_style E:\Study\PHP\Visual-NMP-x64\www\fourgo\Application\Runtime\Cache\Admin\65ddf83d34448e2142f8a9d2ea08716a.php 第 920 行.
+NOTIC: [8] Undefined variable: bd_style E:\Study\PHP\Visual-NMP-x64\www\fourgo\Application\Runtime\Cache\Admin\65ddf83d34448e2142f8a9d2ea08716a.php 第 921 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.069372s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.069480s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000565s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000641s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001880s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002137s ]
+
+[ 2016-05-11T20:06:03+08:00 ] 127.0.0.1 /admin.php/Daily/index4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000120s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000587s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000669s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000165s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000255s ]
+NOTIC: [8] Undefined variable: bd_style E:\Study\PHP\Visual-NMP-x64\www\fourgo\Application\Runtime\Cache\Admin\69ea2d76d5e5b7d74dae11d25948236a.php 第 916 行.
+NOTIC: [8] Undefined variable: bd_style E:\Study\PHP\Visual-NMP-x64\www\fourgo\Application\Runtime\Cache\Admin\69ea2d76d5e5b7d74dae11d25948236a.php 第 917 行.
+NOTIC: [8] Undefined variable: bd_style E:\Study\PHP\Visual-NMP-x64\www\fourgo\Application\Runtime\Cache\Admin\69ea2d76d5e5b7d74dae11d25948236a.php 第 918 行.
+NOTIC: [8] Undefined variable: bd_style E:\Study\PHP\Visual-NMP-x64\www\fourgo\Application\Runtime\Cache\Admin\69ea2d76d5e5b7d74dae11d25948236a.php 第 919 行.
+NOTIC: [8] Undefined variable: bd_style E:\Study\PHP\Visual-NMP-x64\www\fourgo\Application\Runtime\Cache\Admin\69ea2d76d5e5b7d74dae11d25948236a.php 第 920 行.
+NOTIC: [8] Undefined variable: bd_style E:\Study\PHP\Visual-NMP-x64\www\fourgo\Application\Runtime\Cache\Admin\69ea2d76d5e5b7d74dae11d25948236a.php 第 921 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.042938s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.043025s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000719s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000792s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000668s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000750s ]
+

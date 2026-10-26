@@ -1,0 +1,168 @@
+﻿html {
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	background-color: #fff;
+	font-weight: 300;
+}
+ul,li{
+	text-decoration: none;
+	list-style: none;
+}
+body {
+	margin: 0px;
+	padding: 0px;
+}
+.documentation {
+	width: 1100px;
+	margin: 0px auto;
+	padding: 100px 0px;
+}
+.documentation h3, p {
+	text-align: center;
+}
+.documentation h3 {
+	margin: 0px 0px 20px 0px;
+	font-weight: 300;
+	font-size: 2em;
+}
+a, a:visited {
+	color: #E54028;
+	text-decoration: none;
+}
+a:hover {
+	color: #c22d18;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+
+.advantaged1{
+	height: 400px;
+	background: #fff;
+}
+.advantaged2{
+	height: 400px;
+	background: #eeeff1;
+}
+.flow_chart{
+	height: 400px;
+	background: #fff;
+}
+.midden_class{
+	height: 780px;
+	background:#eeeff1;
+}
+.bottom_top{
+	height: 400px;
+	background: #fff;
+}
+.advantage1_left{
+	width: 425px;
+	height: 400px;
+	float: right;
+}
+
+.advantage1_right{
+	width: 425px;
+	height: 400px;
+	float: left;
+}
+.advantage2_left{
+	width: 425px;
+	height: 400px;
+	float: right;
+}
+.advantage2_right{
+	width: 425px;
+	height: 400px;
+	float: left;
+}
+.top_class{
+	height: 80px;
+	width: 100%;
+	line-height: 80px;
+	font-size: 18px;
+	color: #b58e31;
+	text-align: center;
+}
+.class_example{
+	height: 580px;
+}
+.class_example ul{
+	width: 1200px;
+}
+.class_example ul li{
+    width: 260px;
+    height:270px;
+    background: #fff;
+    float: left;
+    margin: 10px;
+}
+.container1{
+	width:1200px;
+	height: 780px;
+	margin: 0 auto;
+}
+.emample_img{
+	width: 260px;
+	height: 200px;
+}
+.example_contant{
+	width: 260px;
+	height: 270px;
+}
+.emample_contant_left{
+	width: 260px;
+	height: 45px;
+	color: #333;
+	line-height: 45px;
+	font-size: 15px;
+	text-indent: 9px;
+}
+.emample_contant_right{
+	width: 260px;
+	height: 25px;
+}
+.emample_contant_right_date{
+	color: #b6c8d2;
+	height: 25px;
+	width: 150px;
+	line-height: 25px;
+	float: left;
+	text-indent: 9px;
+}
+.emample_contant_right_people{
+	color: #b6c8d2;
+	height: 25px;
+	line-height: 25px;
+	width: 110px;
+	float: left;
+	text-indent: 34px;
+}
+.bottom_class{
+	height: 120px;
+    text-align: center;
+    line-height: 120px;
+}
+.bottom_top{
+	background: url(../img/low.jpg)
+}
+.bottom_top_up{
+	padding-top:50px;
+	height:200px;
+	text-align: center;
+	line-height: 200px;
+}
+.bottom_mskk{
+	height:200px;
+	text-align: center;
+}
+.mskk{
+	color: #fff;
+	font-size: 40px;
+	margin: 0 auto;
+	width: 270px;
+	height: 120px;
+	line-height: 120px;
+	border-radius: 32px;
+	background: url(../img/mskk.jpg)
+}

@@ -1,0 +1,224 @@
+{
+  "app": {
+    "common": {
+      "loading": "Loading...",
+      "generating": "Generating...",
+      "original": "Original",
+      "result": "Result",
+      "openMenu": "Open Menu",
+      "closeMenu": "Close Menu"
+    },
+    "auth": {
+      "login": "Log in",
+      "logout": "Log out",
+      "loginAccount": "Sign in",
+      "user": "User"
+    },
+    "title": "WeChat Content Manager",
+    "nav": {
+      "dashboard": "Dashboard",
+      "materials": "Materials",
+      "rewrite": "AI Rewrite",
+      "contents": "Content",
+      "publish": "Publish",
+      "publishHistory": "Publish History",
+      "settings": "Settings"
+    },
+    "actions": {
+      "addToLibrary": "Add to Materials",
+      "batchRewrite": "Batch Rewrite",
+      "batchDelete": "Batch Delete",
+      "rewrite": "Rewrite",
+      "regenerate": "Regenerate",
+      "save": "Save",
+      "saveToContent": "Save to Content",
+      "publish": "Publish",
+      "filter": "Filter",
+      "search": "Search",
+      "refresh": "Refresh",
+      "selectAll": "Select All",
+      "clear": "Clear",
+      "confirm": "Confirm",
+      "cancel": "Cancel"
+    },
+    "dashboard": {
+      "hotboards": {
+        "weixin": "WeChat Hot",
+        "zhihu": "Zhihu Hot",
+        "baidu": "Baidu Trends"
+      },
+      "hot": "Heat",
+      "source": "Source",
+      "empty": "No data"
+    },
+    "materials": {
+      "title": "Materials",
+      "columns": {
+        "title": "Title",
+        "source": "Source",
+        "collectedAt": "Collected At"
+      }
+    },
+    "rewrite": {
+      "title": "AI Rewrite",
+      "style": "Style",
+      "prompt": "Custom Prompt",
+      "styles": {
+        "professional": "Professional",
+        "plain": "Plain",
+        "xiaohongshu": "Xiaohongshu Style",
+        "zhihu": "Zhihu Style",
+        "humor": "Humorous"
+      }
+    },
+    "contents": {
+      "title": "Content",
+      "columns": {
+        "title": "Title",
+        "status": "Status",
+        "category": "Category",
+        "tags": "Tags",
+        "createdAt": "Created",
+        "updatedAt": "Updated",
+        "actions": "Actions"
+      },
+      "status": {
+        "draft": "Draft",
+        "pending": "Pending",
+        "published": "Published",
+        "failed": "Failed"
+      },
+      "categoryManager": "Category Manager",
+      "tagManager": "Tag Manager"
+    },
+    "publish": {
+      "title": "Publish",
+      "modal": {
+        "title": "Publish Config",
+        "selectAccounts": "Select target WeChat accounts",
+        "schedule": "Schedule",
+        "publishNow": "Publish Now"
+      },
+      "preparedLabel": "Prepared article ids",
+      "seeHistory": "See Publish History.",
+      "history": {
+        "title": "Publish History",
+        "columns": {
+          "article": "Article",
+          "account": "Account",
+          "status": "Status",
+          "reason": "Reason",
+          "time": "Time"
+        }
+      }
+    },
+    "settings": {
+      "title": "Settings",
+      "tabs": {
+        "accounts": "WeChat Accounts",
+        "fingerprints": "Fingerprint Browsers"
+      },
+      "accounts": {
+        "add": "Add Account",
+        "edit": "Edit Account",
+        "delete": "Delete Account",
+        "fields": {
+          "name": "Account Name",
+          "appId": "AppID",
+          "appSecret": "AppSecret",
+          "cookie": "Login Cookie",
+          "bindFingerprint": "Bind Fingerprint"
+        }
+      },
+      "fingerprints": {
+        "add": "Add Instance",
+        "edit": "Edit Instance",
+        "delete": "Delete Instance",
+        "fields": {
+          "name": "Instance Name",
+          "corePath": "Browser Core Path",
+          "userDataDir": "UserDataDir"
+        }
+      }
+    },
+    "feedback": {
+      "addedToMaterials": "Added to materials",
+      "addSuccess": "Added successfully",
+      "saved": "Saved",
+      "deleted": "Deleted",
+      "published": "Published",
+      "failed": "Publish failed"
+    },
+    "inspiration": {
+      "title": "Inspiration Market",
+      "subtitle": "Subscribe to creators, get inspiration, one-click to library",
+      "todayUpdate": "Today's Update",
+      "search": {
+        "title": "Add Subscription",
+        "placeholder": "Search WeChat account or YouTube channel",
+        "button": "Search",
+        "searching": "Searching",
+        "minChars": "Please enter account name to search",
+        "notFound": "Account not found, please check the name",
+        "networkError": "Search failed, please check network",
+        "systemError": "System busy, please try again later",
+        "foundAccount": "Found account: {{name}}",
+        "checkNameHint": "Please check the account name and try again"
+      },
+      "subscription": {
+        "mySubscriptions": "My Subscriptions",
+        "limitReached": "Subscription limit reached (200), please delete some first",
+        "alreadySubscribed": "This account is already subscribed",
+        "subscribeSuccess": "Successfully subscribed: {{name}}",
+        "subscribe": "Subscribe",
+        "subscribed": "Subscribed",
+        "unsubscribe": "Unsubscribe",
+        "enable": "Enable",
+        "disable": "Disable",
+        "edit": "Edit",
+        "delete": "Delete",
+        "deleteConfirm": "Delete this subscription? All historical content from this account will also be deleted.",
+        "deleteFailed": "Failed to unsubscribe, please try again later",
+        "all": "All",
+        "active": "Active",
+        "inactive": "Inactive",
+        "noSubscriptions": "No subscriptions",
+        "noActiveSubscriptions": "No active subscriptions",
+        "noInactiveSubscriptions": "No inactive subscriptions",
+        "addCreatorHint": "Search and add creators you follow",
+        "switchTabHint": "Try switching to other tabs",
+        "lastSync": "Last sync",
+        "neverSynced": "Never synced",
+        "willAutoFetch": "Will automatically fetch latest content after subscription"
+      },
+      "account": {
+        "followers": "Followers",
+        "articleCount": "Articles",
+        "latestUpdate": "Latest Update",
+        "wxId": "WeChat ID",
+        "wechat": "WeChat Official Account",
+        "youtube": "YouTube",
+        "today": "Today",
+        "yesterday": "Yesterday",
+        "daysAgo": "{{days}} days ago",
+        "weeksAgo": "{{weeks}} weeks ago",
+        "monthsAgo": "{{months}} months ago",
+        "overYear": "Over a year",
+        "unknown": "Unknown"
+      },
+      "timeline": {
+        "latestContent": "Latest Content",
+        "fromSubscriptions": "From {{count}} creators you subscribed",
+        "fetchLatest": "Fetch Latest",
+        "fetching": "Fetching...",
+        "pleaseAddSubscription": "Please add subscription first"
+      },
+      "timeFormat": {
+        "justNow": "Just now",
+        "minutesAgo": "{{minutes}} minutes ago",
+        "hoursAgo": "{{hours}} hours ago",
+        "daysAgo": "{{days}} days ago"
+      }
+    }
+  }
+}

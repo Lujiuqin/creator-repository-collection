@@ -1,0 +1,189 @@
+.content{
+  margin-top: 50px;
+  width: 1200px;
+  margin: 0 auto;
+}
+.top img{
+  width: 100%;
+  height: auto;
+}
+.head{
+  position: absolute;
+  top: 120px;
+  font-size: 1.2rem;
+}
+.head img{
+  border-radius: 50%;
+  box-shadow: 0 0 20px #ccc;
+}
+.head li span{
+  margin-right: 20px;
+}
+.glyphicon-chevron-right{
+  float: right;
+}
+.glyphicon-search{
+  color: #fff;
+}
+.list-group a{
+  color: #787d82;
+}
+.list-group a:hover{
+  color: #000;
+  text-decoration: none;
+}
+.list-group a:first-child{
+  color: red;
+}
+.info{
+  font-size: 2rem;
+  color: #787d82;
+  position: absolute;
+  margin-top: 0px;
+  z-index: 99;
+}
+.info:hover{
+  color: #ccc;
+}
+.main{
+  width: 970px;
+  margin-left: 230px;
+  height: 453px;
+}
+.title{
+  margin-top: 20px;
+  font-size: 1.2rem;
+  line-height: 4rem;
+  border-bottom: 1px solid #ccc;
+  color: #666;
+}
+#no{
+  width:1000px;
+  height: 350px;
+  border: 1px solid #ccc;
+  margin-left: -30px;
+  margin-top: 137px;
+  position: relative;
+}
+.no2{
+  display: none;
+}
+.no3{
+  display: none;
+}
+.no4{
+  display: none;
+}
+#no2_header{
+  width: 90%;
+  background: #9095ab;
+  height: 50px;
+  margin: 0 auto;
+}
+#no2_header ul li{
+  float: left;
+}
+.no2_xmlb{
+  width: 10%;
+  height: 100%;
+  line-height: 50px;
+  text-align: center;
+
+}
+.no2_xmmc{
+  width: 25%;
+  height: 100%;
+  line-height: 50px;
+  margin-left: 20px;
+}
+.no2_fzr{
+    width: 20%;
+  height: 100%;
+  line-height: 50px;
+  text-align: center;
+}
+.no2_zdls{
+      width: 20%;
+  height: 100%;
+  line-height: 50px;
+  text-align: center;
+}
+.no2_cz{
+  width: 20%;
+  height: 100%;
+  line-height: 50px;
+  text-align: center;
+}
+#withe{
+  width: 20px;
+  height: 42px;
+  background: #fff;
+  position: absolute;
+  top: 344px;
+  left: 260px;
+}
+.list-group span{
+  cursor: pointer;
+}
+.list-group span:hover{
+  color: #000;
+}
+.s_color1{
+  color:red;
+}
+.s_color2{
+  color: #787d82;
+}
+.no2_bj{
+  color: #fff;
+
+}
+.pagination{
+  float: right;
+}
+.gray{
+  margin-left: 10px;
+  margin-top: 2px;
+}
+.glyphicon{
+  background: #ccc;
+  color: #fff;
+  margin-left: 5px;
+  margin-top: 4px;
+}
+.no3_images{
+  width: 300px;
+  height: 200px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+.no3_name{
+  font-size: 24px;
+  position: absolute;
+left: 380px;
+top: 35px;
+
+}
+.no3_information{
+  width: 520px;
+  height: 230px;
+  float: right;
+  border: 1px solid #ddd;
+  margin-top: -150px;
+  margin-right: 80px;
+  text-indent: 2em;
+  padding: 10px;
+  border-radius: 20px;
+}
+.b:hover{
+  color: #000;
+  }
+  .no4_1{
+    height: 70px;
+  }
+  .no4 td{
+    border-right: 1px solid #ccc;
+
+  }

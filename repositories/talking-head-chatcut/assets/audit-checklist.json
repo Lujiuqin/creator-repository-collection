@@ -1,0 +1,254 @@
+{
+  "version": 11,
+  "policy": {
+    "workflow": "standard-chatcut-direct",
+    "humanGate": "contact-sheet-before-export",
+    "humanGateDefault": true,
+    "sceneIdRegistry": "剪辑/scene-map.json",
+    "writeLoop": [
+      "refresh-live-project",
+      "validate-destructive-or-bulk-change",
+      "commit-change",
+      "reread-affected-structure",
+      "inspect-composited-frames",
+      "fix-and-repeat"
+    ],
+    "pauseOnlyFor": [
+      "missing-required-material",
+      "conflicting-user-directions",
+      "paid-generation-confirmation",
+      "contact-sheet-user-approval"
+    ],
+    "maxFixCyclesBeforeEscalatingToUser": 3,
+    "quantitativeDensityGates": "none"
+  },
+  "stages": [
+    {
+      "id": "S0",
+      "name": "project-and-assets",
+      "checks": [
+        "correct-project-and-timeline",
+        "canvas-fps-duration-and-track-inventory",
+        "asset-resolution-and-availability",
+        "duplicate-detection",
+        "existing-edits-preserved",
+        "local-4k-state-reported-separately"
+      ],
+      "hardFails": [
+        "wrong-project",
+        "missing-primary-video",
+        "damaged-import",
+        "existing-edits-overwritten",
+        "upscaled-source-reported-as-native-4k"
+      ]
+    },
+    {
+      "id": "S1",
+      "name": "asr-and-proper-nouns",
+      "checks": [
+        "proper-nouns",
+        "numbers-and-units",
+        "meaning-preserved",
+        "timecodes-aligned",
+        "punctuation"
+      ],
+      "hardFails": [
+        "meaning-rewritten",
+        "proper-noun-error",
+        "subtitle-audio-mismatch"
+      ]
+    },
+    {
+      "id": "S2",
+      "name": "talking-head-cleanup",
+      "checks": [
+        "mistakes-and-retakes-cleaned",
+        "last-complete-natural-retake-kept",
+        "natural-breaths-preserved",
+        "speed-1.1x-unless-documented",
+        "pitch-preserved",
+        "voice-enhancement-auditioned",
+        "smooth-audio-run-after-final-reflow"
+      ],
+      "hardFails": [
+        "meaning-removed",
+        "incorrect-sentence-join",
+        "breath-cut",
+        "speed-or-voice-enhancement-artifact",
+        "audible-pop-or-broken-audio-cut"
+      ]
+    },
+    {
+      "id": "S3",
+      "name": "captions",
+      "checks": [
+        "text-accuracy",
+        "sync",
+        "semantic-line-breaks",
+        "safe-area",
+        "readability",
+        "restrained-key-term-emphasis"
+      ],
+      "hardFails": [
+        "missing-or-wrong-text",
+        "timing-mismatch",
+        "persistent-overlap",
+        "excessive-highlight"
+      ]
+    },
+    {
+      "id": "S4",
+      "name": "visual-plan",
+      "checks": [
+        "live-project-state-read",
+        "scene-map-complete",
+        "must-honor-user-overrides-recorded",
+        "word-level-cues",
+        "canvas-state-and-base-layer",
+        "asset-source-and-factuality",
+        "editable-implementation-path",
+        "motion-purpose-per-unit",
+        "caption-pip-and-key-region-safety"
+      ],
+      "hardFails": [
+        "timing-guessed-without-current-evidence",
+        "user-directive-not-honored",
+        "deviation-without-user-approval",
+        "scene-id-not-registered",
+        "base-layer-not-full-canvas",
+        "ai-generated-real-logo-ui-or-evidence",
+        "motion-without-purpose"
+      ]
+    },
+    {
+      "id": "S5",
+      "name": "template-and-component-prep",
+      "checks": [
+        "current-style-library-and-project-mg-read",
+        "template-fit-at-least-8-or-bespoke",
+        "target-aspect-fit",
+        "official-source-priority",
+        "resource-provenance-complete",
+        "private-data-redacted",
+        "resource-imported-to-chatcut"
+      ],
+      "hardFails": [
+        "stale-template-or-asset-id",
+        "template-overrides-user-direction",
+        "unknown-or-unverified-source",
+        "temporary-hotlink-on-timeline",
+        "private-data-exposed"
+      ]
+    },
+    {
+      "id": "S6",
+      "name": "asset-placement",
+      "checks": [
+        "semantic-sync",
+        "entry-and-exit",
+        "profile-specific-crop",
+        "equal-scale",
+        "caption-and-face-safety",
+        "generation-result-reviewed",
+        "source-record-matches-project-asset"
+      ],
+      "hardFails": [
+        "key-content-cropped",
+        "asset-preempts-conclusion",
+        "visual-contradicts-speech",
+        "ai-illustration-presented-as-evidence",
+        "generated-asset-severe-artifact",
+        "temporary-hotlink-on-timeline"
+      ]
+    },
+    {
+      "id": "S7",
+      "name": "motion-graphics",
+      "checks": [
+        "editable-properties",
+        "word-level-cues",
+        "motion-signature-executed",
+        "single-primary-motion-focus",
+        "no-meaningless-loop",
+        "cue-pre-mid-post-frame-evidence",
+        "transition-start-mid-end-frame-evidence",
+        "user-directive-fidelity",
+        "no-overlap-or-overflow",
+        "clean-final-frame"
+      ],
+      "hardFails": [
+        "bulk-reveal-before-speech",
+        "future-conclusion-too-early",
+        "visible-response-missing",
+        "decorative-ambient-loop",
+        "presenter-pip-hard-cut",
+        "portrait-landscape-stretch",
+        "pip-caption-or-face-covered",
+        "user-directive-not-honored"
+      ]
+    },
+    {
+      "id": "S8",
+      "name": "music-and-sfx",
+      "checks": [
+        "voice-priority",
+        "bgm-decision-recorded",
+        "bgm-level",
+        "sfx-density-and-variety",
+        "visual-landing-sync",
+        "audio-cut-smoothing",
+        "peak-and-clipping-check",
+        "clean-ending"
+      ],
+      "hardFails": [
+        "bgm-masks-voice",
+        "sfx-barrage",
+        "sfx-sync-error",
+        "audible-pop-or-double-voice-at-cut",
+        "clipping-pumping-or-abrupt-tail"
+      ]
+    },
+    {
+      "id": "S9",
+      "name": "final-review-and-export",
+      "checks": [
+        "full-watch-per-profile",
+        "structure-reread",
+        "cue-frame-audit",
+        "transition-frame-audit",
+        "resource-provenance-final-audit",
+        "no-ai-factual-misrepresentation",
+        "no-private-data",
+        "track-state",
+        "no-black-frames-or-placeholders",
+        "contact-sheet-shown-to-user",
+        "editable-project-retained"
+      ],
+      "hardFails": [
+        "known-caption-overlap-or-crop-error",
+        "asset-not-loaded",
+        "black-end-frame",
+        "stretch-letterbox-or-wrong-crop",
+        "editable-timeline-lost",
+        "exported-without-user-contact-sheet-approval"
+      ]
+    },
+    {
+      "id": "S10",
+      "name": "template-evolution",
+      "checks": [
+        "new-mechanism-evaluated",
+        "candidate-recorded-only-after-pixel-pass",
+        "reuse-count-updated",
+        "template-system-valid",
+        "no-project-specific-ids-urls-copy-or-jsx"
+      ],
+      "hardFails": [
+        "cosmetic-variant-duplicated",
+        "failed-template-marked-proven",
+        "template-system-validation-failed",
+        "catalog-contains-project-specific-data"
+      ]
+    }
+  ]
+}

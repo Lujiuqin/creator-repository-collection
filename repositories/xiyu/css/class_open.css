@@ -1,0 +1,170 @@
+﻿body{
+	background: #eeeff1;
+}
+ul,li{
+	text-decoration: none;
+	list-style: none;
+}
+.class_open_header{
+	margin-top: 60px;
+	height: 50px;
+}
+/*中部*/
+.class_open_tittle{
+	
+}
+.class_open_ul{
+
+}
+.class_open_form{
+	padding: 0 20px;
+}
+.class_open_tittle ul::after{
+	clear: both;
+	display: block;
+	height: 0px;
+    content: "";
+}
+
+
+.class_open_midden{
+	margin-bottom: 20px;
+}
+.class_open_tittle ul li{
+	cursor: pointer;
+	float: left;
+	margin-left: 50px;
+	width: 100px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	font-size: 16px;
+	border:1px solid #D1A9A9;
+}
+.line{
+	background: #F8F8F8;
+}
+.click_line{
+		background: #A2CFE7;
+	}
+
+.online_select_name{
+	float: left;
+	height: 50px;
+	font-size: 17px;
+    
+}
+.online_select::after{
+	clear: both;
+	display: block;
+	height: 0px;
+    content: "";
+}
+.online_select li{
+	cursor: pointer;
+	float: left;
+	margin-left: 50px;
+	width: 100px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	font-size: 16px;
+	border:1px solid #D1A9A9;
+}
+
+.online_video::after{
+	content: "";
+	clear: both;
+	display: block;
+	height: 0px;
+}
+/*确认按钮*/
+.online_submit{
+	text-align: center;
+	margin: 0 auto;
+}
+.input_submit{
+	border: medium none;
+	font-size: 14px;
+	background: #A78383 none repeat scroll 0% 0%;
+	width: 400px;
+	line-height: 40px;
+	height: 40px;
+	color: #FFF;
+	text-align: center;
+	cursor: pointer;
+	transition: background-color 0.2s ease 0s;
+	-o-transition: background-color 0.2s ease 0s;
+	-ms-transition: background-color 0.2s ease 0s;
+	-moz-transition: background-color 0.2s ease 0s;
+	-webkit-transition: background-color 0.2s ease 0s;
+} 
+.input_submit:hover{
+	 background: #BD9494;
+}
+/*线下表单*/
+.open_offline ul{
+     padding-left:0px; 
+}
+.open_offline ul li::after{
+	content: "";
+	height: 0px;
+	display: block;
+	clear: both;
+}
+.offline_select_name{
+	float: left;
+	height: 50px;
+	margin-top: 7px;
+	font-size: 17px;
+}
+.offline_content{
+	margin-left: 118px;
+}
+.offline_input{
+	border: 1px solid #D0D6D9;
+	width: 344px;
+	height: 24px;
+	line-height: 24px;
+	font-size: 14px;
+	padding: 7px 7px 7px 9px;
+	transition: all 0.25s ease 0s;
+	-o-transition: all 0.25s ease 0s;
+	-ms-transition: all 0.25s ease 0s;
+	-moz-transition: all 0.25s ease 0s;
+	-webkit-transition: all 0.25s ease 0s;
+	box-sizing: content-box;
+	-o-box-sizing: content-box;
+	-ms-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+}
+.offline_input:focus{
+	border:1px solid #845C5C;
+	box-shadow: 0px 0px 2px 4px #ddd;
+}
+/*简介*/
+.shortname{
+   
+}
+.short_content{
+
+}
+.offline_content select{
+	padding: 0 20px;
+	height: 30px;
+}
+.short_textarea{
+	border:1px solid #ddd;
+     width: 400px;
+     height: 300px;
+     resize: none;
+     transition: all 0.25s ease 0s;
+	-o-transition: all 0.25s ease 0s;
+	-ms-transition: all 0.25s ease 0s;
+	-moz-transition: all 0.25s ease 0s;
+	-webkit-transition: all 0.25s ease 0s;
+}
+.short_textarea:focus{
+	border:1px solid #845C5C;
+}

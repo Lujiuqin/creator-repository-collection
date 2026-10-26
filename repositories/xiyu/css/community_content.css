@@ -1,0 +1,209 @@
+﻿body{
+	background: #eeeff1;
+}
+ul,li{
+	text-decoration: none;
+	list-style: none;
+}
+.community_header{
+	margin-top: 61px;
+	height: 80px;
+	background: #FFF9F9;
+}
+.container_community{
+	width: 1200px;
+	margin: 0 auto;
+	box-sizing:content-box;
+    -o-box-sizing:content-box;
+    -ms-box-sizing:content-box;
+    -moz-box-sizing:content-box;
+    -webkit-box-sizing:content-box;
+}
+.container_community::after{
+	content: "";
+	display: block;
+	height: 0px;
+    clear: both;
+}
+.container_community .h1{
+	width: 200px;
+	height: 60px;
+	margin:  10px 0 0 0 ;
+	line-height: 60px;
+	float: left;
+}
+.container_community a{
+	margin-left:100px; 
+	float: left;
+	line-height: 60px;
+	height: 60px;
+	margin-top:  10px;
+}
+.community_tittle{
+	padding-top: 20px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #D1CACA;
+}
+.community_top{
+	margin-bottom: 10px;
+}
+.community_on{
+	border-bottom: 1px solid #D1CACA;
+}
+.community_bottom{
+	margin-top: 20px;
+}
+.community_textarea{
+    width: 825px;
+	height: 150px;
+	resize: none;
+	border: 1px solid #D0D6D9;
+	transition: all 0.3s ease-out 0s;
+	-o-transition: all 0.3s ease-out 0s;
+	-ms-transition: all 0.3s ease-out 0s;
+	-moz-transition: all 0.3s ease-out 0s;
+	-webkit-transition: all 0.3s ease-out 0s;
+}
+.community_textarea:focus{
+	border: 1px solid #937B7B;
+	box-shadow: 0px 0px 3px 2px #D4B2B2;
+	-o-box-shadow: 0px 0px 3px 2px #D4B2B2;
+	-ms-box-shadow: 0px 0px 3px 2px #D4B2B2;
+	-moz-box-shadow: 0px 0px 3px 2px #D4B2B2;
+	-webkit-box-shadow: 0px 0px 3px 2px #D4B2B2;
+}
+.community_input_right{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #D1CACA;
+}
+.community_input_right::after{
+	content: "";
+	clear: both;
+	height: 0px;
+	display: block;
+}
+.community_input{
+	float: right;
+	border: medium none;
+	font-size: 14px;
+	background: #A78383 none repeat scroll 0% 0%;
+	line-height: 40px;
+	height: 40px;
+	color: #FFF;
+	text-align: center;
+	cursor: pointer;
+	transition: background-color 0.2s ease 0s;
+	-o-transition: background-color 0.2s ease 0s;
+	-ms-transition: background-color 0.2s ease 0s;
+	-moz-transition: background-color 0.2s ease 0s;
+	-webkit-transition: background-color 0.2s ease 0s;
+}
+.community_input:hover{
+	background: #D1A7A7;
+}
+.input_size1{
+    width: 150px;
+    height: 40px;
+}
+.community_talk_off{
+    height: 400px;
+}
+.community_comment{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #D1CACA;
+}
+.comment_author{
+	padding-top: 10px;
+	width: 80px;
+	float: left;
+}
+.comment_author img{
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin-left: 20px;
+}
+.comment_author span{
+	display: block;
+	line-height: 1.2em;
+	height: 18px;
+	margin: 3px 10px auto;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color:#997A7A;
+}
+.comment_d{
+	width: 745px;
+	margin-left: 80px;
+	padding:15px 10px 0px 10px;
+	position: relative;
+}
+.comment_bottom{
+	padding-top: 15px;
+}
+.comment_bottom::after{
+	content: "";
+	height: 0px;
+	display: block;
+	clear: both;
+}
+.comment_bottom_left{
+	float: left;
+    width: 100px;
+    color:#997A7A;
+}
+.comment_bottom_right{
+	float: right;
+	width: 200px;
+	text-align: right;
+	color: #997A7A;
+}
+.community_member{
+	padding-top: 20px;
+}
+.community_member_tittle{
+    font-size: 20px;
+    color: #333;
+    text-align: center;
+    padding-bottom:10px; 
+    border-bottom: 1px solid #CCA2A2;
+}
+.community_member_img{
+	float: left;
+    border-radius: 50%;
+    -o-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    overflow: hidden;
+    display: block;
+    margin-right:10px; 
+}
+.community_member_img img{
+    height: 40px;
+    width: 40px;
+}
+.community_member_name{
+	float: left;
+	text-align: center;
+}.community_member_name a{
+	color: #333;
+}
+.community_member_name p{
+	color: #BD9898;
+	font-size: 12px;
+}
+.community_member_dl{
+	padding:10px 0 10px;
+	border-bottom: 1px solid #F5D6D6; 
+}
+dl::after{
+	content: "";
+	clear: both;
+	display: block;
+	height: 0px;
+}

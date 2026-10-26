@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "topicId": "contact-sheet-smoke-test",
+  "fps": 30,
+  "scenes": [
+    {
+      "userSceneId": "用户-1",
+      "planSceneId": "scene-1",
+      "label": "开场",
+      "range": {
+        "startFrame": 0,
+        "endFrameExclusive": 30
+      }
+    },
+    {
+      "userSceneId": "用户-2",
+      "planSceneId": "scene-2",
+      "label": "结尾",
+      "range": {
+        "startFrame": 30,
+        "endFrameExclusive": 60
+      }
+    }
+  ]
+}

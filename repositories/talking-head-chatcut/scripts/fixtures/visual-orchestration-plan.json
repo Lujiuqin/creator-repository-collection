@@ -1,0 +1,411 @@
+{
+  "version": "1.0",
+  "status": "locked",
+  "fps": 30,
+  "durationInFrames": 9295,
+  "layoutProfile": "portrait-9x16",
+  "brandInvariants": [
+    "#07110D background",
+    "#71F5A5 accent",
+    "Noto Sans SC",
+    "top-right presenter",
+    "existing captions"
+  ],
+  "scenes": [
+    {
+      "sceneId": "model-01",
+      "viewerJob": "capability universe",
+      "startFrame": 828,
+      "endFrameExclusive": 1070,
+      "stateChangeFrames": [
+        875,
+        920,
+        957,
+        988,
+        1020
+      ],
+      "denseSpeech": false,
+      "layoutSilhouette": "radial hub with expanding capability rings",
+      "entranceMechanism": "scale burst plus connector draw",
+      "motionPath": "scale burst plus connector draw",
+      "informationPersistence": "relationships remain",
+      "materialTreatment": "radial hub with expanding capability rings"
+    },
+    {
+      "sceneId": "model-02",
+      "viewerJob": "capability universe",
+      "startFrame": 1070,
+      "endFrameExclusive": 1394,
+      "stateChangeFrames": [
+        1114,
+        1168,
+        1214,
+        1260,
+        1308,
+        1354
+      ],
+      "denseSpeech": false,
+      "layoutSilhouette": "two-lane logo marquee",
+      "entranceMechanism": "opposing horizontal tracks",
+      "motionPath": "opposing horizontal tracks",
+      "informationPersistence": "spoken brands lock into place",
+      "materialTreatment": "two-lane logo marquee"
+    },
+    {
+      "sceneId": "model-03",
+      "viewerJob": "capability universe",
+      "startFrame": 1394,
+      "endFrameExclusive": 2104,
+      "stateChangeFrames": [
+        1478,
+        1540,
+        1602,
+        1664,
+        1819,
+        1828,
+        1883,
+        1938,
+        1993
+      ],
+      "denseSpeech": false,
+      "layoutSilhouette": "full-screen capability stage that flips from text to multimodal quadrants",
+      "entranceMechanism": "hard mask wipe and spatial re-layout",
+      "motionPath": "hard mask wipe and spatial re-layout",
+      "informationPersistence": "current capability enlarges",
+      "materialTreatment": "full-screen capability stage that flips from text to multimodal quadrants"
+    },
+    {
+      "sceneId": "model-04",
+      "viewerJob": "capability universe",
+      "startFrame": 2104,
+      "endFrameExclusive": 2460,
+      "stateChangeFrames": [
+        2127,
+        2188,
+        2235,
+        2278,
+        2320,
+        2362
+      ],
+      "denseSpeech": false,
+      "layoutSilhouette": "prompt portal from text tile to generated image window",
+      "entranceMechanism": "diagonal path travel and aperture reveal",
+      "motionPath": "diagonal path travel and aperture reveal",
+      "informationPersistence": "source and result stay linked",
+      "materialTreatment": "prompt portal from text tile to generated image window"
+    },
+    {
+      "sceneId": "model-05",
+      "viewerJob": "capability universe",
+      "startFrame": 2460,
+      "endFrameExclusive": 2791,
+      "stateChangeFrames": [
+        2496,
+        2558,
+        2662
+      ],
+      "denseSpeech": false,
+      "layoutSilhouette": "cinema filmstrip with two model channels",
+      "entranceMechanism": "filmstrip roll and focus snap",
+      "motionPath": "filmstrip roll and focus snap",
+      "informationPersistence": "selected channel holds",
+      "materialTreatment": "cinema filmstrip with two model channels"
+    },
+    {
+      "sceneId": "agent-01",
+      "viewerJob": "active execution machine",
+      "startFrame": 2791,
+      "endFrameExclusive": 3094,
+      "stateChangeFrames": [
+        2837,
+        2978,
+        3023
+      ],
+      "denseSpeech": false,
+      "layoutSilhouette": "paired product-model split stage",
+      "entranceMechanism": "split doors with connecting bridge",
+      "motionPath": "split doors with connecting bridge",
+      "informationPersistence": "both pairs remain",
+      "materialTreatment": "paired product-model split stage"
+    },
+    {
+      "sceneId": "agent-02",
+      "viewerJob": "active execution machine",
+      "startFrame": 3094,
+      "endFrameExclusive": 3502,
+      "stateChangeFrames": [
+        3094,
+        3141,
+        3225,
+        3255,
+        3346,
+        3388,
+        3420
+      ],
+      "denseSpeech": false,
+      "layoutSilhouette": "question-answer exchange transforms into horizontal mission runway",
+      "entranceMechanism": "speech bubbles then launch sweep",
+      "motionPath": "speech bubbles then launch sweep",
+      "informationPersistence": "completed steps become checkpoints",
+      "materialTreatment": "question-answer exchange transforms into horizontal mission runway"
+    },
+    {
+      "sceneId": "agent-03",
+      "viewerJob": "active execution machine",
+      "startFrame": 3502,
+      "endFrameExclusive": 3870,
+      "stateChangeFrames": [
+        3502,
+        3635,
+        3690,
+        3745,
+        3800,
+        3819
+      ],
+      "denseSpeech": false,
+      "layoutSilhouette": "exploded assembly around a central engine",
+      "entranceMechanism": "parts fly inward from four directions",
+      "motionPath": "parts fly inward from four directions",
+      "informationPersistence": "assembled system locks",
+      "materialTreatment": "exploded assembly around a central engine"
+    },
+    {
+      "sceneId": "agent-04",
+      "viewerJob": "active execution machine",
+      "startFrame": 3870,
+      "endFrameExclusive": 4337,
+      "stateChangeFrames": [
+        3870,
+        3919,
+        3974,
+        4029,
+        4084,
+        4141
+      ],
+      "denseSpeech": false,
+      "layoutSilhouette": "circular execution radar with four sectors",
+      "entranceMechanism": "radial sweep and sector resolve",
+      "motionPath": "radial sweep and sector resolve",
+      "informationPersistence": "completed sectors remain lit",
+      "materialTreatment": "circular execution radar with four sectors"
+    },
+    {
+      "sceneId": "agent-05",
+      "viewerJob": "active execution machine",
+      "startFrame": 4337,
+      "endFrameExclusive": 4878,
+      "stateChangeFrames": [
+        4337,
+        4404,
+        4454,
+        4504,
+        4554,
+        4642,
+        4701,
+        4771
+      ],
+      "denseSpeech": false,
+      "layoutSilhouette": "horizontal Codex conveyor then engine-to-car metaphor",
+      "entranceMechanism": "conveyor translation then kinetic vehicle push",
+      "motionPath": "conveyor translation then kinetic vehicle push",
+      "informationPersistence": "final metaphor becomes hero state",
+      "materialTreatment": "horizontal Codex conveyor then engine-to-car metaphor"
+    },
+    {
+      "sceneId": "github-01",
+      "viewerJob": "myth to evidence",
+      "startFrame": 4878,
+      "endFrameExclusive": 5079,
+      "stateChangeFrames": [
+        4908,
+        4971,
+        5046
+      ],
+      "denseSpeech": false,
+      "layoutSilhouette": "oversized misconception typography replaced by truth panel",
+      "entranceMechanism": "strike-through impact and vertical shutter",
+      "motionPath": "strike-through impact and vertical shutter",
+      "informationPersistence": "correct definition remains",
+      "materialTreatment": "oversized misconception typography replaced by truth panel"
+    },
+    {
+      "sceneId": "github-02",
+      "viewerJob": "myth to evidence",
+      "startFrame": 5079,
+      "endFrameExclusive": 5448,
+      "stateChangeFrames": [
+        5079,
+        5168,
+        5257,
+        5346
+      ],
+      "denseSpeech": false,
+      "layoutSilhouette": "four-shelf resource library",
+      "entranceMechanism": "shelves slide from alternating sides",
+      "motionPath": "shelves slide from alternating sides",
+      "informationPersistence": "shelves accumulate",
+      "materialTreatment": "four-shelf resource library"
+    },
+    {
+      "sceneId": "github-03",
+      "viewerJob": "myth to evidence",
+      "startFrame": 5448,
+      "endFrameExclusive": 5868,
+      "stateChangeFrames": [
+        5448,
+        5537,
+        5567,
+        5682,
+        5744
+      ],
+      "denseSpeech": false,
+      "layoutSilhouette": "command-palette search journey with branching result path",
+      "entranceMechanism": "typed query, scanning beam, path traversal",
+      "motionPath": "typed query, scanning beam, path traversal",
+      "informationPersistence": "resolved path stays highlighted",
+      "materialTreatment": "command-palette search journey with branching result path"
+    },
+    {
+      "sceneId": "github-04",
+      "viewerJob": "myth to evidence",
+      "startFrame": 5868,
+      "endFrameExclusive": 6039,
+      "stateChangeFrames": [
+        5868,
+        5898
+      ],
+      "denseSpeech": false,
+      "layoutSilhouette": "real screenshot with magnifier and evidence stamp",
+      "entranceMechanism": "global-to-detail zoom and annotation",
+      "motionPath": "global-to-detail zoom and annotation",
+      "informationPersistence": "evidence verdict holds",
+      "materialTreatment": "real screenshot with magnifier and evidence stamp"
+    },
+    {
+      "sceneId": "personal-agent-01",
+      "viewerJob": "relationship that compounds over time",
+      "startFrame": 6039,
+      "endFrameExclusive": 6379,
+      "stateChangeFrames": [
+        6109,
+        6169,
+        6309
+      ],
+      "denseSpeech": false,
+      "layoutSilhouette": "spotlight proof podium with project screenshots",
+      "entranceMechanism": "spotlight reveal and proof counter",
+      "motionPath": "spotlight reveal and proof counter",
+      "informationPersistence": "proof objects remain",
+      "materialTreatment": "spotlight proof podium with project screenshots"
+    },
+    {
+      "sceneId": "personal-agent-02",
+      "viewerJob": "relationship that compounds over time",
+      "startFrame": 6379,
+      "endFrameExclusive": 6689,
+      "stateChangeFrames": [
+        6379,
+        6448,
+        6539
+      ],
+      "denseSpeech": false,
+      "layoutSilhouette": "center divider pushes one-shot chat away and expands long-term agent",
+      "entranceMechanism": "split displacement and focus transfer",
+      "motionPath": "split displacement and focus transfer",
+      "informationPersistence": "winning side occupies more space",
+      "materialTreatment": "center divider pushes one-shot chat away and expands long-term agent"
+    },
+    {
+      "sceneId": "personal-agent-03",
+      "viewerJob": "relationship that compounds over time",
+      "startFrame": 6689,
+      "endFrameExclusive": 7039,
+      "stateChangeFrames": [
+        6691,
+        6764,
+        6836,
+        6888,
+        6914
+      ],
+      "denseSpeech": false,
+      "layoutSilhouette": "single-task arc that visibly ends",
+      "entranceMechanism": "curved path progress and endpoint collapse",
+      "motionPath": "curved path progress and endpoint collapse",
+      "informationPersistence": "ended context fades",
+      "materialTreatment": "single-task arc that visibly ends"
+    },
+    {
+      "sceneId": "personal-agent-04",
+      "viewerJob": "relationship that compounds over time",
+      "startFrame": 7039,
+      "endFrameExclusive": 7489,
+      "stateChangeFrames": [
+        7039,
+        7154,
+        7264,
+        7389
+      ],
+      "denseSpeech": false,
+      "layoutSilhouette": "memory orbit with three satellites and feedback pulse",
+      "entranceMechanism": "orbital placement and ring progress",
+      "motionPath": "orbital placement and ring progress",
+      "informationPersistence": "memory nodes stay connected",
+      "materialTreatment": "memory orbit with three satellites and feedback pulse"
+    },
+    {
+      "sceneId": "personal-agent-05",
+      "viewerJob": "relationship that compounds over time",
+      "startFrame": 7489,
+      "endFrameExclusive": 7779,
+      "stateChangeFrames": [
+        7489,
+        7544,
+        7594,
+        7699
+      ],
+      "denseSpeech": false,
+      "layoutSilhouette": "terminal door opens into three daily-entry portals",
+      "entranceMechanism": "portal zoom and route branching",
+      "motionPath": "portal zoom and route branching",
+      "informationPersistence": "all entrances stay reachable",
+      "materialTreatment": "terminal door opens into three daily-entry portals"
+    },
+    {
+      "sceneId": "personal-agent-06",
+      "viewerJob": "relationship that compounds over time",
+      "startFrame": 7779,
+      "endFrameExclusive": 8041,
+      "stateChangeFrames": [
+        7779,
+        7854,
+        7929,
+        7979
+      ],
+      "denseSpeech": false,
+      "layoutSilhouette": "24-hour dial with three cooperation phases",
+      "entranceMechanism": "clock sweep and phase highlighting",
+      "motionPath": "clock sweep and phase highlighting",
+      "informationPersistence": "always-on state holds",
+      "materialTreatment": "24-hour dial with three cooperation phases"
+    },
+    {
+      "sceneId": "summary-01",
+      "viewerJob": "four-layer infrastructure build",
+      "startFrame": 8041,
+      "endFrameExclusive": 9295,
+      "stateChangeFrames": [
+        8141,
+        8500,
+        8850,
+        9150,
+        9176
+      ],
+      "denseSpeech": false,
+      "layoutSilhouette": "four structural floors rise and connect into one tower",
+      "entranceMechanism": "floor lift, connector energize, final camera pullback",
+      "motionPath": "floor lift, connector energize, final camera pullback",
+      "informationPersistence": "completed tower remains for clean ending",
+      "materialTreatment": "four structural floors rise and connect into one tower"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "通用账号定位官"
+  short_description: "通过小白友好的渐进访谈，建立个人背景、产品、用户和账号定位"
+  default_prompt: "使用 $account-positioning-interview 帮我梳理个人背景、产品、目标用户和账号定位，并写入当前项目。"

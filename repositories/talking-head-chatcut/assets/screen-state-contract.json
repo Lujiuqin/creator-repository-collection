@@ -1,0 +1,91 @@
+{
+  "version": 2,
+  "contractId": "chatcut-screen-state-chain-v2",
+  "canvasStates": {
+    "purpose": "任何一帧的画面构图都必须属于这个封闭的合法状态集合，杜绝“不透明部分画布卡片叠在全屏口播上”这类非法构图。",
+    "states": {
+      "L1-person": {
+        "baseLayer": "口播 A-roll 全屏",
+        "baseLayerKind": "a-roll",
+        "aRollDisposition": ["base"],
+        "presenterPolicy": ["full"],
+        "pip": "forbidden"
+      },
+      "L2-media": {
+        "baseLayer": "素材或录屏全屏（等比缩放 + 补齐背景，不裁关键区）",
+        "baseLayerKind": "media",
+        "aRollDisposition": ["pip", "hidden"],
+        "presenterPolicy": ["pip", "hidden"],
+        "pip": "per-user-spec"
+      },
+      "L4-stage": {
+        "baseLayer": "信息舞台背景铺满整块画布（默认 #040706），不是部分画布卡片",
+        "baseLayerKind": "stage-background",
+        "aRollDisposition": ["pip", "hidden"],
+        "presenterPolicy": ["pip", "hidden"],
+        "pip": "required-unless-user-says-otherwise",
+        "stageBackgroundColor": "#040706"
+      },
+      "transition": {
+        "baseLayer": "前后状态的过渡帧",
+        "baseLayerKind": "transition",
+        "aRollDisposition": ["base", "pip", "hidden"],
+        "presenterPolicy": ["full", "pip", "hidden"],
+        "pip": "follows-transition"
+      }
+    },
+    "rules": [
+      "每个时间区间必须声明且只声明一个 canvasState；相邻区间必须首尾相接，无空洞、无重叠。",
+      "任何时刻画布必须被基础层 100% 覆盖；禁止口播 A-roll 以背景残片形式从任何不透明覆盖层下方露出。",
+      "L4-stage 下 MG 背景必须铺满全画布；底轨全屏 A-roll 必须 hidden 或缩入 PIP 框。",
+      "L4-stage 与 L2-media 的信息主区不得进入字幕禁区。",
+      "PIP 必须完整包含人物头肩，不得切头顶或下巴；坐标以 layout-profiles.json 为起点、以当前帧人物位置证据为准。",
+      "字幕、PIP、MG 主信息三者互不遮挡。"
+    ],
+    "subtitleExclusion": {
+      "landscape-16-9": {"canvas": [1920, 1080], "contentMustEndBeforeY": 810},
+      "portrait-9-16": {"canvas": [1080, 1920], "contentMustEndBeforeY": 1560}
+    },
+    "hardFails": [
+      "canvas-state-missing",
+      "canvas-state-not-contiguous",
+      "canvas-state-overlap",
+      "base-layer-missing",
+      "base-layer-not-full-canvas",
+      "a-roll-visible-under-opaque-overlay",
+      "l4-stage-without-hidden-or-pip-a-roll",
+      "l4-stage-without-full-canvas-background",
+      "content-region-enters-subtitle-exclusion-zone",
+      "pip-crops-head-or-shoulders",
+      "pip-overlaps-caption-or-primary-information"
+    ]
+  },
+  "orderedStates": ["before", "action", "processing", "result", "success-message", "modification-result"],
+  "stateDefinitions": {
+    "before": "The state before the demonstrated user action.",
+    "action": "The visible input, click, selection, or command being performed.",
+    "processing": "A truthful waiting, loading, or generation state.",
+    "result": "The first visible completed output caused by the action.",
+    "success-message": "A product confirmation that the action completed successfully.",
+    "modification-result": "The visible output after a later requested change."
+  },
+  "completionLanguage": {
+    "semanticClasses": ["complete", "already", "ready-made", "exported", "result", "after-modification"],
+    "allowedStates": ["result", "success-message", "modification-result"],
+    "forbiddenStates": ["before", "action", "processing"]
+  },
+  "bindingRequiredFields": ["stateId", "state", "assetId", "sourceRef", "sourceRange", "evidenceFrameRef", "spokenAnchor", "sceneId"],
+  "sequenceRules": {
+    "absoluteSourceRangesRequired": true,
+    "resultStateMustBeRealWhenUsedAsEvidence": true,
+    "illustrationCannotSubstituteForProductProof": true,
+    "missingStateBecomesResourceGap": true,
+    "unknownStateMayNotBeGuessed": true
+  },
+  "hardFails": [
+    "completion-language-bound-to-before-action-or-processing",
+    "result-state-without-source-frame-evidence",
+    "fabricated-product-result",
+    "missing-state-silently-omitted"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "catalogId": "chatcut-talking-head-caption-presets-v1",
+  "defaultPresetByUseCase": {
+    "tutorial": "readable-tutorial",
+    "explainer": "clean-explainer"
+  },
+  "presets": {
+    "readable-tutorial": {
+      "textColor": "#FFFFFF",
+      "fontSource": "chatcut-cloud-verified",
+      "outline": {
+        "color": "#000000",
+        "widthAt1080pPx": 3,
+        "scaleWithCanvas": true
+      },
+      "background": {
+        "enabled": true,
+        "color": "#0B0F17",
+        "opacity": 0.72,
+        "cornerRadiusAt1080pPx": 16,
+        "scaleWithCanvas": true
+      },
+      "maxLines": 2,
+      "lineBreakPolicy": "natural-semantic-phrase",
+      "wordHighlight": "none",
+      "safeAreaPolicy": "layout-profile-caption-exclusion-zone",
+      "zeroOcclusionTargets": ["face", "product-control", "product-result", "number", "button", "critical-region"]
+    },
+    "clean-explainer": {
+      "inherits": "readable-tutorial",
+      "background": {
+        "enabled": true,
+        "color": "#0B0F17",
+        "opacity": 0.62,
+        "cornerRadiusAt1080pPx": 14,
+        "scaleWithCanvas": true
+      },
+      "maxLines": 2,
+      "lineBreakPolicy": "natural-semantic-phrase",
+      "wordHighlight": "none"
+    }
+  },
+  "sourceRules": {
+    "oneVisibleCaptionSourceByDefault": true,
+    "multipleVisibleSourcesRequireExplicitMultilingualOrMultiSpeakerDirective": true,
+    "pipAudioMustBeMutedWhenCopied": true,
+    "pipCaptionParticipation": false,
+    "captionsMustBeRegeneratedAfterTimelineShift": true
+  },
+  "hardFails": [
+    "duplicate-visible-caption-source",
+    "caption-overlaps-information-annotation",
+    "caption-obscures-face-or-critical-product-region",
+    "unverified-font-id",
+    "text-crosses-card-border",
+    "caption-review-reused-after-timeline-shift"
+  ]
+}

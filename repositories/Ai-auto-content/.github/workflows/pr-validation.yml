@@ -1,0 +1,63 @@
+name: Pull request validation
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v7
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Type-check
+        run: npm run typecheck
+
+      - name: Check product truth and content fit
+        run: npm run product:check
+
+      - name: Check vendored writing Skills
+        run: npm run writing-skills:check
+
+      - name: Check JSON Schema drift
+        run: npm run schema:check
+
+      - name: Run tests
+        run: npm test
+
+      - name: Run fixture collection
+        run: npm run collect:fixture
+
+      - name: Run offline topic selection fixture
+        run: npm run topic:select -- --fixture --date=2026-08-14
+
+      - name: Run offline research fixture
+        run: npm run research:build -- --fixture --date=2026-08-14
+
+      - name: Run offline Style Profile distillation fixture
+        run: npm run style:distill -- --fixture
+
+      - name: Run offline writing lint fixture
+        run: npm run style:lint -- --fixture
+
+      - name: Run offline local scheduler fixture
+        run: npm run local:scheduler -- --once --fixture --dry-run --now=2026-08-14T00:00:00.000Z
+
+      - name: Run offline local research scheduler fixture
+        run: npm run local:research -- --fixture --dry-run --now=2026-08-14T05:30:00.000Z
+
+      - name: Validate LaunchAgent installer dry-run
+        run: npm run local:install -- --dry-run

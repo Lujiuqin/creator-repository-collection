@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="ch">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<title>四步曲</title>
+		<script src="__ROOT__/Application/Home/View/FourstepsSecond/js/jquery.min.js"></script>
+		<script src="__ROOT__/Application/Home/View/FourstepsSecond/js/bootstrap.min.js"></script>
+		<script>
+			$(function() {
+				$(".meun-item").click(function() {
+					$(".meun-item").removeClass("meun-item-active");
+					$(this).addClass("meun-item-active");
+					var itmeObj = $(".meun-item").find("img");
+					itmeObj.each(function() {
+						var items = $(this).attr("src");
+						items = items.replace("_grey.png", ".png");
+						items = items.replace(".png", "_grey.png")
+						$(this).attr("src", items);
+					});
+					var attrObj = $(this).find("img").attr("src");;
+					attrObj = attrObj.replace("_grey.png", ".png");
+					$(this).find("img").attr("src", attrObj);
+				});
+				$("#topAD").click(function() {
+					$("#topA").toggleClass(" glyphicon-triangle-right");
+					$("#topA").toggleClass(" glyphicon-triangle-bottom");
+				});
+				$("#topBD").click(function() {
+					$("#topB").toggleClass(" glyphicon-triangle-right");
+					$("#topB").toggleClass(" glyphicon-triangle-bottom");
+				});
+				$("#topCD").click(function() {
+					$("#topC").toggleClass(" glyphicon-triangle-right");
+					$("#topC").toggleClass(" glyphicon-triangle-bottom");
+				});
+                $("#topDD").click(function() {
+                    $("#topD").toggleClass(" glyphicon-triangle-right");
+                    $("#topD").toggleClass(" glyphicon-triangle-bottom");
+                });
+				$(".toggle-btn").click(function() {
+					$("#leftMeun").toggleClass("show");
+					$("#rightContent").toggleClass("pd0px");
+				})
+			})
+		</script>
+		<!--[if lt IE 9]>
+          <script src="__ROOT__/Application/Home/View/FourstepsSecond/js/html5shiv.min.js"></script>
+          <script src="__ROOT__/Application/Home/View/FourstepsSecond/js/respond.min.js"></script>
+        <![endif]-->
+		<link href="__ROOT__/Application/Home/View/FourstepsSecond/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="__ROOT__/Application/Home/View/FourstepsSecond/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="__ROOT__/Application/Home/View/FourstepsSecond/css/slide.css" />
+		<link rel="stylesheet" type="text/css" href="__ROOT__/Application/Home/View/FourstepsSecond/css/bootstrap.min.css" />
+		<!-- <link rel="stylesheet" type="text/css" href="__ROOT__/Application/Home/View/FourstepsSecond/css/flat-ui.min.css" /> -->
+		<link rel="stylesheet" type="text/css" href="__ROOT__/Application/Home/View/FourstepsSecond/css/jquery.nouislider.css">
+        <style type="text/css">
+            body{
+                font-family: "Microsoft Yahei";
+            }
+            .public_header{
+                display: none;
+            }
+            .row a{
+                color: white;
+                text-decoration: none;
+            }
+            .cxx{
+              display: none;
+            }
+            .face img{
+                                  height: 40px;
+                    width: auto;
+                    border-radius: 50%;
+                    margin-top: 5px;
+                    margin-right: 30px;
+                    margin-left: 20px;
+                    box-shadow:  0 0 10px #ccc;
+            }
+        </style>
+	</head>
+
+	<body>
+    <include file="Public/header"/>
+		<div style="margin-top: 50px" id="wrap">
+
+			<div class="leftMeun" id="leftMeun">
+
+				<div class="meun-title">科技创新</div>
+                <div class="meun-item meun-item-active" href="#chan" aria-controls="chan" role="tab" data-toggle="tab"><img src="__ROOT__/Application/Home/View/FourstepsSecond/images/icon_source.png">科研介绍</div>
+				<div class="meun-item" href="#sour" aria-controls="sour" role="tab" data-toggle="tab"><img src="__ROOT__/Application/Home/View/FourstepsSecond/images/icon_user_grey.png">项目申报</div>
+				<div class="meun-item" href="#char" aria-controls="char" role="tab" data-toggle="tab"><img src="__ROOT__/Application/Home/View/FourstepsSecond/images/icon_chara_grey.png">项目管理</div>
+				<div class="meun-item" href="#user" aria-controls="user" role="tab" data-toggle="tab"><img src="__ROOT__/Application/Home/View/FourstepsSecond/images/icon_change_grey.png">结题总结</div>
+				
+			</div>
+
+			<div id="rightContent">
+				<a class="toggle-btn" id="nimei">
+					<i class="glyphicon glyphicon-align-justify"></i>
+				</a>
+
+				<div class="tab-content">
+
+					<div role="tabpanel" class="tab-pane active" id="chan">
+						<div class="check-div form-inline">
+							<div class="col-xs-6">
+                                <input type="text" class="form-control input-sm" placeholder="输入文字搜索">
+                                <button class="btn btn-white btn-xs ">查 询 </button>
+                            </div>
+                            <div class="col-lg-3 col-lg-offset-3 col-xs-3" style=" padding-right: 40px;text-align: right;">
+                                <label for="paixu">排序:&nbsp;</label>
+                                <select class=" form-control">
+                                    <option> -- </option>
+                                    <option>按级别</option>
+                                    <option>按时间</option>
+                                </select>
+                            </div>
+						</div>
+						<div class="data-div">
+                            <div class="row tableHeader">
+                                <div class="col-xs-12 ">
+                                    国家级大学生创新创业训练计划项目申报工作的通知
+                                </div>
+                               
+                            </div>
+                            <div class="tablebody">
+
+                            <div class="row">
+                                    <div class="col-xs-3">
+                                        联系人：赵昕丽
+                                    </div>
+                                    <div class="col-xs-3">
+                                        地点：行政楼211办公室
+                                    </div>
+                                    <div class="col-xs-3">
+                                        电话：85070122
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#"><a href="#">下载附件</a></button>
+                                        <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#regchun">申报</button>
+                                    </div>
+                                </div>
+
+                                <div class="row" style="height: auto;">
+                                    <textarea class="form-control" rows="30">
+各二级学院:
+
+为继续推进创新创业型人才模式改革，深化高校创新创业人才培养，进一步贯彻落实《教育部关于做好“本科教学工程”国家级大学生创新创业训练计划实施工作的通知》精神，根据《浙江省教育厅办公室关于做好2016年国家级大学生创新创业训练计划项目申报工作的通知》（浙教办函[2016]36号）要求，经学校研究决定，启动我校2016年国家级大学生创新创业训练计划立项项目的申报工作，现将有关事项通知如下。
+一、项目介绍
+    国家级大学生创新创业训练计划（以下简称“国创计划”）分为创新训练项目、创业训练项目和创业实践项目三类：
+   （一）创新训练项目旨在探索以问题和课题为核心的教学模式改革，倡导以项目为载体、以学生为主体的创新性实验，注重研究过程，调动学生的主动性、积极性和创造性，使学生在本科阶段得到创新性科学研究的锻炼。项目以本科生个人或团队的形式展开，在导师指导下，自主完成创新性研究项目设计、研究条件准备和项目实施、研究报告撰写、成果（学术）交流等工作。  
+（二）创业训练项目旨在探索以实际或模拟的商业活动为载体，培养本科生的创业精神和创业能力。项目以本科生团队的形式展开，在导师指导下，团队中每个学生在项目实施过程中扮演一个或多个具体角色，完成编制商业计划书、开展可行性研究、模拟企业运行、参加企业实践、撰写创业报告等工作。 
+  （三）创业实践项目是学生团队在学校导师和企业导师共同指导下，采用前期创新训练项目（或创新性实验）的成果，提出一项具有市场前景的创新性产品或者服务，以此为基础开展创业实践活动，创业实践项目可在创业训练基础上申报。
+二、申报要求
+   （一）申请人应为全省普通高等学校的在校本科学生个人或创新团队，鼓励跨院系、跨专业、跨年级组建团队申报项目，团队参与学生数应控制在5人以内。申请者必须品学兼优、学有余力、有较强的独立思考能力、创新意识和研究探索精神，对科学研究、科技活动或社会实践有浓厚的兴趣。鼓励跨学科、跨年级合作研究，同等条件下优先资助团队合作项目和跨学科、跨年级合作项目。跨学院的项目，由第一申请者所在学院申报，学生只能申报或参与1个项目，未结题的项目主持人不能申报本年度项目。目前已结题或获奖的省级大学生创新项目（新苗计划）、省挑战杯竞赛项目和省级学科竞赛项目，在原有研究基础上可继续深入研究的，允许申报；已获得国家级奖励或省级资助尚未结题的项目不得参与申报。 
+   （二）项目组须由学生选定或学院配备指导教师1-2名，学院应遴选责任心强、学术水平高、学风正派、治学严谨的教学科研人员担任指导教师。指导教师需具备副高级以上职称或中级职称研究生学历或曾指导学生在校级以上（含校级竞赛）学科竞赛中获奖，鼓励项目特别是创业训练和创业实践项目聘请优秀企业家或行业专家担任指导教师。指导教师在全程起辅导作用，负责指导以学生为主的训练项目实施。同一个指导教师指导的在研项目不能超过2个。
+   （三）申报项目选题要求思路新颖，目标明确，具有创新性和探索性，研究方案可行，经费预算合理。项目研究周期一般为1-2年。各项目实施时间过半时需提交中期报告，原则上要求项目负责人在毕业前完成项目。申报者要对研究方案进行可行性分析，并在实施过程中不断调整优化，保证在校期间完成。
+三、申报程序及限额数
+   （一）项目负责人提出申请，填写《国家级大学生创新创业训练计划项目申报书》，指导教师审阅并签署意见，提交所在二级学院。
+   （二）二级学院组织专家委员会对本学院的申请项目进行评审。主要审查项目的科学性、创新性、可行性、研究计划、经费预算，申请者的研究能力以及项目实施的条件等。创新训练项目，各二级学院原则上申报2-6项；创业训练项目和创业实践项目，各二级学院原则上申报1-2项。二级学院将评审的项目分类进行排序，二级学院院长签字并盖学院章后，将结果报送学校教务处。  
+（三）教务处、创新创业学院会同团委、学生处组织专家委员会对二级学院报送的项目进行评审，遴选出20项省级和国家级训练计划项目（其中创业实践项目不超过2项）。评审决议通过的项目在校园网上公示，公示无异议的项目报省教育厅。
+四、工作安排
+    根据《浙江科技学院国家级创新创业训练计划实施方案》要求，训练计划学校配套经费以及项目组织，协调申报工作由教务处和创新创业学院负责落实。
+    由于省教育厅给学校组织申报的时间很短，请各二级学院务必高度重视并抓紧落实此次申报工作。
+   （一）请各二级学院在4月25日（星期一）下午4:00前统一将项目申报书和汇总表报送教务处（附件1-4，交电子稿和纸质稿；汇总表须由二级学院院长签字并盖学院章，申报书纸质稿需一式2份），地点：行政楼211办公室，邮箱：shxyzust@126.com。
+   （二）教务处、创新创业学院会同团委、学生处组织专家委员会进行评审，在5月10日（星期二）前完成评审工作，公示后按期将我校国家级大学生创新创业训练计划项目报送省教育厅。
+                                    </textarea>
+                                </div>
+
+                                
+                            </div>
+
+                        </div>
+	
+					</div>
+					
+				</div>
+			</div>
+		</div>
+
+		<script src="__ROOT__/Application/Home/View/FourstepsSecond/js/jquery.nouislider.js"></script>
+
+		<script>
+			function huadong(my, unit, def,max) {
+				$(my).noUiSlider({
+					range: [0, max],
+					start: [def],
+					handles: 1,
+					connect: 'upper',
+					slide: function() {
+						var val =Math.floor($(this).val());
+						$(this).find(".noUi-handle").text(
+							val + unit
+						);
+						console.log($(this).find(".noUi-handle").parent().parent().html());
+					},
+					set: function() {
+						var val =Math.floor($(this).val());
+						$(this).find(".noUi-handle").text(
+							val + unit
+						);
+					}
+				});
+				$(my).val(def, true);
+			}
+			huadong('.slider-minmax1', "分钟", "5",30);
+			huadong('.slider-minmax2', "分钟", "6",15);
+			huadong('.slider-minmax3', "分钟", "10",60);
+			huadong('.slider-minmax4', "次", "2",10);
+			huadong('.slider-minmax5', "天", "3",7);
+			huadong('.slider-minmax6', "天", "8",10);
+		</script>
+	</body>
+
+</html>

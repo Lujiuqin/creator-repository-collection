@@ -1,0 +1,12 @@
+body{
+  background: #ccc;
+}
+.content{
+  margin-top: 50px;
+  width: 889px;
+  height: 3489px;
+  overflow: hidden;
+  margin: 0 auto;
+  padding-left: 13px;
+  background: #fff;
+}

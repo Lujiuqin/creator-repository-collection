@@ -1,0 +1,29 @@
+.content{
+  width: 1000px;
+  margin: 0 auto;
+  padding-top: 40px;
+  margin-bottom: 100px;
+}
+.row{
+  width: 100%;
+  /*background: red;*/
+}
+.row img{
+  border-radius: 20px;
+  max-height: 200px;
+  width: auto;
+}
+.row nav{
+  margin-right: 2.5%;
+}
+.center{
+  float: right;
+}
+.thumbnail{
+  border-radius: 20px;
+  box-shadow: 0 0 5px #ccc;
+  border: 0;
+}
+.thumbnail:hover{
+  box-shadow: 0 0 20px #999;
+}

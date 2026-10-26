@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="refresh" content="200; url='{$Url}'" />
+<title>成功提示信息</title>
+</head>
+<body>
+<table width="500" border="1" align="center" cellpadding="3" cellspacing="0">
+ <tr>
+  <th align="center" bgcolor="#cccccc">成功信息提示</th>
+ </tr>
+ <tr>
+  <td>{$message}<br />
+   成功处理的标题信息：{$msgTitle}<br />
+   <present name="message">
+   自定义成功信息：{$message}<br />
+   </present>
+   <present name="error">
+   自定义错误信息：{$error}<br />
+   </present>
+   跳转页面路径：{$jumpUrl}<br />
+   停留时间：{$waitSecond}<br />
+   2秒后返回指定页面！<br />
+   如果浏览器无法跳转，<a href="__ROOT__/{$jumpUrl}" rel="external nofollow" rel="external nofollow" >请点击此处</a>。</td>
+ </tr>
+</table>
+</body>
+</html>

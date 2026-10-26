@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ChatCut Semantic Motion Plan",
+  "type": "object",
+  "required": ["version", "planStatus", "units"],
+  "properties": {
+    "version": {"type": "string", "minLength": 1},
+    "planStatus": {"enum": ["candidate", "locked"]},
+    "units": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "unitId",
+          "viewerJob",
+          "sceneComponentId",
+          "semanticPatternId",
+          "auxiliarySemanticPatternId",
+          "primitiveIds",
+          "primitiveAssignments",
+          "motionIntensity",
+          "motionProfile",
+          "meaningfulChangeReason",
+          "reducedMotionFallback",
+          "triggerWord",
+          "triggerFrame",
+          "itemStartFrame",
+          "cueFrame",
+          "syncMode",
+          "entryState",
+          "cueState",
+          "settledState",
+          "exitState",
+          "handoffToNextUnit",
+          "primaryMotionWindow"
+        ],
+        "properties": {
+          "unitId": {"type": "string", "minLength": 1},
+          "viewerJob": {"type": "string", "minLength": 1},
+          "sceneComponentId": {"type": "string", "minLength": 1},
+          "semanticPatternId": {"type": "string", "minLength": 1},
+          "auxiliarySemanticPatternId": {"type": ["string", "null"]},
+          "primitiveIds": {"type": "array", "minItems": 1, "maxItems": 3, "items": {"type": "string"}},
+          "primitiveAssignments": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 3,
+            "items": {
+              "type": "object",
+              "required": ["primitiveId", "role", "syncMode", "intensity"],
+              "properties": {
+                "primitiveId": {"type": "string", "minLength": 1},
+                "role": {"enum": ["primary", "auxiliary"]},
+                "syncMode": {"enum": ["reveal", "highlight", "state-change", "media-focus"]},
+                "intensity": {"enum": ["L0", "L1", "L2", "L3"]}
+              },
+              "additionalProperties": false
+            }
+          },
+          "motionIntensity": {"enum": ["L0", "L1", "L2", "L3"]},
+          "motionProfile": {"enum": ["editorial-restrained", "mechanical-crisp", "friendly-geometric", "cinematic-emphasis", "documentary-proof"]},
+          "meaningfulChangeReason": {"type": "string", "minLength": 1},
+          "reducedMotionFallback": {"type": "string", "minLength": 1},
+          "triggerWord": {"type": "string", "minLength": 1},
+          "triggerFrame": {"type": ["integer", "null"], "minimum": 0},
+          "itemStartFrame": {"type": ["integer", "null"], "minimum": 0},
+          "cueFrame": {"type": ["integer", "null"], "minimum": 0},
+          "syncMode": {"enum": ["reveal", "highlight", "state-change", "media-focus"]},
+          "entryState": {"type": "string", "minLength": 1},
+          "cueState": {"type": "string", "minLength": 1},
+          "settledState": {"type": "string", "minLength": 1},
+          "exitState": {"type": "string", "minLength": 1},
+          "handoffToNextUnit": {"type": "string", "minLength": 1},
+          "primaryMotionWindow": {
+            "type": "object",
+            "required": ["startFrame", "endFrame"],
+            "properties": {
+              "startFrame": {"type": ["integer", "null"], "minimum": 0},
+              "endFrame": {"type": ["integer", "null"], "minimum": 0}
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

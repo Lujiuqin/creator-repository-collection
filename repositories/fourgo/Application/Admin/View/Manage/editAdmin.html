@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+
+<!-- BEGIN HEAD -->
+
+<head>
+
+	<meta charset="utf-8" />
+
+	<title>Learning</title>
+
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+	<meta content="" name="description" />
+
+	<meta content="" name="author" />
+
+	<!-- BEGIN GLOBAL MANDATORY STYLES -->
+
+	<link href="__ROOT__/Application/Admin/View/media/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+	<link href="__ROOT__/Application/Admin/View/media/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
+
+	<link href="__ROOT__/Application/Admin/View/media/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+	<link href="__ROOT__/Application/Admin/View/media/css/style-metro.css" rel="stylesheet" type="text/css"/>
+
+	<link href="__ROOT__/Application/Admin/View/media/css/style.css" rel="stylesheet" type="text/css"/>
+
+	<link href="__ROOT__/Application/Admin/View/media/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+
+	<link href="__ROOT__/Application/Admin/View/media/css/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+
+	<link href="__ROOT__/Application/Admin/View/media/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+
+	<!-- END GLOBAL MANDATORY STYLES -->
+
+	<!-- BEGIN PAGE LEVEL STYLES -->
+
+	<link href="__ROOT__/Application/Admin/View/media/css/bootstrap-fileupload.css" rel="stylesheet" type="text/css" />
+
+	<link href="__ROOT__/Application/Admin/View/media/css/chosen.css" rel="stylesheet" type="text/css" />
+
+	<link href="__ROOT__/Application/Admin/View/media/css/profile.css" rel="stylesheet" type="text/css" />
+
+	<link rel="stylesheet" type="text/css" href="__ROOT__/Application/Admin/View/media/css/datepicker.css" />
+
+	<link href="__ROOT__/Application/Admin/View/media/css/jquery.fancybox.css" rel="stylesheet" />
+
+	<link href="__ROOT__/Application/Admin/View/media/css/search.css" rel="stylesheet" type="text/css"/>
+
+	<link href="__ROOT__/Application/Admin/View/media/css/jquery-ui-1.10.1.custom.min.css" rel="stylesheet"/>
+
+	<link href="__ROOT__/Application/Admin/View/media/css/jquery.ui.slider.css" rel="stylesheet"/>
+
+	<!-- END PAGE LEVEL STYLES -->
+
+	<link rel="shortcut icon" href="__ROOT__/Application/Admin/View/media/image/favicon.ico" />
+<script type="text/javascript">
+	function changeCheck(){
+		var a = document.getElementById('changePassword').value;
+		var b = document.getElementById('changeRepassword').value;
+		if (a == b) {
+			document.getElementById('info').style.display="none";
+		} else{
+			document.getElementById('info').style.display="block";
+		};
+	}
+	function changeChecks(){
+		var a = document.getElementById('changePasswords').value;
+		var b = document.getElementById('changeRepasswords').value;
+		if (a == b) {
+			document.getElementById('infos').style.display="none";
+		} else{
+			document.getElementById('infos').style.display="block";
+		};
+	}
+    //图片上传预览    IE是用了滤镜。
+    function previewImage(file)
+    {
+      var MAXWIDTH  = 260; 
+      var MAXHEIGHT = 180;
+      var div = document.getElementById('preview');
+      if (file.files && file.files[0])
+      {
+          div.innerHTML ='<img id=imghead>';
+          var img = document.getElementById('imghead');
+          img.onload = function(){
+            var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+            img.width  =  rect.width;
+            img.height =  rect.height;
+//                 img.style.marginLeft = rect.left+'px';
+            img.style.marginTop = rect.top+'px';
+          }
+          var reader = new FileReader();
+          reader.onload = function(evt){img.src = evt.target.result;}
+          reader.readAsDataURL(file.files[0]);
+      }
+      else //兼容IE
+      {
+        var sFilter='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+        file.select();
+        var src = document.selection.createRange().text;
+        div.innerHTML = '<img id=imghead>';
+        var img = document.getElementById('imghead');
+        img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+        var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+        status =('rect:'+rect.top+','+rect.left+','+rect.width+','+rect.height);
+        div.innerHTML = "<div id=divhead style='width:"+rect.width+"px;height:"+rect.height+"px;margin-top:"+rect.top+"px;"+sFilter+src+"\"'></div>";
+      }
+    }
+    function clacImgZoomParam( maxWidth, maxHeight, width, height ){
+        var param = {top:0, left:0, width:width, height:height};
+        if( width>maxWidth || height>maxHeight )
+        {
+            rateWidth = width / maxWidth;
+            rateHeight = height / maxHeight;
+
+            if( rateWidth > rateHeight )
+            {
+                param.width =  maxWidth;
+                param.height = Math.round(height / rateWidth);
+            }else
+            {
+                param.width = Math.round(width / rateHeight);
+                param.height = maxHeight;
+            }
+        }
+
+        param.left = Math.round((maxWidth - param.width) / 2);
+        param.top = Math.round((maxHeight - param.height) / 2);
+        return param;
+    }
+</script>
+</head>
+
+<!-- END HEAD -->
+
+<!-- BEGIN BODY -->
+
+<body class="page-header-fixed">
+<include file="Index:header"/>
+
+	<!-- BEGIN CONTAINER -->   
+
+	<div class="page-container row-fluid">
+
+		<include file="Index:sidebar"/>
+
+		<!-- BEGIN PAGE -->
+
+		<div class="page-content">
+
+			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+
+			<div id="portlet-config" class="modal hide">
+
+				<div class="modal-header">
+
+					<button data-dismiss="modal" class="close" type="button"></button>
+
+					<h3>后台管理</h3>
+
+				</div>
+
+				<div class="modal-body">
+
+					&nbsp;
+
+				</div>
+
+			</div>
+
+			<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+
+			<!-- BEGIN PAGE CONTAINER-->
+
+			<div class="container-fluid">
+
+				<!-- BEGIN PAGE HEADER-->
+
+				<div class="row-fluid">
+
+					<div class="span12">
+
+						<include file="Index:style"/>
+
+						<!-- BEGIN PAGE TITLE & BREADCRUMB-->
+
+						<h3 class="page-title">
+
+							&nbsp;
+
+						</h3>
+
+						<ul class="breadcrumb">
+
+							<li>
+
+								<i class="icon-home"></i>
+
+								<a href="index.html">后台首页</a> 
+
+								<i class="icon-angle-right"></i>
+
+							</li>
+
+							<li>
+
+								<a href="<{:U('Manage/index')}>">管理中心</a>
+
+								<i class="icon-angle-right"></i>
+
+							</li>
+
+							<li>
+
+								<a href="<{:U('Manage/index')}>">用户管理</a>
+
+								<i class="icon-angle-right"></i>
+
+							</li>
+
+							<li>
+
+								<a href="<{:U('Manage/index')}>">管理员管理</a>
+
+								<i class="icon-angle-right"></i>
+
+							</li>
+
+							<li><a href="<{:U('Manage/index')}>">编辑</a></li>
+
+						</ul>
+
+						<!-- END PAGE TITLE & BREADCRUMB-->
+
+					</div>
+
+				</div>
+
+				<!-- END PAGE HEADER-->
+
+				<!-- BEGIN PAGE CONTENT-->
+
+				<div class="row-fluid profile">
+
+					<div class="span12">
+
+						<!--BEGIN TABS-->
+
+						<div class="tabbable tabbable-custom tabbable-full-width">
+
+							<ul class="nav nav-tabs">
+
+								<li class="active"><a href="#tab_1_2" data-toggle="tab">用户信息</a></li>
+
+								<li><a href="#tab_1_3" data-toggle="tab">信息修改</a></li>
+
+								<li><a href="#tab_1_6" data-toggle="tab">最近动态</a></li>
+
+							</ul>
+
+							<div class="tab-content">
+
+								<!--end tab-pane-->
+
+								<div class="tab-pane profile-classic row-fluid active" id="tab_1_2">
+									<volist name="admin" id="vo">
+									<div class="span2"><img src="__ROOT__/Uploads/image/admin/<{$vo.face}>" alt=""/></div>
+
+									<ul class="unstyled span10">
+
+										<li><span>用户名:</span> <{$vo.name}></li>
+
+										<li><span>密码:</span> <{$vo.password}></li>
+
+										<li><span>锁屏密码:</span> <{$vo.lock_password}></li>
+
+										<li><span>权限:</span> 
+											<if condition="$vo.rank eq 2">站长
+											<elseif condition="$vo.rank eq 1"/>高级管理员
+											<else/>普通管理员
+											</if>
+										</li>
+
+										<li><span>邮箱:</span> <{$vo.email}></li>
+
+										<li><span>电话:</span> <{$vo.telephone}></li>
+
+										<li><span>QQ:</span> <{$vo.qq}></li>
+
+										<li><span>注册时间:</span> <{$vo.reg_time}></li>
+
+										<li><span>登录时间:</span> <{$vo.login_time}></li>
+
+										<li><span>登录IP:</span> <{$vo.login_ip}></li>
+
+										</volist>
+									</ul>
+
+								</div>
+
+								<!--tab_1_2-->
+
+								<div class="tab-pane row-fluid profile-account" id="tab_1_3">
+
+									<div class="row-fluid">
+
+										<div class="span12">
+
+											<div class="span3">
+
+												<ul class="ver-inline-menu tabbable margin-bottom-10">
+
+													<li class="active">
+
+														<a data-toggle="tab" href="#tab_1-1">
+
+														<i class="icon-cog"></i> 
+
+														个人信息
+
+														</a> 
+
+														<span class="after"></span>
+
+													</li>
+
+													<li class=""><a data-toggle="tab" href="#tab_2-2"><i class="icon-picture"></i> 修改头像</a></li>
+
+													<li class=""><a data-toggle="tab" href="#tab_3-3"><i class="icon-lock"></i> 修改密码</a></li>
+
+													<li class=""><a data-toggle="tab" href="#tab_4-4"><i class="icon-eye-open"></i> 修改锁屏密码</a></li>
+
+													<!-- <li class=""><a data-toggle="tab" href="#tab_4-4"><i class="icon-eye-open"></i> 修改锁屏密码</a></li> -->
+
+												</ul>
+
+											</div>
+
+											<div class="span9">
+
+												<div class="tab-content">
+
+													<div id="tab_1-1" class="tab-pane active">
+
+														<div style="height: auto;" id="accordion1-1" class="accordion collapse">
+															<volist name="admin" id="vo">
+															<form action="<{:U('Manage/changeInfoAdmin',array('id'=>$vo['id']))}>" method="post">
+
+																<label class="control-label">用户名</label>
+
+																<input type="text" placeholder="" class="m-wrap span8" name="name" value="<{$vo.name}>" />
+
+																<label class="control-label">权限</label>
+
+																<select name="rank">
+																	<if condition="$vo.rank eq 2">
+																		<option value="0">普通管理员</option>
+																		<option value="1">高级管理员</option>
+																		<option value="2" selected="selected">站长</option>
+																	<elseif condition="$vo.rank eq 1"/>
+																		<option value="0">普通管理员</option>
+																		<option value="1" selected="selected">高级管理员</option>
+																		<option value="2">站长</option>
+																	<else/>
+																		<option value="0" selected="selected">普通管理员</option>
+																		<option value="1">高级管理员</option>
+																		<option value="2">站长</option>
+																	</if>
+																</select>
+
+																<label class="control-label">邮箱</label>
+
+																<input type="text" placeholder="" class="m-wrap span8" name="email" value="<{$vo.email}>"/>
+
+																<label class="control-label">电话</label>
+
+																<input type="text" placeholder="" class="m-wrap span8" name="telephone" value="<{$vo.telephone}>"/>
+
+																<label class="control-label">QQ</label>
+
+																<input type="text" placeholder="" class="m-wrap span8" name="qq" value="<{$vo.qq}>"/>
+
+																<label class="control-label">注册时间</label>
+
+																<input readonly="readonly" type="text" placeholder="" class="m-wrap span8" name="" value="<{$vo.reg_time}>"/>
+
+																<label class="control-label">登录时间</label>
+
+																<input readonly="readonly" type="text" placeholder="" class="m-wrap span8" name="" value="<{$vo.login_time}>"/>
+
+																<label class="control-label">登录IP</label>
+
+																<input readonly="readonly" type="text" placeholder="" class="m-wrap span8" name="" value="<{$vo.login_ip}>"/>
+
+																<div class="submit-btn">
+
+																	<button type="submit" name="submit" class="btn blue"><i class="icon-ok"></i> 保存</button>
+																	<button type="button" class="btn"> 取消</button>
+
+																</div>
+
+															</form>
+															</volist>
+														</div>
+
+													</div>
+
+													<div id="tab_2-2" class="tab-pane">
+
+														<div style="height: auto;" id="accordion2-2" class="accordion collapse">
+															<volist name="admin" id="vo">
+															<form action="<{:U('Manage/changeImageAdmin',array('id'=>$vo['id']))}>" method="post" enctype="multipart/form-data">
+															</volist>
+
+																<p>上传自定义头像，头像会按照一定比例自动裁剪。</p>
+
+																<br />
+																<div id="preview">
+																    <img id="imghead" width=100 height=100 border=0 src='<%=request.getContextPath()%>/images/defaul.jpg'>
+																</div>
+																<div class="space10"></div>
+
+																<div id="preview" class="fileupload fileupload-new" data-provides="fileupload">
+
+																	<div class="input-append">
+
+																		<div class="uneditable-input">
+
+																			<i class="icon-file fileupload-exists"></i> 
+
+																			<span class="fileupload-preview"></span>
+
+																		</div>
+
+																		<span class="btn btn-file">
+
+																		<span class="fileupload-new">选择图片</span>
+
+																		<span class="fileupload-exists">更换</span>
+
+																		<input type="file" onchange="previewImage(this)" class="default" name="face" />
+
+																		</span>
+
+																		<a href="#" class="btn fileupload-exists" data-dismiss="fileupload">移除</a>
+
+																	</div>
+
+																</div>
+
+																<div class="clearfix"></div>
+
+																<div class="controls">
+
+																	<span class="label label-important">注意!</span>
+
+																	<span>支持jpg、jpeg、png、gif、bmp格式</span>
+
+																</div>
+
+																<div class="space10"></div>
+
+																<div class="submit-btn">
+
+																	<button type="submit" name="submit" class="btn blue"><i class="icon-ok"></i> 保存</button>
+																	<button type="button" class="btn"> 取消</button>
+
+																</div>
+
+															</form>
+
+														</div>
+
+													</div>
+
+													<div id="tab_3-3" class="tab-pane">
+
+														<div style="height: auto;" id="accordion3-3" class="accordion collapse">
+															<volist name="admin" id="vo">
+															<form action="<{:U('Manage/changePasswordAdmin',array('id'=>$vo['id']))}>" method="post">
+
+																<label class="control-label">当前密码</label>
+
+																<input type="password" class="m-wrap span12" value="<{$vo.password}>" />
+
+																<label class="control-label">新密码</label>
+
+																<input id="changePassword" type="password" name="password" maxlength="16" class="m-wrap span12" />
+
+																<label class="control-label">确认密码</label>
+
+																<input id="changeRepassword" type="password" name="repassword" maxlength="16" class="m-wrap span12" onblur="changeCheck()" />
+																<div id="info" style="display:none;" class="alert alert-error">
+
+																	<button class="close" data-dismiss="alert"></button>
+
+																	<strong>*</strong> 两次密码输入不一致或为空
+
+																</div>
+
+																<div class="submit-btn">
+
+																	<button type="submit" name="submit" class="btn blue"><i class="icon-ok"></i> 保存</button>
+																	<button type="button" class="btn"> 取消</button>
+
+																</div>
+
+															</form>
+															</volist>
+														</div>
+
+													</div>
+													<div id="tab_4-4" class="tab-pane">
+
+														<div style="height: auto;" id="accordion4-4" class="accordion collapse">
+
+															<volist name="admin" id="vo">
+															<form action="<{:U('Manage/changeLockPasswordAdmin',array('id'=>$vo['id']))}>" method="post">
+
+																<label class="control-label">新锁屏密码</label>
+
+																<input id="changePasswords" type="password" name="lock_password" maxlength="16" class="m-wrap span12" />
+
+																<label class="control-label">确认锁屏密码</label>
+
+																<input id="changeRepasswords" type="password" name="lock_repassword" maxlength="16" class="m-wrap span12" onblur="changeChecks()" />
+																<div id="infos" style="display:none;" class="alert alert-error">
+
+																	<button class="close" data-dismiss="alert"></button>
+
+																	<strong>*</strong> 两次密码输入不一致或为空
+
+																</div>
+
+																<div class="submit-btn">
+
+																	<button type="submit" name="submit" class="btn blue"><i class="icon-ok"></i> 保存</button>
+																	<button type="button" class="btn"> 取消</button>
+
+																</div>
+
+															</form>
+															</volist>
+														</div>
+
+													</div>
+
+												</div>
+
+											</div>
+
+											<!--end span9-->
+
+										</div>
+
+									</div>
+
+								</div>
+
+								<!--end tab-pane-->
+
+								<div class="tab-pane row-fluid" id="tab_1_6">
+
+									<div class="row-fluid">
+
+										<div class="span12">
+
+											<div class="span3">
+
+												<ul class="ver-inline-menu tabbable margin-bottom-10">
+
+													<li class="active">
+
+														<a data-toggle="tab" href="#tab_1">
+
+														<i class="icon-briefcase"></i> 
+
+														英语问答
+
+														</a> 
+
+														<span class="after"></span>                                    
+
+													</li>
+
+													<li><a data-toggle="tab" href="#tab_2"><i class="icon-group"></i> 及时笔记</a></li>
+
+													<li><a data-toggle="tab" href="#tab_3"><i class="icon-leaf"></i> 话题讨论</a></li>
+
+													<li><a data-toggle="tab" href="#tab_1"><i class="icon-info-sign"></i> 留言记录</a></li>
+
+													<li><a data-toggle="tab" href="#tab_2"><i class="icon-tint"></i> 快速翻译</a></li>
+
+													<li><a data-toggle="tab" href="#tab_3"><i class="icon-plus"></i> 其它热点</a></li>
+
+												</ul>
+
+											</div>
+
+											<div class="span9">
+
+												<div class="tab-content">
+
+													<div id="tab_1" class="tab-pane active">
+
+														<div style="height: auto;" id="accordion1" class="accordion collapse">
+
+															<div class="accordion-group">
+
+																<div class="accordion-heading">
+
+																	<a href="#collapse_1" data-parent="#accordion1" data-toggle="collapse" class="accordion-toggle collapsed">
+
+																	Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry 
+
+																	</a>
+
+																</div>
+
+																<div class="accordion-body collapse in" id="collapse_1">
+
+																	<div class="accordion-inner">
+
+																		Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+
+																	</div>
+
+																</div>
+
+															</div>
+
+															<div class="accordion-group">
+
+																<div class="accordion-heading">
+
+																	<a href="#collapse_2" data-parent="#accordion1" data-toggle="collapse" class="accordion-toggle collapsed">
+
+																	Pariatur cliche reprehenderit enim eiusmod highr brunch 
+
+																	</a>
+
+																</div>
+
+																<div class="accordion-body collapse" id="collapse_2">
+
+																	<div class="accordion-inner">
+
+																		Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
+
+																	</div>
+
+																</div>
+
+															</div>
+
+															<div class="accordion-group">
+
+																<div class="accordion-heading">
+
+																	<a href="#collapse_3" data-parent="#accordion1" data-toggle="collapse" class="accordion-toggle collapsed">
+
+																	Food truck quinoa nesciunt laborum eiusmod nim eiusmod high life accusamus  
+
+																	</a>
+
+																</div>
+
+																<div class="accordion-body collapse" id="collapse_3">
+
+																	<div class="accordion-inner">
+
+																		Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
+
+																	</div>
+
+																</div>
+
+															</div>
+
+															<div class="accordion-group">
+
+																<div class="accordion-heading">
+
+																	<a href="#collapse_4" data-parent="#accordion1" data-toggle="collapse" class="accordion-toggle collapsed">
+
+																	High life accusamus terry richardson ad 
+
+																	</a>
+
+																</div>
+
+																<div class="accordion-body collapse" id="collapse_4">
+
+																	<div class="accordion-inner">
+
+																		Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
+
+																	</div>
+
+																</div>
+
+															</div>
+
+															<div class="accordion-group">
+
+																<div class="accordion-heading">
+
+																	<a href="#collapse_5" data-parent="#accordion1" data-toggle="collapse" class="accordion-toggle collapsed">
+
+																	Reprehenderit enim eiusmod high life accusamus terry quinoa nesciunt laborum eiusmod 
+
+																	</a>
+
+																</div>
+
+																<div class="accordion-body collapse" id="collapse_5">
+
+																	<div class="accordion-inner">
+
+																		Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
+
+																	</div>
+
+																</div>
+
+															</div>
+
+															<div class="accordion-group">
+
+																<div class="accordion-heading">
+
+																	<a href="#collapse_6" data-parent="#accordion1" data-toggle="collapse" class="accordion-toggle collapsed">
+
+																	Wolf moon officia aute non cupidatat skateboard dolor brunch 
+
+																	</a>
+
+																</div>
+
+																<div class="accordion-body collapse" id="collapse_6">
+
+																	<div class="accordion-inner">
+
+																		Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
+
+																	</div>
+
+																</div>
+
+															</div>
+
+														</div>
+
+													</div>
+
+													<div id="tab_2" class="tab-pane">
+
+														<div style="height: auto;" id="accordion2" class="accordion collapse">
+
+															<div class="accordion-group">
+
+																<div class="accordion-heading">
+
+																	<a href="#collapse_2_1" data-parent="#accordion2" data-toggle="collapse" class="accordion-toggle collapsed">
+
+																	Cliche reprehenderit, enim eiusmod high life accusamus enim eiusmod 
+
+																	</a>
+
+																</div>
+
+																<div class="accordion-body collapse in" id="collapse_2_1">
+
+																	<div class="accordion-inner">
+
+																		Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+
+																	</div>
+
+																</div>
+
+															</div>
+
+															<div class="accordion-group">
+
+																<div class="accordion-heading">
+
+																	<a href="#collapse_2_2" data-parent="#accordion2" data-toggle="collapse" class="accordion-toggle collapsed">
+
+																	Pariatur cliche reprehenderit enim eiusmod high life non cupidatat skateboard dolor brunch 
+
+																	</a>
+
+																</div>
+
+																<div class="accordion-body collapse" id="collapse_2_2">
+
+																	<div class="accordion-inner">
+
+																		Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
+
+																	</div>
+
+																</div>
+
+															</div>
+
+															<div class="accordion-group">
+
+																<div class="accordion-heading">
+
+																	<a href="#collapse_2_3" data-parent="#accordion2" data-toggle="collapse" class="accordion-toggle collapsed">
+
+																	Food truck quinoa nesciunt laborum eiusmod 
+
+																	</a>
+
+																</div>
+
+																<div class="accordion-body collapse" id="collapse_2_3">
+
+																	<div class="accordion-inner">
+
+																		Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
+
+																	</div>
+
+																</div>
+
+															</div>
+
+															<div class="accordion-group">
+
+																<div class="accordion-heading">
+
+																	<a href="#collapse_2_4" data-parent="#accordion2" data-toggle="collapse" class="accordion-toggle collapsed">
+
+																	High life accusamus terry richardson ad squid enim eiusmod high 
+
+																	</a>
+
+																</div>
+
+																<div class="accordion-body collapse" id="collapse_2_4">
+
+																	<div class="accordion-inner">
+
+																		Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
+
+																	</div>
+
+																</div>
+
+															</div>
+
+															<div class="accordion-group">
+
+																<div class="accordion-heading">
+
+																	<a href="#collapse_2_5" data-parent="#accordion2" data-toggle="collapse" class="accordion-toggle collapsed">
+
+																	Reprehenderit enim eiusmod high life accusamus terry quinoa nesciunt laborum eiusmod 
+
+																	</a>
+
+																</div>
+
+																<div class="accordion-body collapse" id="collapse_2_5">
+
+																	<div class="accordion-inner">
+
+																		<p>
+
+																			Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
+
+																		</p>
+
+																		<p> 
+
+																			moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmodBrunch 3 wolf moon tempor
+
+																		</p>
+
+																	</div>
+
+																</div>
+
+															</div>
+
+															<div class="accordion-group">
+
+																<div class="accordion-heading">
+
+																	<a href="#collapse_2_6" data-parent="#accordion2" data-toggle="collapse" class="accordion-toggle collapsed">
+
+																	Wolf moon officia aute non cupidatat skateboard dolor brunch 
+
+																	</a>
+
+																</div>
+
+																<div class="accordion-body collapse" id="collapse_2_6">
+
+																	<div class="accordion-inner">
+
+																		Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
+
+																	</div>
+
+																</div>
+
+															</div>
+
+															<div class="accordion-group">
+
+																<div class="accordion-heading">
+
+																	<a href="#collapse_2_7" data-parent="#accordion2" data-toggle="collapse" class="accordion-toggle collapsed">
+
+																	Reprehenderit enim eiusmod high life accusamus terry quinoa nesciunt laborum eiusmod 
+
+																	</a>
+
+																</div>
+
+																<div class="accordion-body collapse" id="collapse_2_7">
+
+																	<div class="accordion-inner">
+
+																		<p>
+
+																			Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
+
+																		</p>
+
+																		<p> 
+
+																			moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmodBrunch 3 wolf moon tempor
+
+																		</p>
+
+																	</div>
+
+																</div>
+
+															</div>
+
+														</div>
+
+													</div>
+
+													<div id="tab_3" class="tab-pane">
+
+														<div style="height: auto;" id="accordion3" class="accordion collapse">
+
+															<div class="accordion-group">
+
+																<div class="accordion-heading">
+
+																	<a href="#collapse_3_1" data-parent="#accordion3" data-toggle="collapse" class="accordion-toggle collapsed">
+
+																	Cliche reprehenderit, enim eiusmod 
+
+																	</a>
+
+																</div>
+
+																<div class="accordion-body collapse in" id="collapse_3_1">
+
+																	<div class="accordion-inner">
+
+																		Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+
+																	</div>
+
+																</div>
+
+															</div>
+
+															<div class="accordion-group">
+
+																<div class="accordion-heading">
+
+																	<a href="#collapse_3_2" data-parent="#accordion3" data-toggle="collapse" class="accordion-toggle collapsed">
+
+																	Pariatur skateboard dolor brunch 
+
+																	</a>
+
+																</div>
+
+																<div class="accordion-body collapse" id="collapse_3_2">
+
+																	<div class="accordion-inner">
+
+																		Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
+
+																	</div>
+
+																</div>
+
+															</div>
+
+															<div class="accordion-group">
+
+																<div class="accordion-heading">
+
+																	<a href="#collapse_3_3" data-parent="#accordion3" data-toggle="collapse" class="accordion-toggle collapsed">
+
+																	Food truck quinoa nesciunt laborum eiusmod 
+
+																	</a>
+
+																</div>
+
+																<div class="accordion-body collapse" id="collapse_3_3">
+
+																	<div class="accordion-inner">
+
+																		Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
+
+																	</div>
+
+																</div>
+
+															</div>
+
+															<div class="accordion-group">
+
+																<div class="accordion-heading">
+
+																	<a href="#collapse_3_4" data-parent="#accordion3" data-toggle="collapse" class="accordion-toggle collapsed">
+
+																	High life accusamus terry richardson ad squid enim eiusmod high 
+
+																	</a>
+
+																</div>
+
+																<div class="accordion-body collapse" id="collapse_3_4">
+
+																	<div class="accordion-inner">
+
+																		Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
+
+																	</div>
+
+																</div>
+
+															</div>
+
+															<div class="accordion-group">
+
+																<div class="accordion-heading">
+
+																	<a href="#collapse_3_5" data-parent="#accordion3" data-toggle="collapse" class="accordion-toggle collapsed">
+
+																	Reprehenderit enim eiusmod high  eiusmod 
+
+																	</a>
+
+																</div>
+
+																<div class="accordion-body collapse" id="collapse_3_5">
+
+																	<div class="accordion-inner">
+
+																		<p>
+
+																			Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
+
+																		</p>
+
+																		<p> 
+
+																			moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmodBrunch 3 wolf moon tempor
+
+																		</p>
+
+																	</div>
+
+																</div>
+
+															</div>
+
+															<div class="accordion-group">
+
+																<div class="accordion-heading">
+
+																	<a href="#collapse_3_6" data-parent="#accordion3" data-toggle="collapse" class="accordion-toggle collapsed">
+
+																	Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry 
+
+																	</a>
+
+																</div>
+
+																<div class="accordion-body collapse" id="collapse_3_6">
+
+																	<div class="accordion-inner">
+
+																		Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
+
+																	</div>
+
+																</div>
+
+															</div>
+
+															<div class="accordion-group">
+
+																<div class="accordion-heading">
+
+																	<a href="#collapse_3_7" data-parent="#accordion3" data-toggle="collapse" class="accordion-toggle collapsed">
+
+																	Reprehenderit enim eiusmod high life accusamus aborum eiusmod 
+
+																	</a>
+
+																</div>
+
+																<div class="accordion-body collapse" id="collapse_3_7">
+
+																	<div class="accordion-inner">
+
+																		<p>
+
+																			Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
+
+																		</p>
+
+																		<p> 
+
+																			moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmodBrunch 3 wolf moon tempor
+
+																		</p>
+
+																	</div>
+
+																</div>
+
+															</div>
+
+															<div class="accordion-group">
+
+																<div class="accordion-heading">
+
+																	<a href="#collapse_3_8" data-parent="#accordion3" data-toggle="collapse" class="accordion-toggle collapsed">
+
+																	Reprehenderit enim eiusmod high life accusamus terry quinoa nesciunt laborum eiusmod 
+
+																	</a>
+
+																</div>
+
+																<div class="accordion-body collapse" id="collapse_3_8">
+
+																	<div class="accordion-inner">
+
+																		<p>
+
+																			Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
+
+																		</p>
+
+																		<p> 
+
+																			moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmodBrunch 3 wolf moon tempor
+
+																		</p>
+
+																	</div>
+
+																</div>
+
+															</div>
+
+														</div>
+
+													</div>
+
+												</div>
+
+											</div>
+
+											<!--end span9-->                                   
+
+										</div>
+
+									</div>
+
+								</div>
+
+								<!--end tab-pane-->
+
+							</div>
+
+						</div>
+
+						<!--END TABS-->
+
+					</div>
+
+				</div>
+
+				<!-- END PAGE CONTENT-->
+
+			</div>
+
+			<!-- END PAGE CONTAINER--> 
+
+		</div>
+
+		<!-- END PAGE -->    
+
+	</div>
+
+	<!-- END CONTAINER -->
+
+	<include file="Index:footer"/>
+
+	<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+
+	<!-- BEGIN CORE PLUGINS -->
+
+	<script src="__ROOT__/Application/Admin/View/media/js/jquery-1.10.1.min.js" type="text/javascript"></script>
+
+	<script src="__ROOT__/Application/Admin/View/media/js/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+
+	<!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+
+	<script src="__ROOT__/Application/Admin/View/media/js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>      
+
+	<script src="__ROOT__/Application/Admin/View/media/js/bootstrap.min.js" type="text/javascript"></script>
+
+	<!--[if lt IE 9]>
+
+	<script src="__ROOT__/Application/Admin/View/media/js/excanvas.min.js"></script>
+
+	<script src="__ROOT__/Application/Admin/View/media/js/respond.min.js"></script>  
+
+	<![endif]-->   
+
+	<script src="__ROOT__/Application/Admin/View/media/js/jquery.slimscroll.min.js" type="text/javascript"></script>
+
+	<script src="__ROOT__/Application/Admin/View/media/js/jquery.blockui.min.js" type="text/javascript"></script>  
+
+	<script src="__ROOT__/Application/Admin/View/media/js/jquery.cookie.min.js" type="text/javascript"></script>
+
+	<script src="__ROOT__/Application/Admin/View/media/js/jquery.uniform.min.js" type="text/javascript" ></script>
+
+	<!-- END CORE PLUGINS -->
+
+	<!-- BEGIN PAGE LEVEL PLUGINS -->
+
+	<script type="text/javascript" src="__ROOT__/Application/Admin/View/media/js/bootstrap-fileupload.js"></script>
+
+	<script type="text/javascript" src="__ROOT__/Application/Admin/View/media/js/chosen.jquery.min.js"></script>
+
+	<!-- END PAGE LEVEL PLUGINS -->
+
+	<!-- BEGIN PAGE LEVEL SCRIPTS -->
+
+	<script type="text/javascript" src="__ROOT__/Application/Admin/View/media/js/bootstrap-datepicker.js"></script>
+
+	<script src="__ROOT__/Application/Admin/View/media/js/jquery.fancybox.pack.js"></script>
+
+	<script src="__ROOT__/Application/Admin/View/media/js/app.js"></script>
+
+	<script src="__ROOT__/Application/Admin/View/media/js/search.js"></script>
+
+	<script src="__ROOT__/Application/Admin/View/media/js/jquery.knob.js"></script>
+
+	<script src="__ROOT__/Application/Admin/View/media/js/ui-sliders.js"></script>
+
+	<!-- END PAGE LEVEL SCRIPTS -->
+
+	<script>
+
+		jQuery(document).ready(function() {       
+
+		   // initiate layout and plugins
+
+		   Application.init();
+
+		   UISliders.initSliders();
+
+		   UISliders.initKnowElements();
+
+		});
+
+	</script>
+
+	<!-- END JAVASCRIPTS -->
+
+</body>
+
+<!-- END BODY -->
+
+</html>

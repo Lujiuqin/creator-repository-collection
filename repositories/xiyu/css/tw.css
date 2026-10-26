@@ -1,0 +1,74 @@
+@charset "utf-8";
+/* CSS Document */
+
+#ss{
+	width:auto;
+	height:20px;
+	background:#fff;
+	
+	
+}
+#ha{
+	width:auto;
+	height:900px;
+	background:#fff;
+}
+#kt{
+	width:920px;
+	height:40px;
+	margin-left:40px;
+	background:#eaeaea;
+}
+#kt p{
+	font-size:13px;
+	padding-left:10px;
+	height:40px;
+	line-height:40px;
+}
+#time{
+	width:340px;
+	height:400px;
+	margin-left:40px;
+	margin-top:20px;
+	float:left;
+}
+#time_t{
+	height:40px;
+	background:#eaeaea;
+}
+#time_t h2{
+	height:40px;
+	line-height:40px;
+	padding-left:10px;
+}
+#time ul li{
+	width:auto;
+	height:40px;
+	line-height:40px;
+	font-size:16px;
+	padding-left:10px;
+}
+#time ul li a{
+	color:#000;
+	text-decoration:none;
+}
+#time ul li a:hover{
+	text-decoration:underline;
+	color:#66B0D0;
+}
+	
+#pltp{
+	width:150px;
+	height:750px;
+	margin-top:20px;
+	float:right;
+	margin-right:40px;
+}
+#hot{
+	width:340px;
+	height:400px;
+	background:#000;
+	margin-left:40px;
+	margin-top:20px;
+	float:left;
+}

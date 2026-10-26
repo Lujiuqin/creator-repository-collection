@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+
+<!-- BEGIN HEAD -->
+
+<head>
+
+	<meta charset="utf-8" />
+
+	<title>Learning</title>
+
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+	<meta content="" name="description" />
+
+	<meta content="" name="author" />
+
+	<!-- BEGIN GLOBAL MANDATORY STYLES -->
+
+	<link href="__ROOT__/Application/Admin/View/media/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+	<link href="__ROOT__/Application/Admin/View/media/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
+
+	<link href="__ROOT__/Application/Admin/View/media/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+	<link href="__ROOT__/Application/Admin/View/media/css/style-metro.css" rel="stylesheet" type="text/css"/>
+
+	<link href="__ROOT__/Application/Admin/View/media/css/style.css" rel="stylesheet" type="text/css"/>
+
+	<link href="__ROOT__/Application/Admin/View/media/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+
+	<link href="__ROOT__/Application/Admin/View/media/css/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+
+	<link href="__ROOT__/Application/Admin/View/media/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+
+	<!-- END GLOBAL MANDATORY STYLES -->
+
+	<!-- BEGIN PAGE LEVEL STYLES -->
+
+	<link rel="stylesheet" type="text/css" href="__ROOT__/Application/Admin/View/media/css/select2_metro.css" />
+
+	<link rel="stylesheet" href="__ROOT__/Application/Admin/View/media/css/DT_bootstrap.css" />
+
+	<!-- END PAGE LEVEL STYLES -->
+
+	<link rel="shortcut icon" href="__ROOT__/Application/Admin/View/media/image/favicon.ico" />
+<script type="text/javascript">
+function delete_confirm(){
+    event.returnValue = confirm("你确认要删除该用户吗？");
+}
+</script>
+</head>
+
+<!-- END HEAD -->
+
+<!-- BEGIN BODY -->
+
+<body class="page-header-fixed">
+<include file="Index:header"/>
+
+	<!-- BEGIN CONTAINER -->
+
+	<div class="page-container row-fluid">
+
+		<include file="Index:sidebar"/>
+
+		<!-- BEGIN PAGE -->
+
+		<div class="page-content">
+
+			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+
+			<div id="portlet-config" class="modal hide">
+
+				<div class="modal-header">
+
+					<button data-dismiss="modal" class="close" type="button"></button>
+
+					<h3>后台管理</h3>
+
+				</div>
+
+				<div class="modal-body">
+
+					&nbsp;
+
+				</div>
+
+			</div>
+
+			<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+
+			<!-- BEGIN PAGE CONTAINER-->        
+
+			<div class="container-fluid">
+
+				<!-- BEGIN PAGE HEADER-->
+
+				<div class="row-fluid">
+
+					<div class="span12">
+
+						<include file="Index:style"/>
+
+						<!-- BEGIN PAGE TITLE & BREADCRUMB-->
+
+						<h3 class="page-title">
+
+							&nbsp;
+
+						</h3>
+
+						<ul class="breadcrumb">
+
+							<li>
+
+								<i class="icon-home"></i>
+
+								<a href="<{:U('Index/index')}>">后台首页</a> 
+
+								<i class="icon-angle-right"></i>
+
+							</li>
+
+							<li>
+
+								<a href="<{:U('Resource/index')}>">管理中心</a>
+
+								<i class="icon-angle-right"></i>
+
+							</li>
+
+							<li>
+
+								<a href="<{:U('Resource/index')}>">资源管理</a>
+
+								<i class="icon-angle-right"></i>
+
+							</li>
+
+							<li><a href="<{:U('Resource/index')}>">单词库</a></li>
+
+						</ul>
+
+						<!-- END PAGE TITLE & BREADCRUMB-->
+
+					</div>
+
+				</div>
+
+				<!-- END PAGE HEADER-->
+
+				<div class="tab-content">
+
+					<div class="tab-pane active" id="tab_5">
+
+						<div class="portlet box blue ">
+
+							<div class="portlet-title">
+
+								<div class="caption"><i class="icon-reorder"></i>添加单词</div>
+
+								<div class="tools">
+
+									<a href="javascript:;" class="collapse"></a>
+
+									<!--<a href="#portlet-config" data-toggle="modal" class="config"></a>-->
+
+									<a href="javascript:;" class="reload"></a>
+
+									<a href="javascript:;" class="remove"></a>
+
+								</div>
+
+							</div>
+
+							<div class="portlet-body form">
+
+								<!-- BEGIN FORM-->
+
+								<form action="<{:U('Resource/addSave')}>" method="post" class="form-horizontal form-bordered" enctype="multipart/form-data">
+
+									<div class="control-group">
+
+										<label class="control-label">单词</label>
+
+										<div class="controls">
+
+											<input type="text" placeholder="" name="word" class="m-wrap span12">
+
+
+										</div>
+
+									</div>
+
+									<div class="control-group">
+
+										<label class="control-label">音标</label>
+
+										<div class="controls">
+
+											<input type="text" placeholder="" name="phonetic" class="m-wrap span12">
+
+										</div>
+
+									</div>
+
+									<div class="control-group">
+
+										<label class="control-label">发音</label>
+
+										<div class="controls">
+
+												<input type="file" class="default" name="uk" />
+
+										</div>
+
+									</div>
+
+									<div class="control-group">
+
+										<label class="control-label">解释</label>
+
+										<div class="controls">
+
+											<input type="text" placeholder="" name="explain" class="m-wrap span12">
+
+										</div>
+
+									</div>
+
+									<div class="control-group">
+
+										<label class="control-label">例句1</label>
+
+										<div class="controls">
+
+											<input type="text" placeholder="" name="eg1" class="m-wrap span12">
+
+										</div>
+
+									</div>
+
+									<div class="control-group">
+
+										<label class="control-label">例句2</label>
+
+										<div class="controls">
+
+											<input type="text" placeholder="" name="eg2" class="m-wrap span12">
+
+										</div>
+
+									</div>
+
+									<div class="control-group">
+
+										<label class="control-label">例句3</label>
+
+										<div class="controls">
+
+											<input type="text" placeholder="" name="eg3" class="m-wrap span12">
+
+										</div>
+
+									</div>
+
+									<div class="control-group">
+
+										<label class="control-label">记忆</label>
+
+										<div class="controls">
+
+											<input type="text" name="memory" class="m-wrap span12">
+
+										</div>
+
+									</div>
+
+									<div class="control-group">
+
+										<label class="control-label">重点</label>
+
+										<div class="controls">
+
+											<input type="text" name="important" class="m-wrap span12"> 
+
+										</div>
+
+									</div>
+
+									<div class="form-actions">
+
+										<button type="submit" name="submit" class="btn blue"><i class="icon-ok"></i> 保存</button>
+
+										<button type="button" class="btn">取消</button>
+
+									</div>
+
+								</form>
+
+								<!-- END FORM-->  
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<!-- END PAGE CONTAINER-->
+
+		</div>
+
+		<!-- END PAGE -->
+
+	</div>
+
+	<!-- END CONTAINER -->
+
+<include file="Index:footer"/>
+
+	<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+
+	<!-- BEGIN CORE PLUGINS -->
+
+	<script src="__ROOT__/Application/Admin/View/media/js/jquery-1.10.1.min.js" type="text/javascript"></script>
+
+	<script src="__ROOT__/Application/Admin/View/media/js/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+
+	<!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+
+	<script src="__ROOT__/Application/Admin/View/media/js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>      
+
+	<script src="__ROOT__/Application/Admin/View/media/js/bootstrap.min.js" type="text/javascript"></script>
+
+	<!--[if lt IE 9]>
+
+	<script src="__ROOT__/Application/Admin/View/media/js/excanvas.min.js"></script>
+
+	<script src="__ROOT__/Application/Admin/View/media/js/respond.min.js"></script>  
+
+	<![endif]-->   
+
+	<script src="__ROOT__/Application/Admin/View/media/js/jquery.slimscroll.min.js" type="text/javascript"></script>
+
+	<script src="__ROOT__/Application/Admin/View/media/js/jquery.blockui.min.js" type="text/javascript"></script>  
+
+	<script src="__ROOT__/Application/Admin/View/media/js/jquery.cookie.min.js" type="text/javascript"></script>
+
+	<script src="__ROOT__/Application/Admin/View/media/js/jquery.uniform.min.js" type="text/javascript" ></script>
+
+	<!-- END CORE PLUGINS -->
+
+	<!-- BEGIN PAGE LEVEL PLUGINS -->
+
+	<script type="text/javascript" src="__ROOT__/Application/Admin/View/media/js/select2.min.js"></script>
+
+	<script type="text/javascript" src="__ROOT__/Application/Admin/View/media/js/jquery.dataTables.js"></script>
+
+	<script type="text/javascript" src="__ROOT__/Application/Admin/View/media/js/DT_bootstrap.js"></script>
+
+	<!-- END PAGE LEVEL PLUGINS -->
+
+	<!-- BEGIN PAGE LEVEL SCRIPTS -->
+
+	<script src="__ROOT__/Application/Admin/View/media/js/app.js"></script>
+
+	<script src="__ROOT__/Application/Admin/View/media/js/table-managed.js"></script>     
+
+	<script>
+
+		jQuery(document).ready(function() {       
+
+		   Application.init();
+
+		   TableManaged.init();
+
+		});
+
+	</script>
+
+</body>
+
+<!-- END BODY -->
+
+</html>

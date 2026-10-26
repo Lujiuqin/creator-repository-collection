@@ -1,0 +1,50 @@
+{
+  "version": 2,
+  "profiles": {
+    "portrait-9-16": {
+      "aspectRatio": "9:16",
+      "canvas": {"width": 1080, "height": 1920},
+      "safeMargin": {"left": 64, "right": 64, "top": 80, "bottom": 64},
+      "caption": {"left": 50, "top": 1426, "width": 980, "height": 184, "fontSizePx": 62},
+      "exclusionZones": {
+        "caption": {"x": 50, "y": 1380, "width": 980, "height": 300},
+        "pipReserved": {"x": 700, "y": 64, "width": 340, "height": 380},
+        "dynamicEvidenceRequired": ["presenter-face", "product-critical-region", "button", "number", "result-state"]
+      },
+      "talkingHeadPip": {"x": 744, "y": 96, "width": 280, "height": 280, "cornerRadius": 36, "mirrorX": 56},
+      "fullContent": {"x": 64, "y": 80, "width": 952, "height": 1280},
+      "contentWithPip": {"x": 64, "y": 420, "width": 952, "height": 940},
+      "accumulatingRows": {"x": 72, "y": 470, "width": 936, "rowHeight": 176, "gap": 24, "minRows": 2, "maxRows": 5, "rowHeightByCount": {"2": 260, "3": 220, "4": 176, "5": 136}, "gapByCount": {"2": 28, "3": 24, "4": 24, "5": 18}},
+      "preferredFlow": "vertical"
+    },
+    "landscape-16-9": {
+      "aspectRatio": "16:9",
+      "canvas": {"width": 1920, "height": 1080},
+      "safeMargin": {"left": 96, "right": 96, "top": 64, "bottom": 64},
+      "caption": {"left": 160, "top": 842, "width": 1600, "height": 150, "fontSizePx": 52},
+      "exclusionZones": {
+        "caption": {"x": 120, "y": 810, "width": 1680, "height": 210},
+        "pipReserved": {"x": 1460, "y": 48, "width": 412, "height": 392},
+        "dynamicEvidenceRequired": ["presenter-face", "product-critical-region", "button", "number", "result-state"]
+      },
+      "talkingHeadPip": {"x": 1512, "y": 64, "width": 336, "height": 336, "cornerRadius": 40, "mirrorX": 72},
+      "fullContent": {"x": 96, "y": 64, "width": 1728, "height": 720},
+      "contentWithPip": {"x": 96, "y": 160, "width": 1320, "height": 620},
+      "accumulatingRows": {"x": 96, "y": 210, "width": 1320, "rowHeight": 128, "gap": 18, "minRows": 2, "maxRows": 5, "rowHeightByCount": {"2": 200, "3": 150, "4": 128, "5": 100}, "gapByCount": {"2": 20, "3": 18, "4": 18, "5": 16}},
+      "preferredFlow": "horizontal"
+    }
+  },
+  "rules": {
+    "defaultProfile": null,
+    "requireProjectCanvasEvidenceBeforeSelectingProfile": true,
+    "forbidAspectInferenceFromPreviousProject": true,
+    "inspectTargetFrameBeforeFinalPlacement": true,
+    "profileCoordinatesAreStartingReferences": true,
+    "noStretchBetweenProfiles": true,
+    "noLetterboxAsAdaptation": true,
+    "independentCaptionCropAndMgReview": true,
+    "captionZoneMustContainNoInformationAnnotations": true,
+    "faceAndProductCriticalZonesComeFromCurrentFrameEvidence": true,
+    "pipMustAvoidCaptionFaceAndProductCriticalZones": true
+  }
+}

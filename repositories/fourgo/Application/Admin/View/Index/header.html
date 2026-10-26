@@ -1,0 +1,337 @@
+<!-- BEGIN HEADER -->
+
+	<div class="header navbar navbar-inverse navbar-fixed-top">
+
+		<!-- BEGIN TOP NAVIGATION BAR -->
+
+		<div class="navbar-inner">
+
+			<div class="container-fluid">
+
+				<!-- BEGIN LOGO -->
+
+				<a class="brand" href="<{:U('Index/index')}>">
+
+				<img src="__ROOT__/Application/Admin/View/media/image/logo.png" alt="logo" style="height: 20px;width: auto;" />
+
+				</a>
+
+				<!-- END LOGO -->
+
+				<!-- BEGIN RESPONSIVE MENU TOGGLER -->
+
+				<a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+
+				<img src="__ROOT__/Application/Admin/View/media/image/menu-toggler.png" alt="" />
+
+				</a>
+
+				<!-- END RESPONSIVE MENU TOGGLER -->
+
+				<!-- BEGIN TOP NAVIGATION MENU -->
+
+				<ul class="nav pull-right">
+
+					<!-- BEGIN NOTIFICATION DROPDOWN -->
+
+					<li class="dropdown" id="header_notification_bar">
+
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+						<i class="icon-warning-sign"></i>
+
+						<span class="badge">6</span>
+
+						</a>
+
+						<ul class="dropdown-menu extended notification">
+
+							<li>
+
+								<p>你有 14 条未处理事件</p>
+
+							</li>
+
+							<li>
+
+								<a href="#">
+
+								<span class="label label-success"><i class="icon-plus"></i></span>
+
+								用户权限申请 
+
+								<span><span class="label label-success">今天</span></span>
+
+								</a>
+
+							</li>
+
+							<li>
+
+								<a href="#">
+
+								<span class="label label-warning"><i class="icon-bolt"></i></span>
+
+								用户账号异常 
+
+								<span><span class="label label-warning">5 天内</span></span>
+
+								</a>
+
+							</li>
+
+							<li>
+
+								<a href="#">
+
+								<span class="label label-info"><i class="icon-bolt"></i></span>
+
+								用户账号异常 
+
+								<span><span class="label label-info">5 天内</span></span>
+
+								</a>
+
+							</li>
+
+							<li>
+
+								<a href="#">
+
+								<span class="label label-important"><i class="icon-bolt"></i></span>
+
+								用户账号异常 
+
+								<span><span class="label label-important">1 天内</span></span>
+
+								</a>
+
+							</li>
+
+						</ul>
+
+					</li>
+
+					<!-- END NOTIFICATION DROPDOWN -->
+
+					<!-- BEGIN INBOX DROPDOWN -->
+
+					<li class="dropdown" id="header_inbox_bar">
+
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+						<i class="icon-envelope"></i>
+
+						<span class="badge">5</span>
+
+						</a>
+
+						<ul class="dropdown-menu extended inbox">
+
+							<li>
+
+								<p>你有 12 条新消息</p>
+
+							</li>
+
+							<li>
+
+								<a href="inbox.html?a=view">
+
+								<span class="photo"><img src="__ROOT__/Application/Admin/View/media/image/avatar2.jpg" alt="" /></span>
+
+								<span class="subject">
+
+								<span class="from">张三</span>
+
+								<span><span class="label label-info">1 天内</span></span>
+
+								</span>
+
+								<span class="message">
+
+								你好，我想当管理员！
+
+								</span>  
+
+								</a>
+
+							</li>
+
+							<li class="external">
+
+								<a href="">查看全部消息 <i class="m-icon-swapright"></i></a>
+
+							</li>
+
+						</ul>
+
+					</li>
+
+					<!-- END INBOX DROPDOWN -->
+
+					<!-- BEGIN TODO DROPDOWN -->
+
+					<li class="dropdown" id="header_task_bar">
+
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+						<i class="icon-tasks"></i>
+
+						<span class="badge">5</span>
+
+						</a>
+
+						<ul class="dropdown-menu extended tasks">
+
+							<li>
+
+								<p>网站系统监测</p>
+
+							</li>
+
+							<li>
+
+								<a href="#">
+
+								<span class="task">
+
+								<span class="desc">用户流量</span>
+
+								<span class="percent">22%</span>
+
+								</span>
+
+								<span class="progress progress-success progress-striped active">
+
+								<span style="width: 22%;" class="bar"></span>
+
+								</span>
+
+								</a>
+
+							</li>
+
+							<li>
+
+								<a href="#">
+
+								<span class="task">
+
+								<span class="desc">数据库负载</span>
+
+								<span class="percent">40%</span>
+
+								</span>
+
+								<span class="progress progress-info progress-striped active">
+
+								<span style="width: 40%;" class="bar"></span>
+
+								</span>
+
+								</a>
+
+							</li>
+
+							<li>
+
+								<a href="#">
+
+								<span class="task">
+
+								<span class="desc">服务器负载</span>
+
+								<span class="percent">58%</span>
+
+								</span>
+
+								<span class="progress progress-warning progress-striped active">
+
+								<span style="width: 58%;" class="bar"></span>
+
+								</span>
+
+								</a>
+
+							</li>
+
+							<li>
+
+								<a href="#">
+
+								<span class="task">
+
+								<span class="desc">网络信号</span>
+
+								<span class="percent">82%</span>
+
+								</span>
+
+								<span class="progress progress-danger progress-striped active">
+
+								<span style="width: 82%;" class="bar"></span>
+
+								</span>
+
+								</a>
+
+							</li>
+
+							<li class="external">
+
+								<a href="#">监测所有信息 <i class="m-icon-swapright"></i></a>
+
+							</li>
+
+						</ul>
+
+					</li>
+
+					<!-- END TODO DROPDOWN -->
+
+					<!-- BEGIN USER LOGIN DROPDOWN -->
+
+					<li class="dropdown user">
+
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+						<img alt="" src="__ROOT__/Application/Admin/View/img/admin2.jpg" />
+
+						<span class="username">岑老师</span>
+
+						<i class="icon-angle-down"></i>
+
+						</a>
+
+						<ul class="dropdown-menu">
+
+							<li><a href="<{:U('Index/index')}>"><i class="icon-user"></i> 网站信息</a></li>
+
+							<li><a href="<{:U('Daily/index')}>"><i class="icon-calendar"></i> 日常安排</a></li>
+
+							<li><a href="<{:U('Message/index')}>"><i class="icon-envelope"></i> 站内消息(3)</a></li>
+
+							<li class="divider"></li>
+
+							<li><a href="<{:U('Lock/index')}>"><i class="icon-lock"></i> 账号锁定</a></li>
+
+							<li><a href="<{:U('Login/loginOut')}>"><i class="icon-key"></i> 退出</a></li>
+
+						</ul>
+
+					</li>
+
+					<!-- END USER LOGIN DROPDOWN -->
+
+				</ul>
+
+				<!-- END TOP NAVIGATION MENU --> 
+
+			</div>
+
+		</div>
+
+		<!-- END TOP NAVIGATION BAR -->
+
+	</div>

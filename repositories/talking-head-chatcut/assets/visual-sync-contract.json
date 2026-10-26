@@ -1,0 +1,107 @@
+{
+  "version": 3,
+  "unit": "semantic-information-unit",
+  "cueSource": "post-cleanup-word-level-transcript",
+  "cueFormula": "cueFrame = triggerFrame - itemStartFrame",
+  "recalculateAfter": ["speech-cut", "speed-change", "timeline-item-move", "timeline-item-trim"],
+  "modes": {
+    "reveal": "Make a new information unit readable at its cue.",
+    "highlight": "Keep an already-legitimate overview visible and emphasize the current unit at its cue.",
+    "state-change": "Advance a node, connection, process, progress, or task state at its cue.",
+    "media-focus": "Move zoom, crop, annotation, pointer, or focus within visible media at its cue."
+  },
+  "semanticMotionRouting": {
+    "reference": "../references/semantic-motion.md",
+    "sceneComponents": "semantic-scene-components.json",
+    "planSchema": "semantic-motion-plan.schema.json",
+    "planValidator": "../scripts/validate_semantic_motion.py --plan <path>",
+    "semanticPatterns": "semantic-motion-patterns.json",
+    "motionPrimitives": "motion-primitives.json",
+    "requiredPlanningFields": [
+      "viewerJob",
+      "sceneComponentId",
+      "semanticPatternId",
+      "auxiliarySemanticPatternId",
+      "primitiveIds",
+      "primitiveAssignments",
+      "motionIntensity",
+      "motionProfile",
+      "meaningfulChangeReason",
+      "reducedMotionFallback",
+      "entryState",
+      "cueState",
+      "settledState",
+      "exitState",
+      "handoffToNextUnit"
+    ],
+    "primitiveSubsetRule": "primitiveIds must be allowed by semanticPatternId; out-of-set primitives require an explicit auxiliarySemanticPatternId that allows them.",
+    "primitiveAssignmentRule": "Every selected primitive needs a role, syncMode, and intensity supported by that primitive. Exactly one assignment is primary and must match the unit syncMode and motionIntensity.",
+    "perUnitFieldsMayNotBeSatisfiedByGlobalDefaults": true,
+    "maximumPrimaryPrimitivesPerUnit": 1,
+    "maximumAuxiliaryPrimitivesPerUnit": 2,
+    "maximumSimultaneousPrimaryMotionFoci": 1
+  },
+  "intensity": {
+    "L0": "No MG motion; rely on speaker, source media, or intentional stillness.",
+    "L1": "Light response such as underline, color lock, restrained highlight, or annotation.",
+    "L2": "Structural response such as reveal, accumulation, connection, count, comparison, or media focus.",
+    "L3": "Primary narrative impact reserved for chapter, reversal, core conclusion, or strong close."
+  },
+  "timing": {
+    "primaryResponseWindowSeconds": [-0.133, 0.2],
+    "primaryResponseWindowRole": "Quality target. Outside this band but inside the hard limits is a soft fail: auto-adjust first, then keep only with a documented perceptual reason and frame evidence.",
+    "maximumConclusionLeadSeconds": 0.5,
+    "maximumResponseLagSeconds": 0.5,
+    "maximumMeaninglessStaticSecondsDuringInformationDenseSpeech": 4.0,
+    "inspectionOffsetsSeconds": [-0.25, 0, 0.25]
+  },
+  "coverage": {
+    "criticalUnitsRequired": 1.0,
+    "allPlannedUnitsRequired": 1.0,
+    "allowKaraokeCurrentWordHighlight": false,
+    "allowOverviewThenHighlight": true,
+    "overviewCondition": "The overview itself is already spoken or does not disclose a later conclusion."
+  },
+  "evidence": {
+    "required": [
+      "visual-plan-row",
+      "trigger-word",
+      "absolute-trigger-frame",
+      "relative-cue-frame",
+      "sync-mode",
+      "scene-component-id",
+      "semantic-pattern-id",
+      "primitive-ids",
+      "primitive-assignments",
+      "motion-intensity",
+      "meaningful-change-reason",
+      "pre-cue-frame",
+      "cue-frame",
+      "post-cue-frame",
+      "settled-frame",
+      "animation-stopped-frame",
+      "last-visible-frame",
+      "longest-static-interval"
+    ],
+    "pixelEvidenceRequired": true,
+    "timelineOrCodeValuesAloneAreInsufficient": true,
+    "preferExportedOrCloudComposedFrames": true
+  },
+  "hardFails": [
+    "fixed-interval-cues-without-word-anchors",
+    "full-paragraph-bulk-reveal-at-segment-start",
+    "future-conclusion-readable-more-than-0.5s-early",
+    "no-visual-response-more-than-0.5s-after-cue",
+    "planned-reveal-highlight-state-change-or-media-focus-not-visible",
+    "highlight-has-no-ordinary-to-focus-state-change",
+    "media-focus-has-no-concrete-media-object",
+    "meaningless-always-on-drift-pulse-flash-glow-grid-or-scan",
+    "semantic-loop-does-not-stop-when-state-ends",
+    "primitive-assignment-missing-or-mismatched",
+    "primitive-sync-or-intensity-unsupported",
+    "multiple-simultaneous-primary-motion-foci",
+    "motion-intensity-exceeds-semantic-importance-without-reason",
+    "motion-without-declared-purpose",
+    "missing-pixel-evidence"
+  ]
+}

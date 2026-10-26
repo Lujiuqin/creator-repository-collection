@@ -1,0 +1,52 @@
+@charset "utf-8";
+/* CSS Document */
+
+#jctp{
+	width:auto;
+	height:400px;
+	background:#F9F9F9;
+	margin-top:15px;
+}
+img.one{
+	float:left;
+	margin-left:90px;
+	margin-top:50px;
+}
+img.two{
+	float:left;
+	margin-left:90px;
+	margin-top:50px;
+}
+img.three{
+	float:right;
+	margin-right:130px;
+	margin-top:50px;}
+a.ex1{
+	font-size:20px;
+	float:left;
+	margin-left:120px;
+	margin-top:20px;
+	
+}
+a.ex2{
+	font-size:20px;
+	float:left;
+	margin-left:250px;
+	margin-top:20px;
+	
+}
+a.ex3{
+	font-size:20px;
+	float:right;
+	margin-right:150px;
+	margin-top:20px;
+	
+}
+#jctp a{
+	text-decoration:none;
+}
+#jctp a:hover{
+	text-decoration:underline;
+	color:#F60;
+	
+}

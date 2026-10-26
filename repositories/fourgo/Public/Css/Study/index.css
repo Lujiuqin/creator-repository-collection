@@ -1,0 +1,39 @@
+.content{
+  width: 1000px;
+  margin: 0 auto;
+  padding-top: 100px;
+}
+.left{
+  width: 200px;
+  float: left;
+  top: 70px;
+}
+.right{
+  width: 800px;
+  float: right;
+  padding-left: 30px;
+  font-size: 1.1rem;
+  line-height: 1.8rem;
+}
+.right .indents{
+  text-indent: 2em;
+}
+/*研究活动*/
+.right .yjhd{
+  column-count: 3;
+  padding-bottom: 100px;
+}
+.right .yjhd img{
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+.left a{
+  color: #999;
+}
+.left a:hover{
+  color: #337ab7;
+}
+footer{
+  clear: both;
+}

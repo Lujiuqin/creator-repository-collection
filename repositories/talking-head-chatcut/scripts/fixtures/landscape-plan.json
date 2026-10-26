@@ -1,0 +1,138 @@
+{
+  "version": "1.0",
+  "status": "locked",
+  "fps": 30,
+  "aspect": "landscape-16-9",
+  "sceneInstances": [
+    {
+      "sceneId": "pipeline",
+      "templateId": "task-pipeline",
+      "sourceMode": "template",
+      "aspect": "landscape-16-9",
+      "entryRole": "fullscreen-info",
+      "exitRole": "fullscreen-info",
+      "denseSpeech": true,
+      "startFrame": 0,
+      "endFrameExclusive": 180,
+      "resolvedParams": {"stages": ["目标", "执行", "结果"], "intensity": "L2"},
+      "wordCues": [
+        {"id": "goal", "triggerWord": "目标", "triggerFrame": 20, "cueFrame": 20, "syncMode": "state-change"},
+        {"id": "execute", "triggerWord": "执行", "triggerFrame": 70, "cueFrame": 70, "syncMode": "state-change"},
+        {"id": "result", "triggerWord": "结果", "triggerFrame": 130, "cueFrame": 130, "syncMode": "state-change"}
+      ],
+      "processContinuity": {
+        "isGenuineProcess": true,
+        "motionWindows": [
+          {"startFrame": 0, "endFrameExclusive": 30},
+          {"startFrame": 60, "endFrameExclusive": 90},
+          {"startFrame": 120, "endFrameExclusive": 150}
+        ],
+        "motionCoverageRatio": 0.5,
+        "maxStaticHoldFrames": 120,
+        "cadenceFrames": [0, 60, 120]
+      },
+      "overrides": []
+    },
+    {
+      "sceneId": "custom-demo",
+      "templateId": null,
+      "sourceMode": "bespoke-forced",
+      "aspect": "landscape-16-9",
+      "entryRole": "media-frame",
+      "exitRole": "media-frame",
+      "denseSpeech": true,
+      "startFrame": 180,
+      "endFrameExclusive": 300,
+      "resolvedParams": {"description": "用户指定的横屏真实素材聚焦画面"},
+      "wordCues": [
+        {"id": "demo", "triggerWord": "这里", "triggerFrame": 200, "cueFrame": 20, "syncMode": "media-focus"}
+      ],
+      "processContinuity": {
+        "isGenuineProcess": false,
+        "motionWindows": [
+          {"startFrame": 180, "endFrameExclusive": 192},
+          {"startFrame": 216, "endFrameExclusive": 228},
+          {"startFrame": 252, "endFrameExclusive": 264}
+        ],
+        "motionCoverageRatio": 0.3,
+        "maxStaticHoldFrames": 120,
+        "cadenceFrames": [180, 216, 252]
+      },
+      "overrides": ["ovr-custom-demo"]
+    },
+    {
+      "sceneId": "summary",
+      "templateId": "layered-summary",
+      "sourceMode": "template",
+      "aspect": "landscape-16-9",
+      "entryRole": "fullscreen-info",
+      "exitRole": "fullscreen-info",
+      "denseSpeech": true,
+      "startFrame": 300,
+      "endFrameExclusive": 480,
+      "resolvedParams": {"layers": ["目标", "过程", "结果"], "intensity": "L3"},
+      "wordCues": [
+        {"id": "sum-goal", "triggerWord": "目标", "triggerFrame": 310, "cueFrame": 10, "syncMode": "state-change"},
+        {"id": "sum-process", "triggerWord": "过程", "triggerFrame": 370, "cueFrame": 70, "syncMode": "state-change"},
+        {"id": "sum-result", "triggerWord": "结果", "triggerFrame": 430, "cueFrame": 130, "syncMode": "state-change"}
+      ],
+      "processContinuity": {
+        "isGenuineProcess": false,
+        "motionWindows": [
+          {"startFrame": 300, "endFrameExclusive": 318},
+          {"startFrame": 360, "endFrameExclusive": 378},
+          {"startFrame": 420, "endFrameExclusive": 438}
+        ],
+        "motionCoverageRatio": 0.3,
+        "maxStaticHoldFrames": 120,
+        "cadenceFrames": [300, 360, 420]
+      },
+      "overrides": []
+    }
+  ],
+  "transitionInstances": [
+    {
+      "transitionId": "zoom-into-detail",
+      "fromSceneId": "pipeline",
+      "toSceneId": "custom-demo",
+      "aspect": "landscape-16-9",
+      "startFrame": 160,
+      "endFrameExclusive": 180,
+      "intent": "detail",
+      "carriedElementBinding": {"type": "real-media-target", "ref": "demo-target"},
+      "keyframes": {"target": [{"frame": 160, "scale": 1}, {"frame": 170, "scale": 1.4}, {"frame": 180, "scale": 2}]},
+      "overrides": [],
+      "audit": {"continuityProofFrames": [160, 170, 180], "expected": "目标区域连续放大为真实素材主画面"}
+    },
+    {
+      "transitionId": "pull-back-to-overview",
+      "fromSceneId": "custom-demo",
+      "toSceneId": "summary",
+      "aspect": "landscape-16-9",
+      "startFrame": 278,
+      "endFrameExclusive": 300,
+      "intent": "overview",
+      "carriedElementBinding": {"type": "detail-frame", "ref": "demo-target"},
+      "keyframes": {"target": [{"frame": 278, "scale": 2}, {"frame": 289, "scale": 1.4}, {"frame": 300, "scale": 1}]},
+      "overrides": [],
+      "audit": {"continuityProofFrames": [278, 289, 300], "expected": "细节框连续拉远并回到总结总览"}
+    }
+  ],
+  "userOverrides": [
+    {
+      "id": "ovr-custom-demo",
+      "mustHonor": true,
+      "scope": "scene",
+      "appliesTo": {"sceneId": "custom-demo"},
+      "anchor": {"word": "这里", "frame": 200},
+      "directiveType": "bespoke",
+      "spec": {"description": "横屏真实素材全屏，随后聚焦用户指定区域"},
+      "facet": "whole-scene",
+      "conflictPolicy": "override-wins",
+      "fidelityCheck": {
+        "assertions": ["真实素材保持可辨认", "聚焦区域与脚本标注一致"],
+        "evidenceRequired": ["global-frame", "focus-frame", "settled-frame"]
+      }
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "航海选题助手"
+  short_description: "读取定位和内容素材，生成去重、可追溯且不夸张的候选选题"
+  default_prompt: "使用 $shengcai-topic-generator 读取当前 Vault 的定位和内容素材，生成或追加一批去重的候选选题。"

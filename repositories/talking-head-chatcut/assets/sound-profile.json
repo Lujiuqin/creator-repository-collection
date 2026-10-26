@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "profileId": "talking-head-balanced-v1",
+  "principles": {
+    "voiceHasPriority": true,
+    "bgmDecisionRequired": true,
+    "sfxMustFollowVisibleResponse": true,
+    "singleUniversalGainForbidden": true,
+    "perceptualQaRequired": true
+  },
+  "voice": {
+    "anchorTrackRequired": true,
+    "defaultSpeed": 1.1,
+    "preservePitch": true,
+    "enhancement": true,
+    "targetIntegratedLufsRange": [-18, -14],
+    "truePeakMaxDbtp": -1
+  },
+  "bgm": {
+    "allowedDecisions": ["applied", "intentionally-none"],
+    "tutorialDefault": "applied",
+    "intentionallyNoneRequiresReason": true,
+    "sourceModes": ["project-existing", "chatcut-library", "generate"],
+    "bedGainDbRange": [-34, -24],
+    "duckUnderSpeechDbRange": [-12, -6],
+    "followerTrackRequiredWhenApplied": true,
+    "automationInvalidatesAfterStructuralTimelineChange": true
+  },
+  "sfx": {
+    "sourceModes": ["project-existing", "chatcut-library", "generate"],
+    "syncBases": ["visual-settled-frame", "transition-energy-midpoint", "bounded-state-change"],
+    "tiers": {
+      "light": {"gainDbRange": [-28, -20], "intents": ["minor-highlight", "annotation-land", "soft-reveal"]},
+      "medium": {"gainDbRange": [-23, -15], "intents": ["node-land", "state-resolve", "section-transition"]},
+      "strong": {"gainDbRange": [-18, -10], "intents": ["chapter-impact", "core-conclusion", "strong-close"]}
+    },
+    "anchorToleranceFrames": 3,
+    "density": {
+      "contentCuesPerMinute": [4, 8],
+      "maxPrimaryCuesPerScreen": 2,
+      "maxCuesWithinThreeSeconds": 2,
+      "maxConsecutiveSameTimbre": 2
+    },
+    "userFeedbackAdjustmentDb": {
+      "light": 3,
+      "medium": [2, 3],
+      "strong": [1, 1.5]
+    },
+    "generationRequiresBriefAndCostGate": true,
+    "resolvedIdRequiresCurrentSnapshotEvidence": true
+  },
+  "qa": {
+    "cannotAuditionVerdict": "pending",
+    "requiredChecks": ["speech-intelligible", "no-clipping", "sfx-perceptible-not-distracting", "bgm-consistent", "visual-audio-sync"],
+    "evidenceMustBindPlanTimelineAndRender": true
+  },
+  "hardFails": [
+    "bgm-decision-missing",
+    "bgm-applied-without-follower-track",
+    "generated-sound-without-brief-or-cost-gate",
+    "sfx-id-not-in-current-snapshot",
+    "sfx-anchored-only-to-spoken-start",
+    "universal-sfx-gain-used",
+    "perceptual-qa-passed-without-audition"
+  ]
+}

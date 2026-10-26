@@ -1,0 +1,137 @@
+@charset "utf-8";
+/* CSS Document */
+
+#ks{
+	width:auto;
+	height:40px;
+	border: 1px solid #ccc;
+	margin-top:20px;
+}
+#ks p{
+	height:40px;
+	line-height:40px;
+	word-spacing:8px;
+	letter-spacing:5px;
+	padding-left:20px;
+}
+#lb{
+	width:auto;
+	height:130px;
+	border:1px solid #ccc;
+	margin-top:5px;
+}
+#lb dl{
+	width:auto;
+	height:150px;
+}
+#lb dl dd{
+	width:85px;
+	height:35px;
+	background:#e6e6e6;
+	line-height:30px;
+	text-align:center;
+	cursor:pointer;
+	margin:12px;
+	float:left;
+}
+#lb dl dd:hover{
+	background:#f1f3f5;
+}
+#lb dl dd a{
+	color:#000;
+}
+#left{
+	width:25%;
+	height:330px;
+	border:1px solid #ccc;
+	margin-top:20px;
+	box-shadow:10px 10px 5px #888888;
+	float:left;
+}
+#left h2{
+	padding-top:50px;
+	font-weight:400;
+	font-size:20px;
+}
+#left ul{
+	width:auto;
+	height:200px;
+	margin-top:20px;
+	margin-left:8px;
+}
+#left ul li{
+	width:auto;
+	height:25px;
+	line-height:25px;
+}
+#left ul li a{
+	color:#000;
+}
+#left ul li a:hover{
+	text-decoration:underline;
+}
+#again{
+	width:25%;
+	height:330px;
+	border:1px solid #ccc;
+	margin-top:20px;
+	box-shadow:10px 10px 5px #888888;
+	float:left;
+}
+#right{
+	width:72%;
+	height:680px;
+	border:1px solid #ccc;
+	margin-top:20px;
+	float:right;
+	box-shadow:10px 10px 5px #888888;
+	margin-bottom:10px;
+	
+}
+#se{
+	width:auto;
+	height:40px;
+	background:#ccc;
+	margin:5px;
+}
+#se p{
+	height:40px;
+	line-height:40px;
+	word-spacing:8px;
+	letter-spacing:5px;
+	padding-left:20px;
+}
+#zlb{
+	width:auto;
+}
+#js{
+	height:90px;
+	width:auto;
+	border-bottom:1px solid #ccc;
+	margin-left:20px;
+	margin-right:20px;
+	padding-top:20px;
+}
+#js dl dt{
+	width:140px;
+	height:83px;
+	float:left;
+}
+#js dl dd{
+	padding-top:5px;
+}
+.tp{
+	margin-left:20px;
+	margin-top:6px;
+	float:left;
+}
+.mz{
+	margin-top:20px;
+}
+.zt{
+	color:#999;
+}
+#zh{
+	width:auto;
+	height:10px;
+}

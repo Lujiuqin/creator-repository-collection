@@ -1,0 +1,172 @@
+{
+  "version": 2,
+  "count": 18,
+  "compatibilityOnly": true,
+  "supersededForSelectionBy": "semantic-template-system.json",
+  "relationshipToBlueprints": "Scene components define the semantic composition for a speech span. They may instantiate one or more of the nine responsive information blueprints in component-blueprints.md.",
+  "components": [
+    {
+      "id": "core-conclusion-page",
+      "name": "核心结论页",
+      "viewerJob": "Understand one decisive conclusion.",
+      "blueprintIds": ["FullScreenInfo", "KeyPointEmphasis"],
+      "patternIds": ["new-conclusion", "quote-emphasis"],
+      "defaultIntensity": "L3",
+      "preferredProfiles": ["cinematic-emphasis", "mechanical-crisp"]
+    },
+    {
+      "id": "keyword-impact",
+      "name": "关键词冲击",
+      "viewerJob": "Remember one term or phrase without turning captions into karaoke.",
+      "blueprintIds": ["KeyPointEmphasis"],
+      "patternIds": ["term-definition", "quote-emphasis"],
+      "defaultIntensity": "L2",
+      "preferredProfiles": ["editorial-restrained", "mechanical-crisp"]
+    },
+    {
+      "id": "correction-reframe",
+      "name": "转折纠正页",
+      "viewerJob": "Replace a misconception or initial framing with the corrected one.",
+      "blueprintIds": ["ComparePanel", "KeyPointEmphasis"],
+      "patternIds": ["contrast-correction", "misconception-break", "negation-replacement"],
+      "defaultIntensity": "L3",
+      "preferredProfiles": ["mechanical-crisp", "editorial-restrained"]
+    },
+    {
+      "id": "accumulating-list-scene",
+      "name": "递进清单",
+      "viewerJob": "Follow two to five items while retaining prior items.",
+      "blueprintIds": ["AccumulatingRows", "ProgressHeader"],
+      "patternIds": ["parallel-list", "escalation", "priority-ranking"],
+      "defaultIntensity": "L2",
+      "preferredProfiles": ["friendly-geometric", "editorial-restrained"]
+    },
+    {
+      "id": "timeline-sequence",
+      "name": "时间线",
+      "viewerJob": "Understand ordered events or change across time.",
+      "blueprintIds": ["ProcessMap", "ProgressHeader"],
+      "patternIds": ["time-change", "ordered-process"],
+      "defaultIntensity": "L2",
+      "preferredProfiles": ["editorial-restrained", "friendly-geometric"]
+    },
+    {
+      "id": "task-pipeline-scene",
+      "name": "任务流程",
+      "viewerJob": "See a task advance through concrete execution stages.",
+      "blueprintIds": ["ProcessMap", "ProgressHeader"],
+      "patternIds": ["ordered-process", "completion-status", "transfer-route"],
+      "defaultIntensity": "L2",
+      "preferredProfiles": ["mechanical-crisp", "friendly-geometric"]
+    },
+    {
+      "id": "cause-effect-chain",
+      "name": "因果链",
+      "viewerJob": "Understand what causes what and where the outcome lands.",
+      "blueprintIds": ["ProcessMap"],
+      "patternIds": ["causal-chain", "condition-result"],
+      "defaultIntensity": "L2",
+      "preferredProfiles": ["editorial-restrained", "mechanical-crisp"]
+    },
+    {
+      "id": "cycle-diagram",
+      "name": "循环图",
+      "viewerJob": "Understand a bounded repeating system and its current state.",
+      "blueprintIds": ["ProcessMap"],
+      "patternIds": ["cycle-system"],
+      "defaultIntensity": "L2",
+      "preferredProfiles": ["friendly-geometric", "editorial-restrained"]
+    },
+    {
+      "id": "relationship-network",
+      "name": "关系网络",
+      "viewerJob": "See a core concept, its branches, and dependencies.",
+      "blueprintIds": ["ProcessMap"],
+      "patternIds": ["hub-spoke", "dependency-map", "layered-structure"],
+      "defaultIntensity": "L2",
+      "preferredProfiles": ["mechanical-crisp", "editorial-restrained"]
+    },
+    {
+      "id": "before-after-compare",
+      "name": "前后对比",
+      "viewerJob": "See a transformation on a shared baseline.",
+      "blueprintIds": ["ComparePanel"],
+      "patternIds": ["before-after"],
+      "defaultIntensity": "L2",
+      "preferredProfiles": ["documentary-proof", "editorial-restrained"]
+    },
+    {
+      "id": "option-compare",
+      "name": "选项比较",
+      "viewerJob": "Compare choices and understand the selected option.",
+      "blueprintIds": ["ComparePanel", "AccumulatingRows"],
+      "patternIds": ["option-comparison", "right-wrong"],
+      "defaultIntensity": "L2",
+      "preferredProfiles": ["friendly-geometric", "editorial-restrained"]
+    },
+    {
+      "id": "data-growth-page",
+      "name": "数据增长页",
+      "viewerJob": "Understand one number, its direction, and its scale.",
+      "blueprintIds": ["KeyPointEmphasis", "FullScreenInfo"],
+      "patternIds": ["numeric-growth", "proportion", "gap-difference", "time-change"],
+      "defaultIntensity": "L2",
+      "preferredProfiles": ["mechanical-crisp", "friendly-geometric"]
+    },
+    {
+      "id": "screenshot-focus",
+      "name": "截图聚焦",
+      "viewerJob": "Keep screenshot context while locating one exact piece of evidence.",
+      "blueprintIds": ["MediaFrame", "ZoomAnnotation"],
+      "patternIds": ["screenshot-proof", "detail-examination", "evidence-verdict"],
+      "defaultIntensity": "L2",
+      "preferredProfiles": ["documentary-proof"]
+    },
+    {
+      "id": "ui-operation-demo",
+      "name": "UI 操作演示",
+      "viewerJob": "Connect spoken instruction to a real interface control or outcome.",
+      "blueprintIds": ["MediaFrame", "ZoomAnnotation", "ProgressHeader"],
+      "patternIds": ["ui-location", "product-feature", "completion-status"],
+      "defaultIntensity": "L2",
+      "preferredProfiles": ["documentary-proof", "mechanical-crisp"]
+    },
+    {
+      "id": "evidence-annotation",
+      "name": "证据标注",
+      "viewerJob": "Show concrete evidence and connect it to a verdict.",
+      "blueprintIds": ["MediaFrame", "ZoomAnnotation", "KeyPointEmphasis"],
+      "patternIds": ["evidence-verdict", "screenshot-proof", "risk-warning"],
+      "defaultIntensity": "L2",
+      "preferredProfiles": ["documentary-proof"]
+    },
+    {
+      "id": "chapter-divider-scene",
+      "name": "章节转场",
+      "viewerJob": "Establish a major topic shift and reset attention.",
+      "blueprintIds": ["FullScreenInfo", "ProgressHeader"],
+      "patternIds": ["chapter-shift"],
+      "defaultIntensity": "L3",
+      "preferredProfiles": ["mechanical-crisp", "cinematic-emphasis"]
+    },
+    {
+      "id": "talking-head-information-zone",
+      "name": "口播加信息区",
+      "viewerJob": "Retain speaker presence while explaining structured information.",
+      "blueprintIds": ["TalkingHeadPipShell", "AccumulatingRows", "MediaFrame"],
+      "patternIds": ["identity-context", "parallel-list", "product-feature"],
+      "defaultIntensity": "L1",
+      "preferredProfiles": ["editorial-restrained", "friendly-geometric"]
+    },
+    {
+      "id": "layered-summary-close",
+      "name": "分层总结与 CTA",
+      "viewerJob": "Review the framework and leave one clear next action.",
+      "blueprintIds": ["ProcessMap", "AccumulatingRows", "KeyPointEmphasis"],
+      "patternIds": ["summary-map", "thesis-return", "cta-close"],
+      "defaultIntensity": "L3",
+      "preferredProfiles": ["cinematic-emphasis", "editorial-restrained"]
+    }
+  ],
+  "reuseRule": "Reuse a scene component only when viewer job, information structure, visual form, and target media relationship all match."
+}

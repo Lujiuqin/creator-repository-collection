@@ -1,0 +1,38 @@
+name: Validate Skill
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - "codex/**"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Install validation dependencies
+        run: python -m pip install --disable-pip-version-check PyYAML jsonschema referencing
+
+      - name: Validate repository structure and stale gates
+        run: python scripts/validate_repository.py
+
+      - name: Validate template catalog
+        run: python scripts/validate_template_system.py
+
+      - name: Run template regression tests
+        run: python scripts/test_template_system.py
+
+      - name: Run contact-sheet unit tests
+        run: python scripts/test_contact_sheet.py

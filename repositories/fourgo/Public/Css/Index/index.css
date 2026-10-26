@@ -1,0 +1,45 @@
+.content{
+  width: 100%;
+  margin-top: 31px;
+  clear: both;
+  margin-bottom: 100px;
+}
+.main{
+  width: 1000px;
+  margin: 0 auto;
+}
+.one .title{
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 40px;
+}
+.row{
+  margin-top: 20px;
+}
+.row img{
+  max-height: 230px;
+  border-radius: 20px;
+  width: auto;
+}
+.thumbnail{
+  border: 0;
+  box-shadow: 0 0 5px #ccc;
+  border-radius: 20px;
+}
+.thumbnail:hover{
+  box-shadow: 0 0 20px #999;
+}
+.thumbnail a{
+  color: #000;
+}
+.thumbnail a:hover{
+  text-decoration: none;
+}
+.thumbnail .info{
+  padding: 0 4px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+h3{
+  margin-top: 10px;
+}

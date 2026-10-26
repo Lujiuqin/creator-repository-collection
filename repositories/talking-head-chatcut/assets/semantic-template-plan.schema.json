@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ChatCut Semantic Template Plan",
+  "type": "object",
+  "required": ["version", "status", "derivedFromPlanId", "derivedFromRevision", "sourcePlanSha256", "generated", "fps", "aspect", "sceneInstances", "transitionInstances", "userOverrides"],
+  "properties": {
+    "version": {"type": "string", "minLength": 1},
+    "status": {"enum": ["candidate", "locked"]},
+    "derivedFromPlanId": {"type": "string", "minLength": 1},
+    "derivedFromRevision": {"type": "integer", "minimum": 1},
+    "sourcePlanSha256": {"type": "string", "pattern": "^[a-fA-F0-9]{64}$"},
+    "generated": {"const": true},
+    "migrationMode": {"type": "boolean"},
+    "fps": {"type": "number", "exclusiveMinimum": 0},
+    "aspect": {"enum": ["portrait-9-16", "landscape-16-9"]},
+    "sceneInstances": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "semantic-template-system.schema.json#/$defs/sceneInstance"}
+    },
+    "transitionInstances": {
+      "type": "array",
+      "items": {"$ref": "semantic-template-system.schema.json#/$defs/transitionInstance"}
+    },
+    "userOverrides": {
+      "type": "array",
+      "items": {"$ref": "semantic-template-system.schema.json#/$defs/userOverride"}
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {"properties": {"sceneInstances": {"contains": {"properties": {"sourceMode": {"const": "legacy"}}, "required": ["sourceMode"]}}}},
+      "then": {"required": ["migrationMode"], "properties": {"migrationMode": {"const": true}}}
+    },
+    {
+      "if": {"properties": {"transitionInstances": {"contains": {"properties": {"sourceMode": {"const": "legacy"}}, "required": ["sourceMode"]}}}},
+      "then": {"required": ["migrationMode"], "properties": {"migrationMode": {"const": true}}}
+    }
+  ]
+}

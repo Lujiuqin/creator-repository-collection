@@ -1,0 +1,4 @@
+interface:
+  display_name: "Talking Head ChatCut"
+  short_description: "Editable ChatCut production with local 4K support and evidence-based QA."
+  default_prompt: "Use $talking-head-chatcut to directly produce a complete editable ChatCut video from my footage, script, and visual directions. For 4K main footage, assume I import the original in ChatCut Desktop, preserve the local 4K asset, verify local-only visuals through the desktop preview, and distinguish preview verification from actual 4K export verification."

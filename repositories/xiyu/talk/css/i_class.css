@@ -1,0 +1,102 @@
+﻿body{
+	background: #eeeff1;
+}
+ul,li{
+	text-decoration: none;
+	list-style: none;
+}
+.i_class_header{
+	height: 200px;
+	background: #FFF9F9;
+	margin-top: 61px;
+	box-shadow: 0px 0px 10px 10px #ddd;
+	-o-box-shadow: 0px 0px 10px 10px #ddd;
+	-ms-box-shadow: 0px 0px 10px 10px #ddd;
+	-moz-box-shadow: 0px 0px 10px 10px #ddd;
+	-webkit-box-shadow: 0px 0px 10px 10px #ddd;
+}
+.class_p{
+	height: 20px;
+	color:#8A7171;
+	text-indent: 20px;
+}
+.class_open{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	color:#8A7171;
+}
+.class_button{
+	padding:20px 10px 20px 40px;
+	width: 200px;
+	background: #8ABED7;
+    color: #FAFDFF;
+    border-radius: 23px;
+    -o-border-radius: 23px;
+    -ms-border-radius: 23px;
+    -moz-border-radius: 23px;
+    -webkit-border-radius: 23px;
+    margin-top: 50px;
+    cursor: pointer;
+    box-shadow: 0px 0px 3px 2px #848D92;
+    -o-box-shadow: 0px 0px 3px 2px #848D92;
+    -ms-box-shadow: 0px 0px 3px 2px #848D92;
+    -moz-box-shadow: 0px 0px 3px 2px #848D92;
+    -webkit-box-shadow: 0px 0px 3px 2px #848D92;
+}
+/*中部*/
+.i_class_midden{
+	margin-bottom: 20px;
+}
+.midden_tittle{
+	padding: 10px 0;
+	font-size: 19px;
+	border-bottom: 1px solid #D1C1C1; 
+}
+.i_class_img{
+	padding: 0 65px;
+}
+.i_class_about{
+	margin-top:20px;
+}
+.i_class_about ul{
+	content: "";
+	display: block;
+	height: 0px;
+	clear:both;
+}
+.i_class_about li{
+	width: 200px;
+	float: left;
+	margin:0 30px;
+}
+.i_class_about li .about_bg{
+    height: 220px;
+    width: 200px;
+
+}
+.about_bg1{
+	background: url(../img/wykk2.png)  no-repeat;
+}
+.about_bg2{
+	background: url(../img/wykk2.png)  -162px 0px no-repeat;
+}
+.about_bg3{
+	background: url(../img/wykk2.png)  -324px 0px  no-repeat;
+}
+.about_bg4{
+	background: url(../img/wykk2.png)  -506px 0px no-repeat;
+}
+.about_font{
+	width: 220px;
+	text-align: center;
+	color: #333;
+	font-size: 17px;
+}
+.i_class_bottom_jiantou h1{
+	padding-top: 100px;
+	text-align: center;
+}
+.i_class_bottom_jiantou{
+	height: 300px;
+	background: url(../img/jiantou.png) 500px 0px no-repeat;
+}

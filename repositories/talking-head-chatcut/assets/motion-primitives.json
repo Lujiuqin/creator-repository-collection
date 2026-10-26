@@ -1,0 +1,233 @@
+{
+  "version": 1,
+  "unit": "frame-driven-editable-motion-primitive",
+  "runtime": "chatcut-inline-jsx",
+  "externalRuntimeImportsAllowed": false,
+  "count": 24,
+  "primitives": [
+    {
+      "id": "mask-reveal",
+      "name": "遮罩揭示",
+      "job": "Make new information readable without exposing it early.",
+      "syncModes": ["reveal"],
+      "intensity": ["L1", "L2", "L3"],
+      "settles": true,
+      "loop": false
+    },
+    {
+      "id": "diagonal-wipe",
+      "name": "斜切擦入",
+      "job": "Introduce a strong section or conclusion with directional energy.",
+      "syncModes": ["reveal"],
+      "intensity": ["L2", "L3"],
+      "settles": true,
+      "loop": false
+    },
+    {
+      "id": "hard-replace",
+      "name": "硬切替换",
+      "job": "Replace one legitimate state with another at a decisive semantic boundary.",
+      "syncModes": ["state-change", "highlight"],
+      "intensity": ["L1", "L2", "L3"],
+      "settles": true,
+      "loop": false
+    },
+    {
+      "id": "phrase-settle",
+      "name": "短语落稳",
+      "job": "Reveal one meaningful phrase in ordered chunks, not karaoke words.",
+      "syncModes": ["reveal"],
+      "intensity": ["L1", "L2", "L3"],
+      "settles": true,
+      "loop": false
+    },
+    {
+      "id": "keyword-scale-hit",
+      "name": "关键词冲击",
+      "job": "Give one already-legal keyword a single scale or weight impact.",
+      "syncModes": ["highlight"],
+      "intensity": ["L1", "L2", "L3"],
+      "settles": true,
+      "loop": false
+    },
+    {
+      "id": "underline-draw",
+      "name": "下划线绘制",
+      "job": "Mark one key phrase with a restrained directional cue.",
+      "syncModes": ["highlight"],
+      "intensity": ["L1"],
+      "settles": true,
+      "loop": false
+    },
+    {
+      "id": "color-lock",
+      "name": "色块锁定",
+      "job": "Convert an ordinary item into the current focal state.",
+      "syncModes": ["highlight", "media-focus"],
+      "intensity": ["L1", "L2"],
+      "settles": true,
+      "loop": false
+    },
+    {
+      "id": "focus-transfer",
+      "name": "焦点转移",
+      "job": "Move emphasis from one legitimate item to another while preserving context.",
+      "syncModes": ["highlight", "media-focus"],
+      "intensity": ["L1", "L2"],
+      "settles": true,
+      "loop": false
+    },
+    {
+      "id": "neighbor-deemphasis",
+      "name": "邻项降权",
+      "job": "Lower surrounding visual weight so the current item is unmistakable.",
+      "syncModes": ["highlight", "media-focus"],
+      "intensity": ["L1", "L2"],
+      "settles": true,
+      "loop": false
+    },
+    {
+      "id": "row-accumulate",
+      "name": "行项目累积",
+      "job": "Reveal and retain parallel or sequential items as they are spoken.",
+      "syncModes": ["reveal", "state-change"],
+      "intensity": ["L1", "L2"],
+      "settles": true,
+      "loop": false
+    },
+    {
+      "id": "number-count",
+      "name": "数字计数",
+      "job": "Resolve a numeric change at the spoken result.",
+      "syncModes": ["state-change", "reveal"],
+      "intensity": ["L1", "L2", "L3"],
+      "settles": true,
+      "loop": false
+    },
+    {
+      "id": "bar-fill",
+      "name": "数据条填充",
+      "job": "Encode magnitude or completion with a bounded fill.",
+      "syncModes": ["state-change"],
+      "intensity": ["L1", "L2"],
+      "settles": true,
+      "loop": false
+    },
+    {
+      "id": "ring-progress",
+      "name": "环形进度",
+      "job": "Show bounded proportion, completion, or cycle progress.",
+      "syncModes": ["state-change"],
+      "intensity": ["L1", "L2"],
+      "settles": true,
+      "loop": false
+    },
+    {
+      "id": "node-appear",
+      "name": "节点出现",
+      "job": "Establish one entity in a process or relationship map.",
+      "syncModes": ["reveal", "state-change"],
+      "intensity": ["L1", "L2"],
+      "settles": true,
+      "loop": false
+    },
+    {
+      "id": "connector-draw",
+      "name": "连线绘制",
+      "job": "Make a causal, sequential, or structural relationship visible.",
+      "syncModes": ["state-change"],
+      "intensity": ["L1", "L2"],
+      "settles": true,
+      "loop": false
+    },
+    {
+      "id": "path-advance",
+      "name": "路径推进",
+      "job": "Advance a task, transfer, or journey through ordered stages.",
+      "syncModes": ["state-change"],
+      "intensity": ["L2"],
+      "settles": true,
+      "loop": false
+    },
+    {
+      "id": "status-resolve",
+      "name": "状态完成",
+      "job": "Resolve pending, selected, passed, failed, or complete state once.",
+      "syncModes": ["state-change"],
+      "intensity": ["L1", "L2"],
+      "settles": true,
+      "loop": false
+    },
+    {
+      "id": "before-after-swap",
+      "name": "前后切换",
+      "job": "Show a controlled transformation from before to after on a shared basis.",
+      "syncModes": ["state-change", "highlight"],
+      "intensity": ["L2", "L3"],
+      "settles": true,
+      "loop": false
+    },
+    {
+      "id": "split-open",
+      "name": "分屏展开",
+      "job": "Establish two comparable sides without hiding their common baseline.",
+      "syncModes": ["reveal", "state-change"],
+      "intensity": ["L2"],
+      "settles": true,
+      "loop": false
+    },
+    {
+      "id": "global-to-detail",
+      "name": "全局到局部",
+      "job": "Establish media context, then move attention to one concrete object.",
+      "syncModes": ["media-focus"],
+      "intensity": ["L1", "L2"],
+      "settles": true,
+      "loop": false
+    },
+    {
+      "id": "focus-region-move",
+      "name": "区域焦点迁移",
+      "job": "Move a focus rectangle or crop from one concrete region to another.",
+      "syncModes": ["media-focus"],
+      "intensity": ["L1", "L2"],
+      "settles": true,
+      "loop": false
+    },
+    {
+      "id": "annotation-point",
+      "name": "箭头框选标注",
+      "job": "Point to one control, number, object, or piece of evidence.",
+      "syncModes": ["media-focus", "highlight"],
+      "intensity": ["L1", "L2"],
+      "settles": true,
+      "loop": false
+    },
+    {
+      "id": "summary-converge",
+      "name": "元素汇聚总结",
+      "job": "Bring previously established parts into one closing structure.",
+      "syncModes": ["state-change", "highlight"],
+      "intensity": ["L2", "L3"],
+      "settles": true,
+      "loop": false
+    },
+    {
+      "id": "crisp-exit",
+      "name": "机械式退出",
+      "job": "Close a visual unit without truncation, drift, or accidental black tail.",
+      "syncModes": ["reveal", "highlight", "state-change", "media-focus"],
+      "intensity": ["L1", "L2", "L3"],
+      "settles": false,
+      "loop": false
+    }
+  ],
+  "globalRules": {
+    "maximumPrimaryPrimitivesPerSemanticUnit": 1,
+    "maximumAuxiliaryPrimitivesPerSemanticUnit": 2,
+    "alwaysOnDecorativeMotionAllowed": false,
+    "loopRequiresExplicitSemanticState": true,
+    "loopMustStopWhenStateEnds": true,
+    "pixelEvidenceRequired": true
+  }
+}

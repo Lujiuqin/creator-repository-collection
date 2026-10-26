@@ -1,0 +1,333 @@
+{
+  "version": 2,
+  "count": 36,
+  "compatibilityOnly": true,
+  "supersededForSelectionBy": "semantic-template-system.json",
+  "selectionRule": "Choose one primary pattern per semantic information unit. Add one auxiliary pattern only for a second independent viewer job.",
+  "patterns": [
+    {
+      "id": "new-conclusion",
+      "name": "新结论",
+      "viewerJob": "Understand and remember a newly stated conclusion.",
+      "preferredSyncMode": "reveal",
+      "primitiveIds": ["mask-reveal", "keyword-scale-hit", "crisp-exit"],
+      "intensity": ["L2", "L3"],
+      "requiresConcreteMedia": false
+    },
+    {
+      "id": "term-definition",
+      "name": "术语定义",
+      "viewerJob": "Connect one term to its concise meaning.",
+      "preferredSyncMode": "reveal",
+      "primitiveIds": ["phrase-settle", "underline-draw", "color-lock"],
+      "intensity": ["L1", "L2"],
+      "requiresConcreteMedia": false
+    },
+    {
+      "id": "contrast-correction",
+      "name": "转折纠正",
+      "viewerJob": "Replace an initial framing with the speaker's corrected framing.",
+      "preferredSyncMode": "state-change",
+      "primitiveIds": ["hard-replace", "neighbor-deemphasis", "color-lock"],
+      "intensity": ["L2", "L3"],
+      "requiresConcreteMedia": false
+    },
+    {
+      "id": "negation-replacement",
+      "name": "否定与替代",
+      "viewerJob": "See what is rejected and what should replace it.",
+      "preferredSyncMode": "state-change",
+      "primitiveIds": ["hard-replace", "before-after-swap", "color-lock"],
+      "intensity": ["L2", "L3"],
+      "requiresConcreteMedia": false
+    },
+    {
+      "id": "escalation",
+      "name": "递进加强",
+      "viewerJob": "Feel increasing importance across ordered claims.",
+      "preferredSyncMode": "highlight",
+      "primitiveIds": ["row-accumulate", "focus-transfer", "neighbor-deemphasis"],
+      "intensity": ["L1", "L2"],
+      "requiresConcreteMedia": false
+    },
+    {
+      "id": "causal-chain",
+      "name": "因果关系",
+      "viewerJob": "Understand how one condition produces another outcome.",
+      "preferredSyncMode": "state-change",
+      "primitiveIds": ["node-appear", "connector-draw", "path-advance"],
+      "intensity": ["L2"],
+      "requiresConcreteMedia": false
+    },
+    {
+      "id": "condition-result",
+      "name": "条件与结果",
+      "viewerJob": "Distinguish the condition from the result it enables.",
+      "preferredSyncMode": "state-change",
+      "primitiveIds": ["node-appear", "connector-draw", "status-resolve"],
+      "intensity": ["L1", "L2"],
+      "requiresConcreteMedia": false
+    },
+    {
+      "id": "ordered-process",
+      "name": "顺序流程",
+      "viewerJob": "Follow ordered steps and know the current step.",
+      "preferredSyncMode": "state-change",
+      "primitiveIds": ["row-accumulate", "path-advance", "status-resolve"],
+      "intensity": ["L2"],
+      "requiresConcreteMedia": false
+    },
+    {
+      "id": "cycle-system",
+      "name": "循环系统",
+      "viewerJob": "Understand a bounded repeating loop and its current state.",
+      "preferredSyncMode": "state-change",
+      "primitiveIds": ["node-appear", "connector-draw", "ring-progress"],
+      "intensity": ["L2"],
+      "requiresConcreteMedia": false
+    },
+    {
+      "id": "hub-spoke",
+      "name": "中心辐射关系",
+      "viewerJob": "See one core concept and its related capabilities or branches.",
+      "preferredSyncMode": "state-change",
+      "primitiveIds": ["node-appear", "connector-draw", "focus-transfer"],
+      "intensity": ["L2"],
+      "requiresConcreteMedia": false
+    },
+    {
+      "id": "layered-structure",
+      "name": "多层结构",
+      "viewerJob": "Understand hierarchy or dependency across layers.",
+      "preferredSyncMode": "reveal",
+      "primitiveIds": ["row-accumulate", "connector-draw", "neighbor-deemphasis"],
+      "intensity": ["L1", "L2"],
+      "requiresConcreteMedia": false
+    },
+    {
+      "id": "parallel-list",
+      "name": "并列清单",
+      "viewerJob": "Retain several peer concepts while following the current one.",
+      "preferredSyncMode": "highlight",
+      "primitiveIds": ["row-accumulate", "color-lock", "neighbor-deemphasis"],
+      "intensity": ["L1", "L2"],
+      "requiresConcreteMedia": false
+    },
+    {
+      "id": "priority-ranking",
+      "name": "优先级排序",
+      "viewerJob": "Know the order of importance and the current rank.",
+      "preferredSyncMode": "state-change",
+      "primitiveIds": ["row-accumulate", "focus-transfer", "number-count"],
+      "intensity": ["L1", "L2"],
+      "requiresConcreteMedia": false
+    },
+    {
+      "id": "before-after",
+      "name": "前后对比",
+      "viewerJob": "See a transformation on a shared visual baseline.",
+      "preferredSyncMode": "state-change",
+      "primitiveIds": ["split-open", "before-after-swap", "annotation-point"],
+      "intensity": ["L2", "L3"],
+      "requiresConcreteMedia": false
+    },
+    {
+      "id": "right-wrong",
+      "name": "对错对比",
+      "viewerJob": "Distinguish a wrong example from the correct alternative.",
+      "preferredSyncMode": "highlight",
+      "primitiveIds": ["split-open", "color-lock", "status-resolve"],
+      "intensity": ["L2"],
+      "requiresConcreteMedia": false
+    },
+    {
+      "id": "option-comparison",
+      "name": "方案选择",
+      "viewerJob": "Compare options on common criteria and see the selected result.",
+      "preferredSyncMode": "highlight",
+      "primitiveIds": ["split-open", "focus-transfer", "status-resolve"],
+      "intensity": ["L1", "L2"],
+      "requiresConcreteMedia": false
+    },
+    {
+      "id": "numeric-growth",
+      "name": "数字增长",
+      "viewerJob": "Understand the final value and direction of change.",
+      "preferredSyncMode": "state-change",
+      "primitiveIds": ["number-count", "bar-fill", "keyword-scale-hit"],
+      "intensity": ["L2", "L3"],
+      "requiresConcreteMedia": false
+    },
+    {
+      "id": "proportion",
+      "name": "占比",
+      "viewerJob": "Understand a part-to-whole relationship.",
+      "preferredSyncMode": "state-change",
+      "primitiveIds": ["ring-progress", "number-count", "color-lock"],
+      "intensity": ["L1", "L2"],
+      "requiresConcreteMedia": false
+    },
+    {
+      "id": "gap-difference",
+      "name": "差距",
+      "viewerJob": "See the magnitude and direction of a difference.",
+      "preferredSyncMode": "highlight",
+      "primitiveIds": ["bar-fill", "annotation-point", "neighbor-deemphasis"],
+      "intensity": ["L1", "L2"],
+      "requiresConcreteMedia": false
+    },
+    {
+      "id": "time-change",
+      "name": "时间变化",
+      "viewerJob": "Follow how a metric or state changes over time.",
+      "preferredSyncMode": "state-change",
+      "primitiveIds": ["path-advance", "bar-fill", "focus-transfer"],
+      "intensity": ["L2"],
+      "requiresConcreteMedia": false
+    },
+    {
+      "id": "risk-warning",
+      "name": "风险提示",
+      "viewerJob": "Notice one concrete risk and remember the required caution.",
+      "preferredSyncMode": "highlight",
+      "primitiveIds": ["color-lock", "annotation-point", "keyword-scale-hit"],
+      "intensity": ["L1", "L2", "L3"],
+      "requiresConcreteMedia": false
+    },
+    {
+      "id": "completion-status",
+      "name": "完成状态",
+      "viewerJob": "Know which tasks are pending, active, failed, or complete.",
+      "preferredSyncMode": "state-change",
+      "primitiveIds": ["status-resolve", "row-accumulate", "color-lock"],
+      "intensity": ["L1", "L2"],
+      "requiresConcreteMedia": false
+    },
+    {
+      "id": "ui-location",
+      "name": "界面定位",
+      "viewerJob": "Find one control or region inside a real interface.",
+      "preferredSyncMode": "media-focus",
+      "primitiveIds": ["global-to-detail", "annotation-point", "color-lock"],
+      "intensity": ["L1", "L2"],
+      "requiresConcreteMedia": true
+    },
+    {
+      "id": "screenshot-proof",
+      "name": "截图证据",
+      "viewerJob": "Locate and read the exact evidence inside a real screenshot.",
+      "preferredSyncMode": "media-focus",
+      "primitiveIds": ["global-to-detail", "annotation-point", "neighbor-deemphasis"],
+      "intensity": ["L1", "L2"],
+      "requiresConcreteMedia": true
+    },
+    {
+      "id": "detail-examination",
+      "name": "局部细节",
+      "viewerJob": "Move from context to a small but important detail.",
+      "preferredSyncMode": "media-focus",
+      "primitiveIds": ["global-to-detail", "focus-region-move", "annotation-point"],
+      "intensity": ["L1", "L2"],
+      "requiresConcreteMedia": true
+    },
+    {
+      "id": "product-feature",
+      "name": "产品功能指向",
+      "viewerJob": "Connect a spoken product capability to the real control or result.",
+      "preferredSyncMode": "media-focus",
+      "primitiveIds": ["global-to-detail", "focus-region-move", "color-lock"],
+      "intensity": ["L1", "L2"],
+      "requiresConcreteMedia": true
+    },
+    {
+      "id": "chapter-shift",
+      "name": "章节切换",
+      "viewerJob": "Recognize a major structural transition and the new topic.",
+      "preferredSyncMode": "reveal",
+      "primitiveIds": ["diagonal-wipe", "mask-reveal", "crisp-exit"],
+      "intensity": ["L2", "L3"],
+      "requiresConcreteMedia": false
+    },
+    {
+      "id": "thesis-return",
+      "name": "观点回收",
+      "viewerJob": "Reconnect the current explanation to an earlier thesis.",
+      "preferredSyncMode": "highlight",
+      "primitiveIds": ["focus-transfer", "keyword-scale-hit", "summary-converge"],
+      "intensity": ["L1", "L2"],
+      "requiresConcreteMedia": false
+    },
+    {
+      "id": "summary-map",
+      "name": "总结地图",
+      "viewerJob": "Review established parts as one coherent framework.",
+      "preferredSyncMode": "state-change",
+      "primitiveIds": ["summary-converge", "connector-draw", "focus-transfer"],
+      "intensity": ["L2", "L3"],
+      "requiresConcreteMedia": false
+    },
+    {
+      "id": "cta-close",
+      "name": "行动收束",
+      "viewerJob": "Know the single next action after the explanation.",
+      "preferredSyncMode": "reveal",
+      "primitiveIds": ["mask-reveal", "color-lock", "crisp-exit"],
+      "intensity": ["L2", "L3"],
+      "requiresConcreteMedia": false
+    },
+    {
+      "id": "identity-context",
+      "name": "身份与上下文",
+      "viewerJob": "Know who, what, where, or when without interrupting the speech.",
+      "preferredSyncMode": "reveal",
+      "primitiveIds": ["mask-reveal", "phrase-settle", "crisp-exit"],
+      "intensity": ["L1"],
+      "requiresConcreteMedia": false
+    },
+    {
+      "id": "quote-emphasis",
+      "name": "引语强调",
+      "viewerJob": "Retain one short sentence or quote as the memorable line.",
+      "preferredSyncMode": "reveal",
+      "primitiveIds": ["phrase-settle", "underline-draw", "keyword-scale-hit"],
+      "intensity": ["L2", "L3"],
+      "requiresConcreteMedia": false
+    },
+    {
+      "id": "misconception-break",
+      "name": "误区打破",
+      "viewerJob": "Recognize a common misconception and its corrected model.",
+      "preferredSyncMode": "state-change",
+      "primitiveIds": ["hard-replace", "before-after-swap", "neighbor-deemphasis"],
+      "intensity": ["L2", "L3"],
+      "requiresConcreteMedia": false
+    },
+    {
+      "id": "dependency-map",
+      "name": "依赖关系",
+      "viewerJob": "Understand which parts depend on which prerequisites.",
+      "preferredSyncMode": "state-change",
+      "primitiveIds": ["node-appear", "connector-draw", "neighbor-deemphasis"],
+      "intensity": ["L2"],
+      "requiresConcreteMedia": false
+    },
+    {
+      "id": "transfer-route",
+      "name": "传递路径",
+      "viewerJob": "Follow an object, task, or message as it moves between places.",
+      "preferredSyncMode": "state-change",
+      "primitiveIds": ["node-appear", "path-advance", "status-resolve"],
+      "intensity": ["L2"],
+      "requiresConcreteMedia": false
+    },
+    {
+      "id": "evidence-verdict",
+      "name": "证据与结论",
+      "viewerJob": "Connect concrete evidence to the conclusion it supports.",
+      "preferredSyncMode": "media-focus",
+      "primitiveIds": ["global-to-detail", "annotation-point", "status-resolve"],
+      "intensity": ["L2"],
+      "requiresConcreteMedia": true
+    }
+  ]
+}

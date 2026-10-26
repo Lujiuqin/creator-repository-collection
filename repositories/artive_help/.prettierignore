@@ -1,0 +1,12 @@
+.next
+node_modules
+package-lock.json
+*.log
+public
+coverage
+dist
+build
+.turbo
+*.snap
+*.lock
+**/*.sql

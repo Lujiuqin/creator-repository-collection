@@ -1,0 +1,313 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ChatCut Semantic Motion Template System",
+  "type": "object",
+  "required": ["version", "sceneTemplates", "transitionTemplates"],
+  "properties": {
+    "version": {"type": "integer", "minimum": 1},
+    "sceneTemplates": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/sceneTemplate"}
+    },
+    "transitionTemplates": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/transitionTemplate"}
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "frameRange": {
+      "type": "object",
+      "required": ["startFrame", "endFrameExclusive"],
+      "properties": {
+        "startFrame": {"type": "integer", "minimum": 0},
+        "endFrameExclusive": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "sceneTemplate": {
+      "type": "object",
+      "required": ["id", "kind", "name", "status", "successfulUses", "identity", "motionSignature", "params", "cueContract", "aspectVariants", "processContinuityDefault", "transitionPorts", "qa"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+        "kind": {"const": "sceneTemplate"},
+        "name": {"type": "string", "minLength": 1},
+        "status": {"enum": ["candidate", "proven", "deprecated"]},
+        "successfulUses": {"type": "integer", "minimum": 0},
+        "identity": {
+          "type": "object",
+          "required": ["viewerJob", "informationStructure", "silhouette", "recommendedFor"],
+          "properties": {
+            "viewerJob": {"type": "string", "minLength": 1},
+            "informationStructure": {"type": "string", "minLength": 1},
+            "silhouette": {"type": "string", "minLength": 1},
+            "recommendedFor": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+          },
+          "additionalProperties": false
+        },
+        "motionSignature": {
+          "type": "object",
+          "required": ["entrance", "perItemReveal", "sustainMode", "exit", "boundPrimitives", "prohibitedPrimitives"],
+          "properties": {
+            "entrance": {"type": "string", "minLength": 1},
+            "perItemReveal": {"type": "string", "minLength": 1},
+            "sustainMode": {"enum": ["cadence-driven", "bounded-process", "semantic-hold"]},
+            "exit": {"type": "string", "minLength": 1},
+            "boundPrimitives": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+            "prohibitedPrimitives": {"type": "array", "items": {"type": "string"}}
+          },
+          "additionalProperties": false
+        },
+        "params": {"type": "object"},
+        "cueContract": {
+          "type": "object",
+          "required": ["syncModes", "rule"],
+          "properties": {
+            "syncModes": {"type": "array", "minItems": 1, "items": {"enum": ["reveal", "highlight", "state-change", "media-focus"]}},
+            "rule": {"type": "string", "minLength": 1}
+          },
+          "additionalProperties": false
+        },
+        "aspectVariants": {
+          "type": "object",
+          "required": ["portrait-9-16", "landscape-16-9"],
+          "properties": {
+            "portrait-9-16": {"type": "object", "required": ["layout", "safeAreas"], "properties": {"layout": {"type": "string"}, "safeAreas": {"type": "array", "items": {"type": "string"}}}, "additionalProperties": false},
+            "landscape-16-9": {"type": "object", "required": ["layout", "safeAreas"], "properties": {"layout": {"type": "string"}, "safeAreas": {"type": "array", "items": {"type": "string"}}}, "additionalProperties": false}
+          },
+          "additionalProperties": false
+        },
+        "processContinuityDefault": {
+          "type": "object",
+          "required": ["isGenuineProcess"],
+          "properties": {
+            "isGenuineProcess": {"type": "boolean"},
+            "motionCoverageFloor": {"type": "number", "minimum": 0, "maximum": 1},
+            "maxDenseStaticSeconds": {"type": "number", "exclusiveMinimum": 0},
+            "maxGeneralStaticSeconds": {"type": "number", "exclusiveMinimum": 0}
+          },
+          "additionalProperties": false
+        },
+        "transitionPorts": {
+          "type": "object",
+          "required": ["entryRoles", "exitRoles"],
+          "properties": {
+            "entryRoles": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+            "exitRoles": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+          },
+          "additionalProperties": false
+        },
+        "qa": {
+          "type": "object",
+          "required": ["requiredEvidence"],
+          "properties": {"requiredEvidence": {"type": "array", "minItems": 1, "items": {"type": "string"}}},
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "transitionTemplate": {
+      "type": "object",
+      "required": ["id", "kind", "status", "successfulUses", "intent", "fromRoles", "toRoles", "carriedElement", "spatialLogic", "durationRange", "continuityContract", "aspectVariants", "sfxHint"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+        "kind": {"const": "transitionTemplate"},
+        "name": {"type": "string", "minLength": 1},
+        "status": {"enum": ["candidate", "proven", "deprecated"]},
+        "successfulUses": {"type": "integer", "minimum": 0},
+        "intent": {"enum": ["hard-cut", "chapter-break", "continuation", "detail", "overview", "correction", "role-demote"]},
+        "fromRoles": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "toRoles": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "carriedElement": {
+          "type": "object",
+          "required": ["type", "required", "mustStayContinuous"],
+          "properties": {
+            "type": {"type": "string", "minLength": 1},
+            "required": {"type": "boolean"},
+            "mustStayContinuous": {"type": "boolean"}
+          },
+          "additionalProperties": false
+        },
+        "spatialLogic": {"type": "string", "minLength": 1},
+        "durationRange": {
+          "type": "object",
+          "required": ["minFrames", "maxFrames", "defaultFrames"],
+          "properties": {
+            "minFrames": {"type": "integer", "minimum": 0},
+            "maxFrames": {"type": "integer", "minimum": 0},
+            "defaultFrames": {"type": "integer", "minimum": 0}
+          },
+          "additionalProperties": false
+        },
+        "continuityContract": {
+          "type": "object",
+          "required": ["samplePoints", "assertions"],
+          "properties": {
+            "samplePoints": {"type": "array", "minItems": 1, "items": {"enum": ["start", "mid", "end"]}},
+            "assertions": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+          },
+          "additionalProperties": false
+        },
+        "aspectVariants": {
+          "type": "object",
+          "required": ["portrait-9-16", "landscape-16-9"],
+          "properties": {
+            "portrait-9-16": {"type": "object"},
+            "landscape-16-9": {"type": "object"}
+          },
+          "additionalProperties": false
+        },
+        "sfxHint": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "sourceEvidence": {
+      "type": "object",
+      "required": ["snapshotRef", "snapshotRevision", "identityRef"],
+      "properties": {
+        "snapshotRef": {"type": "string", "minLength": 1},
+        "snapshotRevision": {"type": "string", "minLength": 1},
+        "identityRef": {"type": "string", "minLength": 1},
+        "toolId": {"type": "string", "minLength": 1},
+        "toolEvidenceRef": {"type": "string", "minLength": 1},
+        "roleMetadataRef": {"type": "string", "minLength": 1},
+        "implementationRoute": {"type": "string", "minLength": 1},
+        "editableProperties": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "triggerReason": {"type": "string", "minLength": 1},
+        "migrationOnly": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "sceneInstance": {
+      "type": "object",
+      "required": ["sceneId", "templateId", "sourceMode", "sourceEvidence", "aspect", "entryRole", "exitRole", "denseSpeech", "startFrame", "endFrameExclusive", "resolvedParams", "wordCues", "processContinuity", "overrides"],
+      "properties": {
+        "sceneId": {"type": "string", "minLength": 1},
+        "templateId": {"type": ["string", "null"]},
+        "sourceMode": {"enum": ["template", "chatcut-library", "project-existing", "bespoke", "bespoke-forced", "legacy"]},
+        "sourceEvidence": {"$ref": "#/$defs/sourceEvidence"},
+        "aspect": {"enum": ["portrait-9-16", "landscape-16-9"]},
+        "entryRole": {"type": "string", "minLength": 1},
+        "exitRole": {"type": "string", "minLength": 1},
+        "denseSpeech": {"type": "boolean"},
+        "startFrame": {"type": "integer", "minimum": 0},
+        "endFrameExclusive": {"type": "integer", "minimum": 1},
+        "resolvedParams": {"type": "object"},
+        "wordCues": {"type": "array", "items": {"$ref": "#/$defs/wordCue"}},
+        "processContinuity": {"$ref": "#/$defs/processContinuity"},
+        "designReferences": {"type": "array", "items": {"$ref": "#/$defs/designReference"}},
+        "overrides": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {"if": {"properties": {"sourceMode": {"enum": ["template", "chatcut-library", "project-existing"]}}, "required": ["sourceMode"]}, "then": {"properties": {"templateId": {"type": "string", "minLength": 1}}}},
+        {"if": {"properties": {"sourceMode": {"enum": ["chatcut-library", "project-existing"]}}, "required": ["sourceMode"]}, "then": {"properties": {"sourceEvidence": {"required": ["toolId", "toolEvidenceRef"]}}}},
+        {"if": {"properties": {"sourceMode": {"enum": ["bespoke", "bespoke-forced"]}}, "required": ["sourceMode"]}, "then": {"properties": {"templateId": {"type": "null"}, "sourceEvidence": {"required": ["implementationRoute", "editableProperties", "triggerReason"]}}}},
+        {"if": {"properties": {"sourceMode": {"const": "legacy"}}, "required": ["sourceMode"]}, "then": {"properties": {"sourceEvidence": {"required": ["migrationOnly"], "properties": {"migrationOnly": {"const": true}}}}}}
+      ]
+    },
+    "wordCue": {
+      "type": "object",
+      "required": ["id", "triggerWord", "triggerFrame", "cueFrame", "syncMode"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "triggerWord": {"type": "string", "minLength": 1},
+        "triggerFrame": {"type": "integer", "minimum": 0},
+        "cueFrame": {"type": "integer", "minimum": 0},
+        "syncMode": {"enum": ["reveal", "highlight", "state-change", "media-focus"]}
+      },
+      "additionalProperties": false
+    },
+    "processContinuity": {
+      "type": "object",
+      "required": ["isGenuineProcess", "motionWindows", "cadenceFrames"],
+      "properties": {
+        "isGenuineProcess": {"type": "boolean"},
+        "motionWindows": {"type": "array", "items": {"$ref": "#/$defs/frameRange"}},
+        "motionCoverageRatio": {"type": "number", "minimum": 0, "maximum": 1},
+        "maxStaticHoldFrames": {"type": "integer", "minimum": 0},
+        "cadenceFrames": {"type": "array", "items": {"type": "integer", "minimum": 0}}
+      },
+      "additionalProperties": false
+    },
+    "transitionInstance": {
+      "type": "object",
+      "required": ["transitionId", "sourceMode", "sourceEvidence", "entryRole", "exitRole", "fromSceneId", "toSceneId", "aspect", "startFrame", "endFrameExclusive", "intent", "carriedElementBinding", "keyframes", "overrides", "audit"],
+      "properties": {
+        "transitionId": {"type": ["string", "null"]},
+        "sourceMode": {"enum": ["template", "chatcut-library", "project-existing", "bespoke", "bespoke-forced", "legacy"]},
+        "sourceEvidence": {"$ref": "#/$defs/sourceEvidence"},
+        "entryRole": {"type": "string", "minLength": 1},
+        "exitRole": {"type": "string", "minLength": 1},
+        "fromSceneId": {"type": "string", "minLength": 1},
+        "toSceneId": {"type": "string", "minLength": 1},
+        "aspect": {"enum": ["portrait-9-16", "landscape-16-9"]},
+        "startFrame": {"type": "integer", "minimum": 0},
+        "endFrameExclusive": {"type": "integer", "minimum": 0},
+        "intent": {"type": "string", "minLength": 1},
+        "carriedElementBinding": {"type": ["object", "null"]},
+        "keyframes": {"type": "object"},
+        "designReferences": {"type": "array", "items": {"$ref": "#/$defs/designReference"}},
+        "overrides": {"type": "array", "items": {"type": "string"}},
+        "audit": {
+          "type": "object",
+          "required": ["continuityProofFrames", "expected"],
+          "properties": {
+            "continuityProofFrames": {"type": "array", "minItems": 1, "items": {"type": "integer", "minimum": 0}},
+            "expected": {"type": "string", "minLength": 1}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {"if": {"properties": {"sourceMode": {"enum": ["template", "chatcut-library", "project-existing"]}}, "required": ["sourceMode"]}, "then": {"properties": {"transitionId": {"type": "string", "minLength": 1}}}},
+        {"if": {"properties": {"sourceMode": {"enum": ["chatcut-library", "project-existing"]}}, "required": ["sourceMode"]}, "then": {"properties": {"sourceEvidence": {"required": ["toolId", "toolEvidenceRef", "roleMetadataRef"]}}}},
+        {"if": {"properties": {"sourceMode": {"enum": ["bespoke", "bespoke-forced"]}}, "required": ["sourceMode"]}, "then": {"properties": {"transitionId": {"type": "null"}, "sourceEvidence": {"required": ["roleMetadataRef", "implementationRoute", "editableProperties", "triggerReason"]}}}},
+        {"if": {"properties": {"sourceMode": {"const": "legacy"}}, "required": ["sourceMode"]}, "then": {"properties": {"sourceEvidence": {"required": ["migrationOnly"], "properties": {"migrationOnly": {"const": true}}}}}}
+      ]
+    },
+    "designReference": {
+      "type": "object",
+      "required": ["provider", "cardId", "sourceRevision", "recipePath", "demoPath", "adaptationMode", "preservedBeats", "discardedImplementation"],
+      "properties": {
+        "provider": {"const": "video-shotcraft"},
+        "cardId": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+        "sourceRevision": {"type": "string", "minLength": 7},
+        "recipePath": {"type": "string", "minLength": 1},
+        "demoPath": {"type": "string", "minLength": 1},
+        "adaptationMode": {"enum": ["motion-grammar", "ported-mg", "timeline-plus-mg", "study-only"]},
+        "preservedBeats": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "discardedImplementation": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+      },
+      "additionalProperties": false
+    },
+    "userOverride": {
+      "type": "object",
+      "required": ["id", "mustHonor", "scope", "appliesTo", "directiveType", "spec", "facet", "conflictPolicy", "fidelityCheck"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "mustHonor": {"type": "boolean"},
+        "scope": {"enum": ["scene", "transition"]},
+        "appliesTo": {"type": "object"},
+        "anchor": {"type": ["object", "null"]},
+        "directiveType": {"type": "string", "minLength": 1},
+        "spec": {"type": "object"},
+        "facet": {"enum": ["whole-scene", "template-only", "motion-signature-only", "transition-only", "timing-only"]},
+        "conflictPolicy": {"enum": ["override-wins", "report-conflict"]},
+        "fidelityCheck": {
+          "type": "object",
+          "required": ["assertions", "evidenceRequired"],
+          "properties": {
+            "assertions": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+            "evidenceRequired": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

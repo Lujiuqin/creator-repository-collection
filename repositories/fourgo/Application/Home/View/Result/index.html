@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>四步曲</title>
+    <!-- 插件css文件 -->
+    <css href="__CSS__/bootstrap.min.css"/>
+    <css href="__CSS__/bootstrap-theme.min.css"/>
+    <css href="__CSS__/common.css"/>
+    <css href="__CSS__/header.css"/>
+    <css href="__CSS__/bottom.css"/>
+    <css href="__CSS__/Result/index.css"/>
+</head>
+<body>
+<!-- 导航栏 -->
+<header>
+    <include file="Public:header"/>
+</header>
+<div class="content">
+    <ol class="breadcrumb">
+      <li><a href="#">实践成果</a></li>
+      <li>成果展示</li>
+    </ol>
+    <!-- 学生获奖开始 -->
+    <div class="showTop">
+        <h2>竞赛成果</h2>
+        <!-- 第一行 -->
+        <volist name="JsList" id="one">
+
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <img src="{$one.img}" alt="...">
+              <div class="caption">
+                <h3 class="font-center">{$one.name}</h3>
+                <p class="indents text-justify">{$one.info}</p>
+                <p>
+                  <a href="show" class="btn btn-primary" role="button">查看</a>
+                  <a href="#" class="btn btn-default" role="button">点赞</a>
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </volist>
+
+      <div class="pages">{$JsShow}</div>
+    </div>
+    <!-- 学生获奖结束 -->
+
+    <!-- 学生论文开始 -->
+    <div class="showBot">
+    <h2>论文成果</h2>
+        <!-- 第一行 -->
+        <volist name="LwList" id="one">
+
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <img src="{$one.img}" alt="...">
+              <div class="caption">
+                <p class="indents text-justify">{$one.info}</p>
+                <p>
+                  <a href="{:U('Result/result')}" class="btn btn-primary" role="button">查看</a>
+                  <a href="#" class="btn btn-default" role="button">点赞</a>
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </volist>
+
+      <div class="pages">{$LwShow}</div>
+    </div>
+    <!-- 学生论文结束 -->
+</div>
+<footer>
+    <include file="Public:bottom"/>
+</footer>
+<!--最后引入各项JS文件-->
+<js href="__JQUERY__/jquery.js"/>
+<js href="__JQUERY__/bootstrap.js"/>
+<js href="__JS__/header.js"/>
+<js href="__JS__/Result/index.js"/>
+</body>
+</html>

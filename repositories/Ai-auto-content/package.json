@@ -1,0 +1,62 @@
+{
+  "name": "ai-auto-content",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Deterministic daily AI material collection pipeline",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "collect": "npm run collect:cloud",
+    "collect:cloud": "tsx src/index.ts",
+    "collect:browser": "tsx scripts/browser-pipeline-cli.ts",
+    "collect:fixture": "tsx src/index.ts --fixture --date=2026-08-12 --dry-run",
+    "spike:opencli": "tsx scripts/opencli-live-spike.ts",
+    "opencli:install-adapters": "tsx scripts/install-opencli-adapters.ts",
+    "local:check": "tsx scripts/local-scheduler-cli.ts check",
+    "local:morning": "tsx scripts/local-scheduler-cli.ts morning",
+    "local:topic": "tsx scripts/local-scheduler-cli.ts topic",
+    "local:research": "tsx scripts/local-scheduler-cli.ts research",
+    "local:scheduler": "tsx scripts/local-scheduler-cli.ts scheduler",
+    "local:install": "tsx scripts/local-runtime-install.ts",
+    "local:uninstall": "tsx scripts/local-runtime-uninstall.ts",
+    "launchd:render": "tsx scripts/render-launchd-plist.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "product:check": "tsx scripts/product-check.ts",
+    "writing-skills:check": "tsx scripts/writing-skills-check.ts",
+    "style:import": "tsx scripts/style-import.ts",
+    "style:inspect": "tsx scripts/style-inspect.ts",
+    "style:distill": "tsx scripts/style-distill.ts",
+    "style:protected:inspect": "tsx scripts/style-protected-inspect.ts",
+    "style:feedback": "tsx scripts/style-feedback.ts",
+    "style:lint": "tsx scripts/style-lint.ts",
+    "schema:generate": "tsx scripts/generate-json-schemas.ts",
+    "schema:check": "tsx scripts/generate-json-schemas.ts --check",
+    "topic:select": "tsx scripts/topic-select.ts",
+    "topic:validate": "tsx scripts/topic-validate.ts",
+    "topic:inspect-input": "tsx scripts/topic-inspect-input.ts",
+    "topic:paths:check": "tsx scripts/topic-output-paths-check.ts",
+    "research:build": "tsx scripts/research-build.ts",
+    "research:validate": "tsx scripts/research-validate.ts",
+    "research:inspect": "tsx scripts/research-inspect.ts",
+    "research:cache:clean": "tsx scripts/research-cache-clean.ts"
+  },
+  "dependencies": {
+    "cheerio": "^1.1.2",
+    "ipaddr.js": "^2.2.0",
+    "openai": "^7.4.0",
+    "p-limit": "^7.1.1",
+    "rss-parser": "^3.13.0",
+    "yaml": "^2.8.1",
+    "zod": "^4.0.17"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "ajv": "^8.20.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  }
+}

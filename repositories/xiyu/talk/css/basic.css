@@ -1,0 +1,180 @@
+@charset "utf-8";
+/* CSS Document */
+*{ 
+margin:0;
+padding:0;
+	}
+body{
+	width:1000px;
+	margin:0 auto;
+	font-size:12px;
+	background:#f1f3f5;
+}
+   #container { width: 995px; height: 400px; border: 3px solid #333; overflow: hidden; position: relative;margin-top:0px;}
+        #list { width: 5000px; height: 400px; position: absolute; z-index: 1;}
+        #list img { float: left;}
+        #buttons { position: absolute; height: 10px; width: 100px; z-index: 2; bottom: 20px; left: 250px;}
+        #buttons span { cursor: pointer; float: left; border: 1px solid #fff; width: 10px; height: 10px; border-radius: 50%; background: #333; margin-right: 5px;}
+        #buttons .on {  background: orangered;}
+        .arrow { cursor: pointer; display: none; line-height: 39px; text-align: center; font-size: 36px; font-weight: bold; width: 40px; height: 40px;  position: absolute; z-index: 2; top: 180px; background-color: RGBA(0,0,0,.3); color: #fff;}
+        .arrow:hover { background-color: RGBA(0,0,0,.7);}
+        #container:hover .arrow { display: block;}
+        #prev { left: 20px;}
+        #next { right: 20px;}
+#heard{
+	border:1px solid #000;
+	height:296px;
+	background-image:url(../image/dy.jpg);
+}
+#heard a{
+	text-decoration:none;
+	color:#000;
+}
+#heard a:hover{
+	text-decoration:underline;
+	color:#0C3;
+}
+.tm{
+	width:200px;
+	heigth:128px;
+}
+#heard p{
+	float:right;
+	width:50px;
+	height:50px;
+	line-height:50px;
+	font-size:14px;
+	margin-top:5px;
+	margin-right:5px;
+}
+#hf{
+	border:1px solid #000;
+	height:70px;
+	background:url(../image/syim.jpg);
+}
+ul{
+	list-style-type:none;
+} 
+#hf ul{
+	width:700px;
+	height:70px;
+	line-height:70px;
+	float:left;
+}
+#hf a{
+	float:right;
+	color:#000;
+	display:inline-block;
+	text-decoration:none;
+	font-size:18px;
+	text-align:center;
+}
+.zc{
+	margin-right:60px;
+	margin-top:25px;
+}
+.one{
+	margin-right:80px;
+	margin-top:25px;
+}
+#hf ul li{
+	height:70px;
+	width:110px;
+	float:left;
+	text-align:center;
+	font-size:14px;
+	background:url(../image/fgf.jpg) no-repeat right center;
+}
+#hf ul li.end{
+	width:110px;
+	background::none;
+}
+#hf ul li a{
+	color:#fff;
+	display:inline-block;
+	width:110px;
+	height:70px;
+	text-decoration:none;
+}
+#hf ul li a:hover{
+	text-decoration:underline;
+	color:yellow;
+	font-size:20px;
+	font-weight:250;
+}
+#hf p{
+	float:right;
+}
+#fanny{
+	width:50%;
+	height:200px;
+	margin-bottom:0px;
+	margin-top:10px;
+	float:left;
+	background:#e3e9ed;
+}
+#fanny h2{
+	padding:20px 20px 0 20px;
+}
+#fanny ul{
+	width:500px;
+	height:170px;
+	padding:25px;
+}
+#fanny ul li{
+	float:left;
+	width:72px;
+	height:30px;
+	line-height:30px;
+	font-size:16px;
+}
+#fanny ul li a{
+	text-decoration:none;
+	color:#999;
+	
+}
+#fanny ul li a:hover{
+	color:#F60;
+}
+#faniy{
+	width:50%;
+	height:200px;
+	margin-bottom:0px;
+	margin-top:10px;
+	float:right;
+	background:#e3e9ed;
+}
+#faniy h2{
+	padding:20px 20px 0 20px;
+}
+#fainy ul{
+	width:500px;
+	height:170px;
+	padding:25px;
+}
+#faniy ul li{
+	float:left;
+	width:85px;
+	height:30px;
+	line-height:30px;
+	font-size:16px;
+}
+#faniy ul li a{
+	text-decoration:none;
+	color:#999;
+	
+}
+#faniy ul li a:hover{
+	color:#F60;
+}
+#footer{
+	clear:both;
+	width:auto;
+	height:60px;
+	text-align:center;
+}
+#footer p{
+	font-size:18px;
+	padding:20px 0 0 0;
+}
+

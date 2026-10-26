@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "planFilename": "visual-orchestration-plan.json",
+  "requiredRootFields": ["version", "status", "fps", "durationInFrames", "layoutProfile", "brandInvariants", "scenes"],
+  "requiredSceneFields": ["sceneId", "viewerJob", "startFrame", "endFrameExclusive", "stateChangeFrames", "denseSpeech", "layoutSilhouette", "entranceMechanism", "motionPath", "informationPersistence", "materialTreatment"],
+  "optionalRootFields": ["transitions"],
+  "requiredTransitionFields": ["transitionId", "fromSceneId", "toSceneId", "intent", "carriedElementType", "startFrame", "endFrameExclusive", "continuityProofFrames"],
+  "thresholds": {
+    "maxConsecutiveSameSilhouette": 2,
+    "maxAdjacentSameSilhouetteAndEntrance": 0,
+    "maxHardCutRatio": 0.3,
+    "maxAdjacentSameTransitionIntentAndCarriedElement": 0
+  },
+  "densityGatesRemoved": {
+    "date": "2026-08-02",
+    "removed": [
+      "minimumDiversityByDurationSeconds",
+      "maxDenseStateHoldSeconds",
+      "maxGeneralCompositionHoldSeconds"
+    ],
+    "reason": "数量门槛导致为凑指标而加动效；改为逐动效声明 purpose，见 template-system-contract.json continuity。",
+    "defaultWhenNoReasonToAddVisuals": "keep a clean full-screen talking head"
+  },
+  "hardFails": [
+    "missing-required-field",
+    "scene-range-invalid",
+    "scene-overlap",
+    "state-change-outside-scene",
+    "three-consecutive-scenes-share-silhouette",
+    "adjacent-scenes-share-silhouette-and-entrance",
+    "transition-range-invalid",
+    "transition-references-unknown-scene",
+    "transition-continuity-unproven",
+    "adjacent-transition-intent-and-carried-element-repeated",
+    "hard-cut-ratio-over-limit",
+    "visual-diversity-claimed-without-pixel-evidence"
+  ]
+}

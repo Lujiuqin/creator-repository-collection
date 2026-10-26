@@ -1,0 +1,95 @@
+{
+  "version": 1,
+  "sourcePriority": [
+    "user-or-existing-project-asset",
+    "official-brand-product-project-source",
+    "public-source-with-clear-publisher-and-usage-basis",
+    "ai-generated-illustration",
+    "decorative-only"
+  ],
+  "resourceModes": ["BRAND_ASSET", "WEB_SCREENSHOT", "PUBLIC_MEDIA", "AI_IMAGE", "AI_VIDEO"],
+  "factuality": ["official", "documentary", "illustrative", "decorative"],
+  "brandAssets": {
+    "officialSourceRequired": true,
+    "aiGenerationAllowed": false,
+    "preserveAspectRatio": true,
+    "preserveBrandColors": true,
+    "preferSvgThenTransparentPng": true
+  },
+  "webScreenshots": {
+    "captureRealCurrentPage": true,
+    "aiGenerationAllowed": false,
+    "waitForPageLoad": true,
+    "redactPrivateOrAccountData": true,
+    "recordSourceUrlAndAcquiredAt": true
+  },
+  "publicMedia": {
+    "searchThumbnailIsNotASource": true,
+    "openOriginalPublisherPage": true,
+    "recordUsageBasis": true,
+    "temporaryHotlinkAllowed": false,
+    "importIntoChatCut": true
+  },
+  "aiImage": {
+    "allowedFor": ["abstract-concept", "illustration", "stylized-scene", "background", "object-visualization", "consistency-anchor"],
+    "forbiddenFor": ["real-logo", "real-product-ui", "news-evidence", "testimonial", "product-proof", "factual-screenshot"],
+    "requiredProvider": "codex-built-in-imagegen",
+    "requiredSkill": "imagegen",
+    "requiredTool": "image_gen",
+    "chatCutImageGenAllowed": false,
+    "routineUserConfirmationRequired": false,
+    "saveSelectedOutputToStableProjectPath": true,
+    "importIntoChatCut": true,
+    "timelineMayReferenceTemporaryGenerationPath": false
+  },
+  "aiVideo": {
+    "allowedFor": ["hard-to-film-short-scene", "abstract-motion", "stylized-transition", "image-to-video", "shot-extension", "reference-guided-shot"],
+    "forbiddenFor": ["fake-product-operation", "news-evidence", "factual-proof", "unauthorized-testimonial", "pixel-accurate-ui-demo"],
+    "oneGenerationJobAtATime": true,
+    "reuseAnchorsForRecurringIdentity": true,
+    "maxTextOnlyRetriesForIdentityIssue": 2,
+    "followChatCutVideoGenAlignmentAndReviewRules": true
+  },
+  "provenance": {
+    "scope": "externally-sourced-or-ai-generated-resources-only",
+    "userOriginalOrExistingProjectAssetExemption": "Track in the S0 project inventory; sourceUrlOrGenerationRef is not required unless the asset was externally sourced or AI-generated in this workflow.",
+    "requiredFields": [
+      "resourceId",
+      "sceneId",
+      "resourceMode",
+      "factuality",
+      "title",
+      "publisherOrModel",
+      "sourceUrlOrGenerationRef",
+      "acquiredAt",
+      "usageBasis",
+      "projectAssetId",
+      "visualPlanVersion",
+      "activeLayoutProfile",
+      "cropOrPlacement",
+      "qaVerdict"
+    ],
+    "aiAdditionalFields": ["promptSummary", "referenceAssetIds", "durationOrSize"],
+    "generationReferenceRules": {
+      "codexAiImage": "stableLocalProjectPath",
+      "chatCutAiVideo": "jobId"
+    }
+  },
+  "hardFails": [
+    "ai-generated-real-logo",
+    "ai-generated-real-ui-or-factual-evidence",
+    "unknown-or-unverified-source",
+    "private-data-exposed",
+    "temporary-hotlink-used-on-timeline",
+    "selected-resource-not-imported-to-chatcut",
+    "missing-provenance-record",
+    "generated-asset-has-severe-artifacts",
+    "new-ai-image-not-generated-with-codex-imagegen",
+    "chatcut-image-gen-used-for-new-ai-image",
+    "codex-ai-image-not-persisted-before-import",
+    "concurrent-video-generation-jobs",
+    "resource-contradicts-script-or-current-visual-plan",
+    "chatcut-video-generation-rules-bypassed",
+    "chatcut-video-scope-or-result-review-bypassed"
+  ]
+}

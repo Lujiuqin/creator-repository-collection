@@ -1,0 +1,39 @@
+@charset "utf-8";
+/* CSS Document */
+
+#he{
+	width:auto;
+	height:1000px;
+	background:#fff;
+}
+#ha{
+	width:auto;
+	height:3200px;
+	background:#fff;
+}
+#tittle{
+	width:auto;
+	height:50px;
+	line-height:50px;
+	text-align:center;
+}
+#ph{
+	width:auto;
+	margin-left:40px;
+	margin-right:40px;
+}
+#ph p{
+	text-align:left;
+	line-height:40px;
+	font-size:14px;
+}
+.ts{
+	text-indent:28px;
+}
+#ph strong{
+	text-align:left;
+	height:40px;
+	line-height:40px;
+	font-weight:bold;
+	font-size:16px;
+}
