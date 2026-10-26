@@ -1,5 +1,11 @@
 # 创作者项目收藏与工作台
 
+> **想查看和原作者一样的 README、中文介绍和使用方法，请打开[独立仓库入口](INDEPENDENT_REPOSITORIES.md)。**
+>
+> 例如：[账号定位原版首页](https://github.com/Lujiuqin/account-positioning-interview#readme) · [内容工作流原版首页](https://github.com/Lujiuqin/ai-content-workflow-skills#readme) · [信号台原版首页](https://github.com/Lujiuqin/Ai-news#readme)。这些是 Lujiuqin 账号下各自独立的仓库。
+>
+> 下面保留原来的备份合集和导航，不用它替代各项目的原版 README。
+
 Lujiuqin 的 GitHub 项目集合，收录 wangguoqing123 的 23 个公开仓库快照，方便阅读、学习和后续按项目使用。原作者与上游来源见 [来源与版本](SOURCES.md)。
 
 **先看 [新手使用指南](QUICKSTART.md)，全部项目见 [完整仓库地图](docs/作者仓库地图与新手使用指南.md)。**
